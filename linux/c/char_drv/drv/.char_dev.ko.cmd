@@ -1,0 +1,1 @@
+cmd_/home/intchains/note/linux/c/char_drv/drv/char_dev.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/intchains/note/linux/c/char_drv/drv/char_dev.ko /home/intchains/note/linux/c/char_drv/drv/char_dev.o /home/intchains/note/linux/c/char_drv/drv/char_dev.mod.o;  true

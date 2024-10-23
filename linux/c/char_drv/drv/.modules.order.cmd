@@ -1,0 +1,1 @@
+cmd_/home/intchains/note/linux/c/char_drv/drv/modules.order := {   echo /home/intchains/note/linux/c/char_drv/drv/char_dev.ko; :; } | awk '!x[$$0]++' - > /home/intchains/note/linux/c/char_drv/drv/modules.order

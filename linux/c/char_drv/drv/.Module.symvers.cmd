@@ -1,0 +1,1 @@
+cmd_/home/intchains/note/linux/c/char_drv/drv/Module.symvers := sed 's/\.ko$$/\.o/' /home/intchains/note/linux/c/char_drv/drv/modules.order | scripts/mod/modpost -m -a  -o /home/intchains/note/linux/c/char_drv/drv/Module.symvers -e -i Module.symvers   -T -

@@ -1,0 +1,1 @@
+cmd_/home/intchains/note/linux/c/char_drv/drv/char_dev.o := ld  -m elf_x86_64 -z noexecstack     -r -o /home/intchains/note/linux/c/char_drv/drv/char_dev.o /home/intchains/note/linux/c/char_drv/drv/drv_probe.o

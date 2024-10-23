@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "fs.h": "c",
+        "module.h": "c",
+        "drv_probe.h": "c"
+    }
+}
