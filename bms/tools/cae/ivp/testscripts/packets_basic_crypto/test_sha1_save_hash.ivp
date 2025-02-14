@@ -1,0 +1,420 @@
+# ---------------------------------------------
+# Integration Vectors File
+# Module   : EIP-97b-ie-AXI
+# Version  : 2.3
+# ---------------------------------------------
+# @ 111 ns 
+SetClockFrequency SYS_CLK 100
+DeviceReset 10
+# EIP97: Init(HW version 2.3.1)
+# EIP97.EIP202: Init(HW version 2.7)
+# EIP97.EIP202.AIC_G: Init(HW version 1.4, noi=32, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R0: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R1: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R2: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R3: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.PE_0: Init(HW version 1.5)
+# EIP97.PE_0.EIP96: Init(HW version 4.3.3)
+# EIP97.PE_0.EIP96.EIP201: Init(HW version 1.4, noi=4, mini_reg=0, ext_reg=0)
+# EIP97.PE_0.AIC: Init(HW version 1.4, noi=5, mini_reg=0, ext_reg=0)
+#     Configure DFE
+# @ 221 ns 
+WriteWord MASTER1_XFER 0x0000f000 0xa7050f08 0xffffffff
+#     Configure DSE
+# @ 281 ns 
+WriteWord MASTER1_XFER 0x0000f400 0x8000c807 0xffffffff
+# @ 341 ns 
+WriteWord MASTER1_XFER 0x00010100 0x00007500 0xffffffff
+# @ 401 ns 
+WriteWord MASTER1_XFER 0x00010000 0x0000f800 0xffffffff
+# @ 461 ns 
+WriteWord MASTER1_XFER 0x00011c00 0x00000087 0xffffffff
+#     Enable optimal context updates and timeout counter for EIP-96
+# @ 521 ns 
+WriteWord MASTER1_XFER 0x00011000 0x00410000 0xffffffff
+# @ 581 ns 
+WriteWord MASTER1_XFER 0x00011008 0x00000225 0xffffffff
+# EIP97: ConfigureHIA
+#     'rings': 2(0x2)
+# @ 641 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x80000000 0xffffffff
+# @ 701 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x80000000 0xffffffff
+# @ 761 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x80000000 0xffffffff
+# @ 841 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000000 0xffffffff
+# @ 901 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x80000000 0xffffffff
+# @ 981 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000000 0xffffffff
+# @ 1041 ns 
+ReadWord PORTS_SPACE CMD_TRIG 0x0 0xffffffff
+# EIP97.EIP202.CDR0: Init(Entries=256, EntrySize=24, EntryOffset=24, AddToken=1, TCM=0, 64BitMode=0)
+#     EIP97.EIP202.CDR0Buf: Init(address=0x0 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x0
+#     Program data base address
+# @ 1041 ns 
+WriteWord64 MASTER1_XFER 0x00000008 0x00000000 0xffffffffffffffff
+#     Program additional token base address
+# @ 1161 ns 
+WriteWord64 MASTER1_XFER 0x00000010 0x00000000 0xffffffffffffffff
+#     Temporarily disable ext triggerring
+# @ 1281 ns 
+WriteWord MASTER1_XFER 0x00000020 0x00000000 0xffffffff
+#     Clear pending prepared descriptors counter
+# @ 1341 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x80000000 0xffffffff
+#     Clear pending prepared descriptors pointer
+# @ 1401 ns 
+WriteWord MASTER1_XFER 0x00000034 0x00000000 0xffffffff
+#     Clear pending ownership update pointer
+# @ 1461 ns 
+WriteWord MASTER1_XFER 0x00000038 0x00000000 0xffffffff
+#     Ring size
+# @ 1521 ns 
+WriteWord MASTER1_XFER 0x00000018 0x00001800 0xffffffff
+#     Ring base address
+# @ 1581 ns 
+WriteWord64 MASTER1_XFER 0x00000000 0x00000000 0xffffffffffffffff
+#     Clear pending processed descriptors counter
+# @ 1701 ns 
+WriteWord MASTER1_XFER 0x00000030 0x80000000 0xffffffff
+#     Configure data swapping
+# @ 1761 ns 
+WriteWord MASTER1_XFER 0x00000024 0x01000000 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 1821 ns 
+WriteWord MASTER1_XFER 0x0000001c 0x40060006 0xffffffff
+#     Clear any pending interrupts
+# @ 1881 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x0000003f 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.CDR0:     Requested fetch count: 3
+# @ 1941 ns 
+WriteWord MASTER1_XFER 0x00000020 0x00120012 0xffffffff
+# EIP97.EIP202.CDR0: Init_final(EntrySize=24, EntryOffset=24, FetchCount=3, MaxFetchCount=42, FetchThresh=18, FetchSize=18)
+#     Ring number: 0
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x0
+#     Assign CDR0 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 2001 ns 
+ReadWord MASTER1_XFER 0x0000f010 0x00000000 0xffffffff
+# @ 2081 ns 
+WriteWord MASTER1_XFER 0x0000f010 0x0000000f 0xffffffff
+# @ 2141 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x40000000 0xffffffff
+# @ 2221 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000001 0xffffffff
+# @ 2281 ns 
+ReadWord PORTS_SPACE CMD_TRIG 0x0 0xffffffff
+# EIP97.EIP202.CDR1: Init(Entries=256, EntrySize=24, EntryOffset=24, AddToken=1, TCM=0, 64BitMode=0)
+#     EIP97.EIP202.CDR1Buf: Init(address=0x1800 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x1800
+#     Program data base address
+# @ 2281 ns 
+WriteWord64 MASTER1_XFER 0x00001008 0x00000000 0xffffffffffffffff
+#     Program additional token base address
+# @ 2401 ns 
+WriteWord64 MASTER1_XFER 0x00001010 0x00000000 0xffffffffffffffff
+#     Temporarily disable ext triggerring
+# @ 2521 ns 
+WriteWord MASTER1_XFER 0x00001020 0x00000000 0xffffffff
+#     Clear pending prepared descriptors counter
+# @ 2581 ns 
+WriteWord MASTER1_XFER 0x0000102c 0x80000000 0xffffffff
+#     Clear pending prepared descriptors pointer
+# @ 2641 ns 
+WriteWord MASTER1_XFER 0x00001034 0x00000000 0xffffffff
+#     Clear pending ownership update pointer
+# @ 2701 ns 
+WriteWord MASTER1_XFER 0x00001038 0x00000000 0xffffffff
+#     Ring size
+# @ 2761 ns 
+WriteWord MASTER1_XFER 0x00001018 0x00001800 0xffffffff
+#     Ring base address
+# @ 2821 ns 
+WriteWord64 MASTER1_XFER 0x00001000 0x00001800 0xffffffffffffffff
+#     Clear pending processed descriptors counter
+# @ 2941 ns 
+WriteWord MASTER1_XFER 0x00001030 0x80000000 0xffffffff
+#     Configure data swapping
+# @ 3001 ns 
+WriteWord MASTER1_XFER 0x00001024 0x01000000 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 3061 ns 
+WriteWord MASTER1_XFER 0x0000101c 0x40060006 0xffffffff
+#     Clear any pending interrupts
+# @ 3121 ns 
+WriteWord MASTER1_XFER 0x0000103c 0x0000003f 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.CDR1:     Requested fetch count: 3
+# @ 3181 ns 
+WriteWord MASTER1_XFER 0x00001020 0x00120012 0xffffffff
+# EIP97.EIP202.CDR1: Init_final(EntrySize=24, EntryOffset=24, FetchCount=3, MaxFetchCount=42, FetchThresh=18, FetchSize=18)
+#     Ring number: 1
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x1800
+#     Assign CDR1 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 3241 ns 
+ReadWord MASTER1_XFER 0x0000f010 0x0000000f 0xffffffff
+# @ 3321 ns 
+WriteWord MASTER1_XFER 0x0000f010 0x00000f0f 0xffffffff
+# @ 3381 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x40000001 0xffffffff
+# @ 3461 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000003 0xffffffff
+# @ 3521 ns 
+ReadWord PORTS_SPACE RES_TRIG_PREP 0x0 0xffffffff
+# @ 3521 ns 
+ReadWord PORTS_SPACE RES_TRIG_PROC 0x0 0xffffffff
+# @ 3521 ns 
+WriteWord MASTER1_XFER 0x00000824 0x01000000 0xffffffff
+# EIP97.EIP202.RDR0: Init(Entries=256, EntrySize=24, EntryOffset=24, TCM=0, 64BitMode=0, OwnershipWrite=0, SingleWr=0)
+#     EIP97.EIP202.RDR0Buf: Init(address=0x3000 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x3000
+#     Program data base address
+# @ 3581 ns 
+WriteWord64 MASTER1_XFER 0x00000808 0x00000000 0xffffffffffffffff
+#     Ring base address
+# @ 3701 ns 
+WriteWord64 MASTER1_XFER 0x00000800 0x00003000 0xffffffffffffffff
+#     Ring size
+# @ 3821 ns 
+WriteWord MASTER1_XFER 0x00000818 0x00001800 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 3881 ns 
+WriteWord MASTER1_XFER 0x0000081c 0x00060006 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.RDR0:     Requested fetch count: 4
+# @ 3941 ns 
+WriteWord MASTER1_XFER 0x00000820 0x00080018 0xffffffff
+#     Clear descriptors counters
+# @ 4001 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x80000000 0xffffffff
+# @ 4061 ns 
+WriteWord MASTER1_XFER 0x00000830 0x80000000 0xffffffff
+# EIP97.EIP202.RDR0:     Decrement batch size: 3072
+# @ 4121 ns 
+WriteWord MASTER1_XFER 0x00000834 0x00000000 0xffffffff
+# @ 4181 ns 
+WriteWord MASTER1_XFER 0x00000838 0x00000000 0xffffffff
+#     Threshold (Before clearing any interrupts)
+# @ 4241 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000000 0xffffffff
+#     Clear any pending interrupts
+# @ 4301 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x000000ff 0xffffffff
+# EIP97.EIP202.RDR0: Init_final(EntrySize=24, EntryOffset=24, FetchCount=4, ThreshCount=4, MaxFetchCount=42, FetchThresh=8, FetchSize=24)
+#     Ring number: 0
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x3000
+#     Assign RDR0 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 4361 ns 
+ReadWord MASTER1_XFER 0x0000f410 0x00000000 0xffffffff
+# @ 4441 ns 
+WriteWord MASTER1_XFER 0x0000f410 0x0000000f 0xffffffff
+# @ 4501 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x40000000 0xffffffff
+# @ 4581 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000001 0xffffffff
+# @ 4641 ns 
+ReadWord PORTS_SPACE RES_TRIG_PREP 0x0 0xffffffff
+# @ 4641 ns 
+ReadWord PORTS_SPACE RES_TRIG_PROC 0x0 0xffffffff
+# @ 4641 ns 
+WriteWord MASTER1_XFER 0x00001824 0x01000000 0xffffffff
+# EIP97.EIP202.RDR1: Init(Entries=256, EntrySize=24, EntryOffset=24, TCM=0, 64BitMode=0, OwnershipWrite=0, SingleWr=0)
+#     EIP97.EIP202.RDR1Buf: Init(address=0x4800 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x4800
+#     Program data base address
+# @ 4701 ns 
+WriteWord64 MASTER1_XFER 0x00001808 0x00000000 0xffffffffffffffff
+#     Ring base address
+# @ 4821 ns 
+WriteWord64 MASTER1_XFER 0x00001800 0x00004800 0xffffffffffffffff
+#     Ring size
+# @ 4941 ns 
+WriteWord MASTER1_XFER 0x00001818 0x00001800 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 5001 ns 
+WriteWord MASTER1_XFER 0x0000181c 0x00060006 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.RDR1:     Requested fetch count: 4
+# @ 5061 ns 
+WriteWord MASTER1_XFER 0x00001820 0x00080018 0xffffffff
+#     Clear descriptors counters
+# @ 5121 ns 
+WriteWord MASTER1_XFER 0x0000182c 0x80000000 0xffffffff
+# @ 5181 ns 
+WriteWord MASTER1_XFER 0x00001830 0x80000000 0xffffffff
+# EIP97.EIP202.RDR1:     Decrement batch size: 3072
+# @ 5241 ns 
+WriteWord MASTER1_XFER 0x00001834 0x00000000 0xffffffff
+# @ 5301 ns 
+WriteWord MASTER1_XFER 0x00001838 0x00000000 0xffffffff
+#     Threshold (Before clearing any interrupts)
+# @ 5361 ns 
+WriteWord MASTER1_XFER 0x00001828 0x00000000 0xffffffff
+#     Clear any pending interrupts
+# @ 5421 ns 
+WriteWord MASTER1_XFER 0x0000183c 0x000000ff 0xffffffff
+# EIP97.EIP202.RDR1: Init_final(EntrySize=24, EntryOffset=24, FetchCount=4, ThreshCount=4, MaxFetchCount=42, FetchThresh=8, FetchSize=24)
+#     Ring number: 1
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x4800
+#     Assign RDR1 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 5481 ns 
+ReadWord MASTER1_XFER 0x0000f410 0x00000000 0xffffffff
+# @ 5561 ns 
+WriteWord MASTER1_XFER 0x0000f410 0x00000f00 0xffffffff
+# @ 5621 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x40000001 0xffffffff
+# @ 5701 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000003 0xffffffff
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x010a0502: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=5(0x5) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=0 HashAlg=2(0x2) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00080001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=1 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x00000000: Data=0(0x0) 
+#       3 Digest0_1    0x00000000: Data=0(0x0) 
+#       4 Digest0_2    0x00000000: Data=0(0x0) 
+#       5 Digest0_3    0x00000000: Data=0(0x0) 
+#       6 Digest0_4    0x00000000: Data=0(0x0) 
+#     ContextBuf: Init(address=0x6000 is allocated for 28 bytes)
+#     ContextBuf: Write(len=28, address=0x6000, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006000
+Data 28
+010a0502 00080001 00000000 00000000 00000000 00000000 00000000 
+# TestApp: TestQueueAddBurst(1 descriptors)
+# CmdRes.Hash: Init(1, Module=EIP97)
+# Test(WR1): len=120, save_hash
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220078: Length=120(0x78) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x047b3df4: AppId=75185652(0x47b3df4) 
+#       2 ctx_ptr      0x00006000: CtxPtr=24576(0x6000) 
+#       3 Description: context control word 0
+#         CCW0         0x010a0512: ToP=2(0x2) PktHashRestart=1 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=5(0x5) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=0 HashAlg=2(0x2) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00080001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=1 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=1)
+#         direction    0x02020078: Length=120(0x78) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e60014: Length=20(0x14) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#       7 Description: save hash result to the context
+#         instr_ctx_cache 0xe5e61802: Offset=2(0x2) D=1 P=1 F=0 U=0 Stat=3 Origin=28(0x1c) Length=5(0x5) OpCode=14(0xe) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x00000014: Length=20(0x14) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x047b3df4: AppId=75185652(0x47b3df4) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=20 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=20, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x0000601c
+Data 20
+010a0512 00080001 02020078 21e60014 e5e61802 
+#     PktInBuf: Init(len=120 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=120, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006030
+Data 120
+6bb2c7e3 906d1d4e 196aefec 7207bbc6 f6eb07af 5b1214b8 f9025907 35e412d1 
+1ff0ac34 9a065e01 581c2fdb 5cf721f5 f5ef4a79 1afe2fa2 f2e52894 c13e50cd 
+210b6b4a 6b121305 6c24bd8c 5e7115a3 6a680ef2 4b3452ba 46cbf378 72cbb08e 
+3f6ec466 7624ef74 00347ba3 4c019eb2 278ba1c4 c2ad78b4 
+#     PktOutBuf: Init(len=20 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=20, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x000060a8
+Data 20
+cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c00014: ParticleSize=20(0x14) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x000060a8: DataPtr0_Lo=24744(0x60a8) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=0)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3000, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00003000
+Data 24
+04c00014 000060a8 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 5761 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 5821 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 5881 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 8 clocks (80 ns)
+# @ 5961 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 6041 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=0)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x0, swap=0, tag=0)
+# @ 6101 ns 
+WriteBlock SLAVE1_XFER 0x00000000
+Data 24
+05c00078 00006030 0000601c 02220078 047b3df4 00006000 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6101 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=20)
+#         estimated 1 buffer(s)
+# Test(RD1): len=120, save_hash
+Record 1
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=0, 0 (pend 0, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 6161 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000006 0xffffffff
+# @ 6221 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 286 clocks (2860 ns)
+# @ 9081 ns 
+ReadWord MASTER1_XFER 0x00000830 0x01000018 0xffffffff
+# @ 9161 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=0)
+# @ 9221 ns 
+CheckBlock SLAVE1_XFER 0x00003000
+Data 24
+04c00014 000060a8 00000014 00000000 047b3df4 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (0 pend), 0 pkts (0 pend), cur 24, 1)
+# @ 9221 ns 
+CheckBlock SLAVE1_XFER 0x000060a8
+Data 20
+380791e7 c231faad e60b51f4 66cbf5bb a2ec2698 
+#         collected 20 bytes
+# TestDel(1): len=120, save_hash
+# @ 9221 ns 
+# @ 9221 ns 
+# @ 9221 ns 
+# EIP97.Context: Get(Name='CTX0 (Hash, Out)', AutoFill=1)
+# @ 9221 ns 
+CheckBlock SLAVE1_XFER 0x00006000
+Data 28
+010a0502 00080001 380791e7 c231faad e60b51f4 66cbf5bb a2ec2698 

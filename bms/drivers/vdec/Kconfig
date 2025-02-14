@@ -1,0 +1,27 @@
+config DRV_VDEC
+	bool "vdec driver support"
+	default n
+	help
+		enable vdec support
+
+config DRV_VDEC_H264
+	bool "VDEC H264 Subsystem"
+	depends on DRV_VDEC
+	default n
+	help
+		VDEC H264 Subsystem
+
+config DRV_VDEC_HEVC
+	bool "VDEC HEVC Subsystem"
+	depends on DRV_VDEC
+	default n
+	help
+		VDEC HEVC Subsystem
+
+config DRV_VDEC_JPEG
+	bool "VDEC JPEG Subsystem"
+	depends on DRV_VDEC
+	default n
+	help
+		VDEC JPEG Subsystem
+

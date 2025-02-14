@@ -1,0 +1,5 @@
+config TBH_I2C
+	bool "testbench i2c support"
+	default n
+	help:
+		enable testbench i2c

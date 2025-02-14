@@ -1,0 +1,6 @@
+config LIB_INTERRUPT
+	bool "interrupt support"
+	default n
+	help:
+		enable interrupt
+

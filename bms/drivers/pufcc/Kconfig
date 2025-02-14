@@ -1,0 +1,10 @@
+config DRV_PUFCC
+	bool
+
+config DRV_PUFSECURITY
+	bool "pufcc driver support"
+	default n
+	select DRV_PUFCC
+	help:
+		enable pufcc
+

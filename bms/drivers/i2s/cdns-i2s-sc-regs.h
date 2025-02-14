@@ -1,0 +1,76 @@
+#pragma once
+
+#include <asm/bits.h>
+
+#define CDNS_I2S_SC_DEPTH (6UL)
+
+#define I2S_CTRL        (0x00UL)
+#define I2S_CTRL_I2S_EN            BIT(0)
+#define I2S_CTRL_DIR_CFG           BIT(1)
+#define I2S_CTRL_MS_CFG            BIT(2)
+#define I2S_CTRL_SFT_RST           BIT(3)
+#define I2S_CTRL_FIFO_RST          BIT(4)
+#define I2S_CTRL_CHN_WIDTH(n)      ((n) << 5)
+#define I2S_CTRL_WS_MODE(n)        ((n) << 8)
+#define I2S_CTRL_MONO_MODE         BIT(12)
+#define I2S_CTRL_AUDIO_MODE        BIT(13)
+#define I2S_CTRL_SCK_POLAR         BIT(14)
+#define I2S_CTRL_WS_POLAR          BIT(15)
+#define I2S_CTRL_DATA_WS_DEL(n)    ((n) << 16)
+#define I2S_CTRL_DATA_ALIGN        BIT(21)
+#define I2S_CTRL_DATA_ORDER        BIT(22)
+#define I2S_CTRL_HOST_DATA_ALIGN   BIT(23)
+#define I2S_CTRL_I2S_STB           BIT(24)
+#define I2S_CTRL_INTREQ_MASK       BIT(25)
+#define I2S_CTRL_I2S_MASK          BIT(26)
+#define I2S_CTRL_FIFO_EMPTY_MASK   BIT(27)
+#define I2S_CTRL_FIFO_AEMPTY_MASK  BIT(28)
+#define I2S_CTRL_FIFO_FULL_MASK    BIT(29)
+#define I2S_CTRL_FIFO_AFULL_MASK   BIT(30)
+#define I2S_CTRL_LR_PACK           BIT(31)
+
+#define I2S_CTRL_FDX    (0x04UL)
+#define I2S_CTRL_FDX_FULL_DUPLEX       BIT(0)
+#define I2S_CTRL_FDX_I2S_FTX_EN        BIT(1)
+#define I2S_CTRL_FDX_I2S_FRX_EN        BIT(2)
+#define I2S_CTRL_FDX_FIFO_RST          BIT(4)
+#define I2S_CTRL_FDX_RI2S_MASK         BIT(26)
+#define I2S_CTRL_FDX_RFIFO_EMPTY_MASK  BIT(27)
+#define I2S_CTRL_FDX_RFIFO_AEMPTY_MASK BIT(28)
+#define I2S_CTRL_FDX_RFIFO_FULL_MASK   BIT(29)
+#define I2S_CTRL_FDX_RFIFO_AFULL_MASK  BIT(30)
+
+#define I2S_SRES        (0x08UL)
+#define I2S_SRES_FDR    (0X0CUL)
+#define I2S_SRATE       (0X10UL)
+
+#define I2S_STAT        (0X14UL)
+#define I2S_STAT_TDATA_UNDERR BIT(0)
+#define I2S_STAT_RDATA_OVRERR BIT(1)
+#define I2S_STAT_FIFO_EMPTY   BIT(2)
+#define I2S_STAT_FIFO_AEMPTY  BIT(3)
+#define I2S_STAT_FIFO_FULL    BIT(4)
+#define I2S_STAT_FIFO_AFULL   BIT(5)
+#define I2S_STAT_RFIFO_EMPTY  BIT(16)
+#define I2S_STAT_RFIFO_AEMPTY BIT(17)
+#define I2S_STAT_RFIFO_FULL   BIT(18)
+#define I2S_STAT_RFIFO_AFULL  BIT(19)
+
+#define FIFO_LEVEL      (0X18UL)
+#define FIFO_AEMPTY     (0X1CUL)
+#define FIFO_AFULL      (0X20UL)
+#define FIFO_LEVEL_FDR  (0X24UL)
+#define FIFO_AEMPTY_FDR (0X28UL)
+#define FIFO_AFULL_FDR  (0X2CUL)
+
+#define TDM_CTRL        (0X30UL)
+#define I2S_TDM_EN            BIT(0)
+#define I2S_TDM_CHN_NO(n)     ((n) << 1)
+#define I2S_TDM_CHN_EN(n)     ((n) << 16)
+
+#define TDM_FD_DIR      (0X34UL)
+#define I2S_TX_FIFO     (0x40UL)
+#define I2S_RX_FIFO     (0x40UL)
+
+#define CDNS_I2S_TX_FIFO_DEPTH 16 /* Words */
+#define CDNS_I2S_RX_FIFO_DEPTH 16 /* Words */

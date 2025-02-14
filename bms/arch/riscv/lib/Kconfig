@@ -1,0 +1,12 @@
+config HW_MEMDEV
+	bool "Support HW memcpy & memset"
+	depends on COMPILE_RTL && (TB_RUN_DDR || TB_RUN_DDR1)
+	default y
+	help
+	   Support HW memcpy & memset
+
+config CCI_COHERENCY_EN
+	bool "Enable CCI coherency for multi cluster"
+	default n
+	help
+	   Enable CCI coherency

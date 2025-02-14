@@ -1,0 +1,5 @@
+config DRV_VENC
+    bool "video encode driver support"
+    default n
+    help
+        enable video encode driver

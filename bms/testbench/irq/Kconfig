@@ -1,0 +1,6 @@
+config TBH_IRQ
+	bool "testbench irq support"
+	default n
+	help:
+		enable testbench irq
+

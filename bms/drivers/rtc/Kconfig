@@ -1,0 +1,5 @@
+config DRV_RTC
+	bool "rtc driver support"
+	default n
+	help:
+	  enable rtc

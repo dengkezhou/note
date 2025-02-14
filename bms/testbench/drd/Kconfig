@@ -1,0 +1,6 @@
+config TBH_DRD
+	bool "testbench drd support"
+	default n
+	help:
+		enable testbench drd
+

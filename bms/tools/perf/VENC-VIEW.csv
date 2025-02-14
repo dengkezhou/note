@@ -1,0 +1,21 @@
+﻿Board,CORE,500,550,600,650,700,750,800,850,900,950,1000
+1,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,118 fps,125 fps,127 fps,X,X
+2,0,75 fps,84 fps,90 fps,94 fps,104 fps,113 fps,113 fps,128 fps,125 fps,X,X
+4,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,118 fps,125 fps,127 fps,129 fps,X
+5,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,125 fps,127 fps,129 fps,X
+7,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,125 fps,127 fps,X,X
+8,0,76 fps,83 fps,90 fps,96 fps,104 fps,113 fps,113 fps,128 fps,128 fps,128 fps,X
+9,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,117 fps,127 fps,X,X
+10,0,75 fps,84 fps,90 fps,96 fps,104 fps,111 fps,119 fps,125 fps,125 fps,131 fps,X
+12,0,76 fps,83 fps,90 fps,95 fps,103 fps,111 fps,119 fps,125 fps,127 fps,130 fps,X
+13,0,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,118 fps,125 fps,127 fps,129 fps,X
+1,1,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,125 fps,127 fps,128 fps,X
+2,1,76 fps,84 fps,90 fps,98 fps,102 fps,111 fps,125 fps,125 fps,125 fps,X,X
+4,1,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,118 fps,125 fps,127 fps,128 fps,X
+5,1,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,125 fps,117 fps,128 fps,X
+7,1,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,117 fps,123 fps,127 fps,129 fps,X
+8,1,76 fps,81 fps,89 fps,94 fps,104 fps,111 fps,113 fps,128 fps,125 fps,128 fps,X
+9,1,76 fps,83 fps,90 fps,92 fps,103 fps,110 fps,117 fps,125 fps,127 fps,X,X
+10,1,75 fps,84 fps,92 fps,98 fps,102 fps,111 fps,121 fps,121 fps,128 fps,135 fps,X
+12,1,76 fps,83 fps,90 fps,95 fps,103 fps,111 fps,119 fps,125 fps,127 fps,130 fps,X
+13,1,76 fps,83 fps,90 fps,95 fps,103 fps,110 fps,118 fps,125 fps,117 fps,126 fps,X

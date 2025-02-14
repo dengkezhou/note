@@ -1,0 +1,848 @@
+version 2.4.5[SwBuildId=694550]
+[sw]fix: add the reset for sei counter exceeding MAX_PAYLOAD_NUM
+[sw:hevc]fix: can't return pp buffer before mc callback, merge form vc9000d_v1.3 CL694483.
+[sw:mpeg4]fix: check the valid of work_out to decide to whether output and avoid the segment fault for some error case when --ec=ignore_error with pp, also see CL694397
+[sw][sys]feat:add the vvc support in vdk api and refine g1 format related code
+[sw]fix: update read/write prob table index only when refresh_entropy_probs enabled.
+[sw]fix: remove gcc12.2 compile issue
+[sw:tb]fix: Klokwork error
+[sw]fix: Rollback //VPU/VPUv1/vc9000d/software/source/common/vcdecapi.c to revision 157
+[sw:mpeg4]fix: modify init_value when define ASIC_TRACE_SUPPORT
+[sw]fix: need initial pp_reorder_size * pp_scale_size.
+[sw:tb]fix: rename rfc table file when used "-O" to resolve both rfc compress data and rfc table write to the same file.
+[sw]fix: tile4x4 error for vp8/mpeg4/mpeg2/vc1.
+[sw]fix: fix a bug of RFC mem alloc for yuv422/444
+[sw]fix: update vvc tile_edge_buffer code.
+[sw][sys]dev: FFFD support vp9 hw update probs; update picture_ctrl_dec.trc for vp9 trace; remove unused variable in cmodel.
+[sw]fix: remove vvc  case_57823 mismatch issue caused by CL690772
+[sw]fix: klocwork error from CL690847.
+[sw][sys]dev: add a temp write prob table to support re-decode a pic which TB abort its decoding process.
+[sys][sw]fix:remove the compile issue when use gcc-12.2
+[sw]maintain: modify incorrect output file name
+[sw]fix: compile error for legacy formats when SUPPORT_DEC400=y
+[sys][sw]fix: remove the compile issue when use gcc-12.2
+[sw]fix: change the depth of fifo by using register configuration
+[sw]maintain: 1) optimize codes for VCDecXXXNextPicture; 2) add output rfc table when disable pp with enable rfc, currently support for hevc
+[sw]dev: vp9 mc not support hw update probs.
+[sw]fix: need update offset for tile_edge buffer when buffer size bigger then current size.
+[sw]fix: avoid mc top sim buffer confliction.
+[sw]fix: fix a bug of Fake rfc table.
+[sw]fix: add checker for super_tile with feature_list cconfig.
+[sw]fix: ppu.c rallback to version179.
+[sw]fix: add checker for super_tile with feature_list cconfig.
+[sw]fix: need consumed data in function SwFlushBits when encountering an error.
+[sw]dev: strore one complete batch mode.
+[sw]fix: should not set sw_ar_rand_seed to 0.
+[sw]fix: add latency parameters for jpeg.
+[sys][sw]chore: rename BASE_TYPE_H to VCD_BASE_TYPE_H
+[sw]chore: revert to use BASE_TYPE_H
+[sw]dev: '--mc' replace 'SupportMutiCore' in tb.cfg accroding to HW request.
+[sw]chore: rename BASE_TYPE_H to VCD_BASE_TYPE_H
+[sw]fix: update random latency code.
+[sys][sw]merge: vp9 hw probs code from //VPU/VPUv1/temp/dev_jonas/vc9000d_temp/...@687778.
+[sys][sw]merge: vp9 hw probs code from //VPU/VPUv1/temp/dev_jonas/vc9000d_temp/...@687778.
+[sw:h264]fix: fix a bug of core dump.
+[sw]fix: klocwork of h264bsdDecodePicParamSet.
+[sw]fix: fix case_5090 hang.
+[sw]dev: set random latency in axi_lg by hw not sw.
+[sw:h264]fix: scaling list setting. merged from vc9000d_yuv444_422 CL685584
+[sw]docs: revert the vcdecapi.h to software/source/inc
+[sw]fix: compile error when " make clean && make -j h264dec_osfree USE_EXTERNAL_BUFFER=y RELEASE=y USE_64BIT_ENV=y".
+[sw]fix: only enable 400 checker when  afbc compress is used. 
+[sw]dev: fix the builing of cmake.
+[sw]chore: fix a building warning.
+[sw]fix:modify the coding style check second version.
+[sw]fix: AFBC don't support monochrome output.
+[sw]fix:modify the coding style check.
+[sw:ppstandalone]fix: fix a bug of R10G10B10A2 output size computation.
+[sw]fix: add checker for super_tile.
+[sw]fix: support interlace case for super_tile.
+[sw]fix: updata tile_edge buffer for hevc/av1/vp9.
+[sw:h264]fix: check current_out pointer valid
+[sw]dev: Support multi-instance multi-slice decoding in VCMD mode.
+[sw]fix: change the min resolution from 144 to 72.
+[sw:hevc]fix: change the min resolution from 144 to 72.
+[sw]fix:1.bind the module_type with core count when vcmd 
+[sw:kmd]fix: fix coding style.
+[sw]fix: MC sync word error in DMA mode.
+[sw]fix: 1) bsd error and sei error need to clean some status of sei param; 2) only H264BSD_NO_FREE_BUFFER need to call H264UpdateSeiInfo;
+[sw:avs2]fix: use max ctb size 64 to calculate the dmv size of recon, not 2^sps->lcu_size_in_bit, to avoid cmodel segment fault for some multi sequence case
+[sw]refactor: add function "PrintOutputFileName()"
+[sw]fix: fix the error of hevc 422 cases.
+[sw]refactor: rename output file for g2dec/ppdec/avsdec/jpegdec/mpeg2dec/mpeg4dec/rvdec/vc1dec/vp6dec/vp8dec
+[sw:dwl]feat: remove unused tile pointer from DWLReadPpConfiguration.
+[sw:avs2]fix: use sps->lcu_size_in_bit to calculate the dmv_mem_size to avoid rfc table bus of regs mismatch with Avs2DecNextPicture for some error case
+[sw:pp]fix: change the lanczos coeff buffer size.
+[sw:pp]dev: set default value of HWIF_PP_IN_FORMAT_U to 1 in PPSetRegs, and override it when necessary for standalone pp.
+[sw]chore: fix building error.
+[sw:av1]fix: set sw_pp_in_format explicitly.
+[sw:hevc]fix: fix case_24234 hang due to pp buffer not clear when sps_id changed, and the poc is not correct.
+[sw:h264]dev: modify caseinfo for aso fmo stream.
+[sw]fix: pp luma_offset and chroma_offset shouldn't be set in PpUnitSetIntConfig() when buf_off_set_by_user is 0.
+[sw]fix:av1 FindIndex should compare bus address when MEM_ONLY_DEV_CHECK is defined. 
+[sw]fix: use vsi_bool to replace Boolean, and avoid some potential issue when including <stdbool.h> and "basetype.h";
+[sw]fix: update stride_unit regs info.
+[sw]fix: fix hang issue when trace output enable in low latnecy mode.
+[sw]fix: update stride_unit regs & code for super_tile.
+[sw:kmd]fix: JMP_E_1 is bit 25, resolved the worng jmp_IE_1 to set JMP command, also resolved the comments for vcmd_delink_cmdbuf, also see VIVDS-110;
+[sw]fix: add error concealment for avs2 with PIC_RDY IRQ(error bitstream)
+[sw:vp9]dev: simpilify the calculation of vp9 filter mem with macro.
+[sw]fix: fix support dtb bugs; initial variable for avs testbench
+[sw]fix: h264 case_9200 will hang.
+[sw:vp9]fix: not clear the sf_curr_frm_id at befor use, and not break when returned DEC_STRM_PROCESSED under USE_PIC_DISCARD=y
+[sw]dev: add crop_x and crop_y for case info.
+[sw]maintain: add ppdec testbench print information
+[sw:jpeg]fix: fix a bug of thumbnail.
+[sw]fix: shield debug info code.
+[sw]maintain:move xxxdecapi.h to private source directory
+[sw]fix: h264 svct decode.
+[sw]fix: add pp count for API printf.
+[sw]fix: add int
+[sw] fix: change 1FC2 to $1
+[sw]fix: set sei buffer unused when this frame is not used and is not displayed.
+[sw]maintain: extend private interface, add "void *priv" to DWLInitParam and DWLLinearMem
+
+version 2.4.4[SwBuildId=680977]
+[sw]fix: update the version.h
+
+version 3.3.4[SwBuildId=680941]
+[sw]feat: add new feature of "temporal_scalable decoding" for hevc/h264/vvc.
+[sw]dev: when load drive , use sudo and gen tb.cfg
+[sw]fix: need config pointer of strm in ring_buffer mode.
+[sw:ppstandalone]fix: 1. command line parser 2. when enable pp-luma-only, chroma related data can not write to trace.
+[sw:h264]fix: revise the varible is_asofmo_stream as support_asofmo_stream 
+[sw:ppstandalone]fix: for DEC_OUT_FRM_RGBA888, scale_w *= 4;
+[swreg]dev: update register spec.
+[sw:hevc]fix: fix hang for case_24503, the resolution is from small to big when meet DEC_HDRS_RDY every times.
+[sw]fix: fix resolution error of case info.
+[sw]fix: fix error about yuv422 packed output.
+[sw]fix: add the output of  yuv422 packed format.
+[sw:ppstandalone]fix: fix a bug of WritePicture. 
+[sw:h264]maintain: output the rfc table addr for h264
+[sw]fix: fix case_5088 will hang due to sei buffer not free.
+[sw:jpeg]fix: option: --full-only thumbnail related bug
+[sw:ppstandalone]fix: 1. TracePpuCropOut and add OpenTraceFiles which is deleted by mistake.
+[sw]fix: move the definition of TILE_8x8 from system/models/Makefile to common.mk.
+[sw]fix: win64 compiling error for ppdec/av1.
+[sw:av1]maintain: maintian decode_id for av1 show existing frame, same with vp9.
+[sw]fix: need to reset sei buffer and the related sei params when meet DEC_NO_DECODING_BUFFER
+[sw]chore: clean unused code.
+[sw]fix: add the default aso  printing whithout --is-asofmo
+[sw]dev: modify the formats to print case info.
+[sw]dev: support AXIFE_v32 and config reg29(MID), reg34(IDLE LAT) and reg35(FLUSH) 
+[sw:jpeg]fix: avoid duplicate printing of registers info.
+[sw:hevc:avs2:vvc]fix: fix a bug of "enable TILE8x8  and rfc , disable pp, the output chroma address may be wrong".
+[sw:kmd]fix: hantrodec_release need to release mmu for vcmd mode
+[sw]fix: fix issue of error info.
+[sw:jpeg]fix: fix a bug of image with thumbnail.
+[sw]fix: print DWLWriteReg info.
+[sw:vp9]fix: fix the data_left if it is a super frame and return hdrs_rdy
+[sw]fix: g2dec compile error.
+[sw]fix: "-d2" option don't work.
+[sw:avs2]fix: fix scene picture buffer management bug, which is reported by GLFVPU-223.
+[sw]chore: fix avs2 progressive picture dumping for debugging purpose.
+[sw:ppdec]fix: add chroma_format_idc for input_pp_rfc_ctrl. and pp rfc support yuv400/420 input
+[sw]fix: jpeg error pp_chroma_info config for 440_cases.
+[sw:h264]fix: resolved error case hang, caused by not dmv buffer when DPB full
+[sw:tb]chore: add not support detail info for heifdec
+[sw:jpeg]fix: fix compile error of CL675426 "make jpegdec ENV=x86_linux_pci"
+[sw:jpeg]maintain: jpeg control software optimization: "JpegDecGetImageInfo JpegDecDecode JpegFlushRegs JpegRefreshRegs"
+[sw]fix: 1. -b: write tile8x8 luma ref data and tile4x4 chroma data to outbuf, the pic_stride is wrong. 2. avs2 core dump due to the chroma_format_idc is not set.
+[sw:kmd]fix: hantrovcmd_release may meet NULL pointer to make kernel segment fault, also see VIVDS-109;
+[sw]fix: chroma_format_idc == 3 is yuv444.
+[sw]feat: add --is-asofmo option to replace SUPPORT_ASOFMO, aso/fmo case use g1 core  with it, default use g2 core. see KVUVCD-76
+[sw]fix: update tile edge buffer.
+[sw:h264]chore: clean unused code.
+[sw:vcdec]fix: 1.fix stream dump bug 2.fix the vp9 super frame parse 
+
+version 3.3.3[SwBuildId=673622]
+[sw]feat: unify ppdec API interface.
+[sw]dev: code clean, don't need tiled_stride_enable because it's always equal to 1, we can set stride in tiled mode by default.
+[sw]feat: delete SUPPORT_HEIF macro inapi, merge from vc9000d_v1.3.3 CL651112.
+[sw]fix: Remove klocwork issues.
+[sw]fix: win64 compiling error.
+[sw]fix: related with VIVDS-40, customer stream pass input->data_len=0 which make "Vp9AsicStrmPosUpdate" calculate wronlgy input data 
+[sw]fix: global variable issue
+[sw]fix: fix a bug of CL668430. When enable luma TILE8x8 and Chroma TILE4x4, the output chroma address was calculated incorrectly.
+[sw]fix: global variable issue
+[sw]fix: Cmodel can't #include xxxx.h in control SW
+[sw]fix: modify the output, use alignheight anfd alignwith to control the ouput of fbc cmodel input.
+[sw]fix: add checker for FBC comp channel.
+[sw]fix: build error about global vector in windows visual studio part2
+[sw]fix: build error about global vector in windows visual studio
+[sw:tb]fix: memset the DecSequenceInfo  when  invoked by heif dectestbench
+[sw]chore: detail the SUPPORT_DMA
+
+version 2.3.3[SwBuildId=668909]
+[sw]dev: support low latency for all g2 format and cmodel.
+[sw]fix: RFC input ppstandalone input stride >> 1 -> >> 3
+[sw]dev: Multiplexing 355 register, when RFC input mode, the stride default >> 1.
+[sw]fix: global vector issue and macro 'USE_FBC_CORE_INPUT' issue
+[sw]fix: fix a bug of wrong memset.
+[sw]fix: optimize logmsg code.
+[sw]fix: fix hang issue caused by sei status not reset when dpb all set as unused.
+[sw]fix: fix a bug of ppstandalone: parse --sizes
+[sw]fix: when enable tile8x8 and disable pp and rfc, direct output as tiled8x8.
+[sw]fix: mpeg4 output stride info error.
+[sw]fix: fix compile error 
+[sw]fix: fix a bug of CommonWriteOnePic when calculating sequence checksum. and move MD5Init and MD5Final outside CommonWriteOnePic
+[sw]fix: windows building error about global vectors 'AlignWidth' and 'AlignHeight'
+[sw]fix: ppstandalone support decompress multi frames through vc9000d_input_pp_rfc_ctrl.bin
+[sw]fix: segmental error about scalar factor 'table_data'
+[sw:rv]maintain: fix windows building error.
+[sw]fix: clear unused code about store scalar fators
+[sw]fix: add checker about scalar factors writing to SRAM or swreg depend on hw feature 'fbc_comp_support'
+[sw]fix: maintain avs2decapi.c code.
+[sw]fix: modify the way to control the output of fbc, when use USE_FBC_CORE_INPUT=y,it will reuse the format of fbc_tiled32x8 and tiled16x16,and genreate the pfc core input.
+[sw]maintain: only resove currently known windows compile risk
+[sw]fix: rename "afbc/AFBC/Afbc" to "fbc/FBC/Fbc".
+[sw]merge: both width and height downscale 1/2 factors from swreg
+[sw]feat: support tiled64x64 for ppdec.
+[sw]merge: merge width and height downscale 1/2 with AFBC
+[swreg]merge: merge coeffs for 1/2 scaling ratio from vc9000d_v1.3.3
+[sw]fix: close pp_shaper when 64x64 output
+[sw]fix: add 'pp_comp' flag in calculate AFBC header + payload data buffer size;  change option '--tb-align-height' to '--align-height' and modify align notification
+
+version 2.2.3[SwBuildId=666428]
+[sw]fix: revert  function about yuvsink, and add macro defination of AFBC tiled16x16 and tiled32x8.
+[sw]dev: remove sw_pp_in_blk_size and add sw_ppx_comp_e.
+[sw:avs2]fix: fix building warning when DMA is enabled.
+[swreg]maintain: add ppstandalone rfc input related regs.
+[sw]fix: fix klockwork about array 'ParseDecPictureFormat' index out of bounds
+[sw]fix: fix compile error.
+[sw]feat: support 6X scale
+[sw]feat: support reference picture tile 8x8 storage format of luma component for rfc bypass mode - hevc/h264/vvc/vp9/av1/avs2. merge from vc9000d_compressor_overflow
+[sw]fix: fix klocwork  that  dereferenced  pointer may be used.
+[sw]fix:modify the output file name, and modify some coding style.
+[sw]fix: modify AFBC tile edge buffer, considering luma+chroma and if can't write done in HW.
+[sw]merge: merge afbc fix from vc9000d_v1.3.3 CL618663 ~ CL657060.
+[sw]feat: dump AFBC output data, merged from vc9000d_v1.3.3.
+[sw]fix: move yuvsink from testbench to file_sink.h
+[sw]feat: add skip_frame feature for vvc.
+[sw]fix: fix compile error.
+[sw]fix: tile code.
+[sw:pp]fix: fix a pp coeff set issue.
+[sw]fix: compile error.
+[sw]fix: support super_tile 64x64 for g2.
+[sw:hevc]fix:fix the bug when doing ref pic replacement, fixed in GLFVPU-213
+[sw]dev: ppstandalone support RFC input: delete SWREG RFC_IN_LUT_STRIDE/ RFC_IN_CHT_STRIDE.
+[sw]chore:Remove some klocwork issues.
+[sw]fix: avs2 case mismatch in DMA mode.
+[swreg]maintain: update register spec.
+[sw:pp]fix:fix hw and cmodel mismatch for spline and nearest filter algorithm,see KL3VC9KD-44
+[sw]fix: klocwork error.
+[sw:avs2]fix: fix building warning.
+[sw:avs2]fix: fix reported issue in  GLFVPU-213.
+[sw:avs2]dev: code clean,  delete the  header files of ctrl sw in avs2 cmodel makefile,and move some header files to avs2 cmodel.  
+[sw]merge: merge vc9000d_v2.1_dev into vc9000d, which covers:
+[sw]dev: modify the symbols between case info.
+[sw]fix: fix compile error when FPGA_PERF_AND_BW=y.
+[sw]feat: support supper_tile for g2 format.
+[sw]maintain: vp6/vp8/rv/vc1 return "DEC_DISCARD_INTERNAL" for USE_PICTURE_DISCARD logic
+[sw]maintain: vp6/vp8/rv/vc1 return "DEC_DISCARD_INTERNAL" if decide discard the frame for sw EC
+[sw]fix: delete AFBC code from DWL.
+[sw]feat: support supper_tile(draft).
+[sw:vvc]fix: add the core_mask setting for core selection
+[sw]maintain: use DEC_DISCARD_INTERNAL to replace DEC_STRM_PROCESSED for ec
+[sw]feat: support secure mode flow when SUPPORT_AXIFE for axi_3.0
+[sw:hevc]fix: 1) add check when return dmv buffer; 2) HevcEmptyDpb need to clean up the full range of dpb->buffer to avoid crash of RemoveOutputAll when disable pp with USE_OMXIL_BUFFER;
+[sw:kmd]fix:fix the coding  style
+[sw:vc1/rv/vp8/vp6]dev: merge unfied SW EC feature
+[sw]feat: provide unified heterogeneous core selection driver ,merge from vc9000d_v1.3_glenfly@643087
+[sw:vp8]fix: user allocated max buffer num should be managed by MAX_PIC_BUFFERS
+[sw:tb]fix: memset the DecInputParameters when VCDecDecode invoked
+[sw]fix: fix comple error.
+[sw]dev: declutter the code.
+[sw:vc1]fix:fix the compile error
+
+version 2.2.2[SwBuildId=643074]
+[sw]feat: avs2 will support MC in CMODEL.
+[sw]fix: delete the debug printing.
+[sw]dev: prepare low latency related registers for avs2/vvc.
+[sw:vp9]fix: just need to allocate one entroy count buffer if multicore decoding is not enabled.
+[sw]fix: fix the compile error.
+[sw]dev: clean unused parameters , including use_p010_output and use 8bits_output.
+[sw]fix: DEC_NO_DECODING_BUFFER need to clear the sei_buffer to prevent repeat sei counter
+[sw:kmd]dev: support kernel6.1
+[sw:kmd]fix: fix the bug for debugfs
+[sw:kmd]revert: revert to revision 38
+[sw]dev: prepare low latency related registers for vp9/av1.
+[sw:vc1]fix: for VIVDS-71, fix vc1 interlace case output error, merge from vc9000d_v1.3 CL625254 CL636861 638902
+[sw]dev: rename sw_ignore_slice_error to sw_error_conceal_e.
+[sw:api]fix: add return value for SW_EC(discard pic).
+[sw]fix: fix compile error (-Werror=address)
+[sw]maintain: disable obsoleted option -u.
+[sw:kmd]fix: fix the bug for debugfs
+[sw:av1]fix: maintain the DEC_PIC_DECODED for Av1DecDecode
+[sw]fix: compile error. 
+[sw]fix: need init exe_cmdbuf_count in vcmd_start, merge from vc9000d_v1.3 CL638148.
+[sw]fix: fix case info of error case.
+[sw:kmd]fix: use macro USE_WATCHDOG contrl watchdog code, merge from vc9000d_v1.3 CL637600.
+
+version 2.2.1[SwBuildId=637578]
+[sw<:api>]fix: remove variable "random_error_by_tb" from API structure.
+[sw:av1]fix: maintain the DEC_PIC_DECODED for VCDecAv1Decode, see UNISOCTV-83;
+[sw<:av1>]fix: case_30405 only output 8 frames.
+[sw:heif]fix: can't clean the pp buffer for multilayer stream, merge from vc9000d_v1.3_lenovo CL629293.
+[sw]fix: av1 output N<n> frames.
+[sw]fix: maintain the return value of VCDecAv1Decode to update upper pic_id or make app has chance to try to fetch output frame by call DecNextPicture
+[sw:avs2]fix: set the read bytes as buffer length when turn around to stream start addreass
+[sw]fix: mc sync buffer should be 64 bytes for each col tile.
+[sw]fix: release dpb buffer after found new HDR. 
+[sw:vvc]fix: Release dpb buffer after found new HDR. 
+[sw:h264]fix: fix the turn around judgment
+[sw:h264]fix: consider ringbuffer for cabac words checking 
+[sw]fix: fix klocwork failures due to "uninitialized variables".
+[sw]maintain: cmake supports MINGWN.
+[sw]feat: make xxxDecAddBuffer simpler: only consider reference buffer and pp buffer. Unify raster scan buffer with pp buffer.
+[sw:jpeg]fix: fix the case info of frame num.
+[sw:av1]maintain: 1) replace memcpy with DWLmemcpy; 2) only open multi core when available core > 1; 3) add secure_mode to decoder instance to maintaim drm player(next to realize)
+[sw]fix: fix hwregs need use core_id for indexing.
+[sw]fix: remove unused variables
+[sw]fix: fix watchdog abort bit set error for vcd, merge from vc9000d_v1.3.3 CL624296.
+[sw]dev: optimize vcmd DWL, due to the cmd id has been  managed by the vcmd driver, the sync operations are unnecessary
+[sw]chore: define macro READ_STATUS_REGS_COUNT to repalce number 8
+[sw:jpeg]fix: error usage for NEXT_MULTIPLE.
+[sw:av1]fix: don't need to release safely the dpb queue when call Av1DecAbortAfter without pp and enable USE_OMXIL_BUFFER;
+[sw]fix: delete unused code for vcmd_release. 
+[sw]fix: replace the key word "VC8000D" with "VCD".
+[sw:av1]fix: fix the klockwork issue
+[sw:av1]fix: delete extra code in Av1DecInit and try to fix the klocwork issue
+[sw:vp9]fix: delete the extra code in Vp9DecInit
+[sw]fix: delete the extra code when dec_cont->pp_enabled=0 in xxDecInit
+[sw]fix: TILED32x8 is not supported in vc9000d yet. 
+[sw]dev: new hw support h&w align to 8 for AFBC.
+[sw]fix: fix the android compile error
+[sw:hevc]fix: should give the cmdbuf_id when call UnbindAsicTileEdgeMemsFromCore
+[sw]fix: logmsg h264 rlc_mode print
+[sw]fix: if left date less than 4, consume it.
+[sw]docs: fix the Makefile.
+[sw]dev: support one dec.cfg one cmd line or one dec.cfg multi-cmd line.
+[sw]fix: jpeg support -Nx, x mean the number of jpeg besides thumbnail.
+[sw]fix: resolve the klocwork issue.
+[sw:kmd]fix: update  core config when vcmd used.
+[sw]fix: resolve the klocwork issue.
+[sw]dev: jpeg support -Nx to specifies the number of decoded frames.
+[sw]fix: fifo_core should be free when xxxDecRelease to avoid the mem leak
+[sw:av1]fix: resolved the klocwork issue, see #1610, #1611, #1612
+[sw]dev: suppport only one dec.cfg to record all command lines. use # to comment one line.
+[sw:av1]fix: try to fix the klocwork issue
+[sw]maintain: 1) optimize the mc related for vcmd mode, reduce the dimension of hw_rdy_callback_arg for av1/vp9, the max times of cmdbuf reserved is the max available cores;
+[sw]dev:solve the problem that the dec400 cmodel generated by libs decompilation cannot be linked to the library.
+[sw:vc1]fix: one vc1 sw EC issue
+[sw]fix: fix the compile error when USE_VIRTUAL_PLATFORM_TEST=y
+[sw]style: line ending should with unix format
+[sw]style: line ending should with unix format
+[sw:avs2]fix: collect the resolution in frame instead of filed for interlaced frame.
+[sw]style: line ending should with unix format
+[sw]maintain: optimize the dimension of hw_rdy_callback_arg for the mc codec format(vvc) to save the heap size;
+[sw]maintain: optimize the dimension of hw_rdy_callback_arg for the mc codec format(h264/hevc) to save the heap size;
+[sw]chore: remove raster buffer manager source files.
+[sw]dev: remove the "dec_plugin_sdk" feature for target v4l2lib
+[sw]fix: update vp9 stream logmsg
+[sw:dwl]dev: don't include dec400sys.h if SUPPORT_DEC400 is not defined.
+[sw:hevc]fix: fix the typo for some sei represent flag
+[sw]merge: Merging //VPU/VPUv1/vc9000d_cmake/... to //VPU/VPUv1/vc9000d/...
+[sw]fix: maintain the return value for VCDecAv1Decode and VCDecVp9Decode, only superframe could decode multiple time for the same input buffer
+[sw:avs2]fix: fix klocwork issue of resource leak.
+[sw:av1]fix: fix the pic width of case info.
+[sw]fix: fix klocwork issues about resource leak and uninitialized variable - possible.
+[sw]fix: fix the checker of pic size, the max pic size should be aligned with ctb size.
+[sw:vc1]fix: fix vc1dec compile issue, removed the useless partial variable i;
+[sw:rv]fix: fix rvdec compile issue, removed the useless partial variable i;
+[sw]fix: fix compile error when USE_ASIC_TRACE=y.
+[sw:avs2]fix: replace raster buffer manager by input buffer queue.
+[sw:vvc]fix: replace raster buffer manager by input buffer queue.
+[sw:hevc]fix: replace raster buffer manager by input buffer queue.
+[sw:h264]fix: fix the logic error of ref caused by the previous submit from 613250
+[sw]maintain: 1) not distingush the vcmd and nop-vcmd for DWLReadSiceID, DWLReadCOreHwBuildId and DWLReadAsicCoreCount;
+[sw]chore: delete the useless file
+[sw]maintain: 1) delete the condition about asic_id in Set/GetDecRegister;
+[sw]fix: fix a typo. 
+[sw]fix: fix compile error when use SUPPORT_ASOFMO=y.
+[sw:h264]fix: sync memory should be set for current out when new access unit.
+[sw]fix: sw will discard vcl_nalu if ph decoding error.
+[sw:h264]fix: wait for unbind dmv buffer not the free buff. 
+[sw:h264]fix: fix one klocwork issue.
+[sw:av1]fix: fix error about the display resolution of case info.
+[sw:h264]fix: consider dmv buffer management in frame gap mode.
+[sw]feat:add vdk test code, compile with "make clean g2dec USE_VIRTUAL_PLATFORM_TEST=y ",optional with VDK_STRICT_TEST=y
+[sw:h264]fix:fix the spell error of ref_dmv_list,not ref_pic_list
+[sw]dev: add PERTRACE_I to print performance information in LOGMSG.
+[sw]fix: fix error case 5092 hang issue.
+[sw:av1]fix: fix the issue about the output->pic_id,it should be same as input->pic_id.
+[sw:vp8]fix: delete the extra header file including
+[sw]fix: fix cycle count error in multicore dec mode, merge from vc9000d_v1.3 CL610489.
+[sw:dwl]fix: fix the dec_dwl->num_cores value under vcmd, should be all cores number
+[sw:kmd]style: fix coding style issue
+[sw]fix: case_50957 will core dump.
+[sw]maintain: replace some array number with MAX_PIC_BUFFERS
+[sw:h264]fix: fixed the segment fault when not enable pp, also fixed not multiple allocate the output buffer when sequence change, also see Bug 34812
+[sw]fix: slice mode should be 1 when dec_ont->disable_slice_mode is 1.
+[sw:kmd]fix: fix issue about cmd buf num between start and idle.
+
+version 2.1.1[SwBuildId=609713]
+[sw]fix: correct the vcd api version
+
+version 2.1.8[SwBuildId=609688]
+[sw]maintain: remove the fixed buffer number, replaced with MAX_PIC_BUFFERS limit
+[sw:kmd]dev: add hw_start_time and idle time to collect performance.
+[sw:kmd]fix: fix a bug for linked buf released by notlink function, merge from vc9000d_v1.3 CL609391.
+
+version 2.1.1[SwBuildId=609084]
+[sw]fix: random error inject fixed.
+[sw:vp8]fix: balance the decode core, not only use core0 when single core decode
+[sw]fix: random error code error.
+[sw]maintain: don't need to include deccapicommon.h in deccfg.h.
+[sw:h264]chore: optimize some codes
+
+version 2.1.9[SwBuildId=608703]
+[sw:h264]feat: support sei parse for h264 interlaced stream.
+[sw:kmd]fix: delete extra code.
+[sw:kmd]fix: fix a bug of reserved_cmdbufid
+[sw:kmd]fix: fix a  bug of reserved_time
+[sw]fix: maintain the bit depth well when PPNextPicture
+[sw]fix: set seed in VCDecInit.
+[sw]fix: unique_id need random seed.
+[sw:kmd]style: fix coding style issue
+[sw]fix: return value of DWLMallocRefFrm is DWL_OK and DWL_ERROR, merge form vc9000d_v1.3 CL608219.
+[sw:dwl]dev: support register printing with vcmd
+[sw]fix: vvc mc+vcmd wiil hang.
+[swreg]dev: remove obsoleted sw_dec_strm_corrupted.
+[sw]fix: use DWLReadReg in dwl_linux.c.
+[sw]fix: search suffix nalu code.
+[sw]fix: memcpy for dec_cfg should be early to avoid pic_broken cause pp set error in OutputPicture.
+[sw]fix: add macro define of "USE_SUFFIX_SEARCH".
+
+version 2.1.8[SwBuildId=606303]
+[sw]fix: add shaper_alignment code for ppdec.
+[sw]fix: case_51146 will core dump because need new checker.
+[sw]dev: add FPGA_PERF_AND_BW=y to collect performance info.
+[sw]dev: add FPGA_PERF_AND_BW=y to collect performance.
+[sw:dwl]dev: enable up to 4 channels in cache, since there are only 4 channels configured in HW to reduce HW logic (~10K gates per channel).
+[sw:avs]fix: fix error about case inforamtion collection of avs format.
+[sw]fix: sei param status  need set unused when sw error.
+
+version 2.1.7[SwBuildId=604739]
+[sw]dev: update the way to print performance information and unify some coding style.
+[swreg]maintain: add abnormal mask bit register.
+[sw]feat: if no reordering is enabled, set PP output buffers number to 2 for h264 and hevc to save DDR resource.
+[sw:jpeg]maintain: remove jpegdecscan.c and jpegdecscan.h to decrease code size.
+[sw:dwl]fix: fix the issue munmap repeated release the same address
+[sw]maintain: remove the misleading code "HWIF_PP_IRQ_STAT" 
+[sw:vvc]fix: fix big dpb offset in swreg_access.trc. 
+[sw:vvc]fix: refine FlushDecRegisters and RefreshDecRegisters
+[sw]fix: fix stream length miscalculation problem in low latency mode.
+
+version 2.1.6[SwBuildId=602823]
+[sw]dev: use enum to define DWLRet and DWLClienType instead of macro defination ,clear the macro definations of DWL_CACHE_*.
+[sw:kmd]style: fix coding style issue
+[sw:avs2]dev: remove unused source files from avs2 control sw.
+[sw:vvc]dev: set sw_unique_id.
+[sw]dev: add missing updated file to fix building error.
+[sw]dev: set unique id for all formats in control sw instead of dwl.
+[sw]fix: strm_buff_read_bits need reset to decode next nalu in slice mode.
+[sw]fix: handle suffix_APS and EOS(bind core_id).
+[sw]docs: uodate comments.
+[sw:vc1]fix: six compile error.
+
+version 2.1.5[SwBuildId=600741]
+[sw]dev: update the way to collect performance infomation in dwl when FPGA_PERF_AND_BW=y.
+[sw:vvc]revert: revert changes about FPGA_PERF_AND_BW.
+[sw]fix: handle suffix_APS and EOS(need sync two thread).
+[sw]docs: update vcdecapi doc.
+[sw]fix: handle suffix_APS and EOS(2000 bytes at most).
+[sw]fix: GDR case will hang because dmv buffer can't be getted.
+[sw]fix: handle suffix_APS and EOS.
+[sw]maintain: add the rfc out buffer clear when eanble ENABLE_FPGA_VERIFICATION,merge from vc9000d_v1.3_lenovo @598993
+[sw]dev: fix building error due to missing files that should be submitted.
+[sw]dev: use DEC_HW_IRQ_XXX to replace XXX_DEC_8170_IRQ_XXX.
+[sw]fix: print multicore irq return value.
+[sw]dev: use DEC_HW_IRQ_XXX to replace DEC_8170_IRQ_XXX & DEC_8190_IRQ_XXX.
+[sw:kmd]dev: fix some debugging message.
+[sw]dev: use DEC_HW_IRQ_XXX to replace DEC_8170_IRQ_XXX & DEC_8190_IRQ_XXX.
+[swreg]dev: remove unused sw_num_tile_cols/rows.
+[sw:kmd]fix: fix some bug of mc debugfs with vcmd
+[sw]fix: sw ec need hw ec in frame_MC mode.
+[sw]docs: update comments of files to doxygen style,and update vcdecapi.pdf.
+[sw:vvc]fix: fix probem about the resolution of case information collecting. 
+[sw]fix: treat GDR frame as first pic in bitstream in SW EC mode.
+[sw]fix: sw ec for vvc.
+[sw:dwl]fix: fix klocwork issues: operands of different size in bitwise operation. (#1591, #1592)
+[sw]fix: fix vcmd core dump issue.
+[sw]chore: delete jpeg_hw_header_version, jpeg_hw_header_version is always 1.
+[sw]docs: update comments to doxygen style and update add comments to vcdec_api_doxyfile.
+
+version 2.1.6[SwBuildId=598115]
+[sw]feat: for ppdec dec400 buffer layout change, add struct dec400_luma_table and dec400_chroma_table 
+[sw:dwl]dev: set sw_unique_id in dwl.
+[sw]fix: shaper alignment change. if md5 diff, please add -A256.
+[sw:kmd]fix:alloc/free stlb and mtlb separately by "dma_alloc/free_coherent"
+[sw:vc1]dev: add CASE_INFO_STAT=y to collect case information.
+[swreg>]dev: remove sw_dec_axi_rd_id_e / sw_dec_axi_wr_id_e, for single id is not supported any and multi-id is always enabled by default.
+
+version 2.1.4[SwBuildId=597043]
+[sw]feat: two feature.
+
+version 2.0.4[SwBuildId=596981]
+[sw:jpeg]dev: add CASE_INFO_STAT=y to collect case infomation, and unify the coding style.
+[sw:rv]dev: add CASE_INFO_STAT=y to collect case information.
+[sw]fix: disable cr_first when rgb_output enabled.
+[sw:vvc]fix: Compile process failed with DMA.
+
+version 2.1.3[SwBuildId=596167]
+[sw]fix: change "full_stream_mode" to "multi_frame_input_flag".
+[sw]fix: fix error about bitrate.
+[sw:vp6]fix: for VIVDS-79, vp6 meet segment fault random for vc9000d_v1.2, the reason is wronly maintain "request_decoding_buffer"
+[sw:mpeg4]dev: add CASE_INFO_STAT=y to collect case information.
+[sw]fix: hw have already set SW_DEC_VVC_PROF in register. 
+[sw:mpeg2]dev: adda CASE_INFO_STAT=y to collect case information.
+[sw:hevc]fix: change DEBUG_PRINT & ERROR_PRINT to STREAMTRACE_X.
+[sw:dwl]dev: for VVC, dir mv (id#4) is not enabled in cache.
+[swreg]maintain: rename registers.
+[sw]fix: GDR case will hang in MC.
+[sw]fix: GDR case wiil shutdown VCD in MC.
+[sw]dev: add CASE_INFO_STAT=y to print case infomation.
+[swreg]maintain: update register spec.
+[sw]docs: update vcdecapi comments to doxygen style.
+
+version 2.0.3[SwBuildId=589783]
+[sw:dwl]dev: add FPGA_BW_AND_PERF =y to collect performance test information in dwl.
+
+version 2.0.2[SwBuildId=585358]
+[sw]feat: add the time scale info getting by xxDecGetInfo for hevc,h264,av1,vvc, merge from vc8000d_netint@573171
+[sw]fix: VvcAdjustPpUnitCropScaleInfo should wait for CLVSS picture check done.
+[sw:vvc]fix: EOS will be discard in MC mode.
+[sw]fix: dpb_out index max should be MAX_DPB_SIZE - 1.
+[sw:vvc]fix: fix error about  pefoamance test of bwwr when FPGA_PERF_AND_BW=y.
+[sw:h264]fix: fix strm_curr_pos in some condition that stream turnaround happens and flushing bits returns HANTRO_NOK.
+[sw:vvc]dev: add CASE_INFO_STAT=y to print case information.
+[sw:vvc]fix: add the DWLReleaseCmdBuf before DWLWaitCmdbufsDone under vcmd, same with 564558
+[sw:vvc]fix: delete the redundant code when has_2nd_pipeline=0 and deleted.
+[sw]fix: cr_first and rgb output can not both enabled.
+[sw]fix: add help info of logmsg.
+[sw]fix: disable EC code which will case core dump for error case_53264.
+[sw]fix: VvcAdjustPpUnitCropScaleInfo and CheckPpUnitConfig should be used earlier for variable resolution.
+[sw]chore: forget a file
+
+version 2.0.1[SwBuildId=575327]
+[sw]feat: unify ec
+[sw]chore: remove the useless attribute "mb_error_conceal"
+[sw:vvc]fix: fix compile error when FPGA_PERF_AND_BW=y.
+[swreg]maintain: fix RW property for some register fields.
+[sw:<vvc>]fix: let SUFFIX_APS as next pic's data.
+[sw]fix: typo.
+[sw]fix: VvcAdjustPpUnitCropScaleInfo need be used before ppu_cfg copy when no_reordering output.
+[sw:vvc]feat: support MC.
+[sw:rv]fix: fix rv width/height incorrect issue in RvDecSetInfo.
+[sw]fix: current_out->ppu_cfg can't be copy in VVcSetRegs when reordering output.
+[sw]fix: warning and error in klocwork for vvc.
+[sw]fix: typo.
+[sw]fix: compiling error.
+[sw]fix: warning and error in klocwork for vvc.
+[swreg]maintain: fix RW property for some register fields.
+[sw]dev: add cambricon_vvc(1FD4) IP offset.
+[sw]dev: replace SUPPORT__UNAVAILABLE_PIC_MEMSET with ENABLE_FPGA_VERIFICATION.
+[sw]docs: update ChangLog by hands, in future it will be auto generated.
+[sw]fix: compile error when ENV=x86_linux_pci USE_VCMD=y
+[sw:vvc]feat: support logmsg for vvc.
+[sw]style:  line ending should use unix format
+[sw]dev: update cambricon_vvc featurelist.
+[sw]fix: shouldn't pthread_join the mc_listener_thread when not create the ThreadMCListener, if not, maybe segment fault in some env, like vdk;
+
+version 2.0.0[SwBuildId=572339]
+[sw]feat: a base version to support vvc decoder, some features need to be added.
+[sw:vcdec]docs: update two layout setting files.
+[sw]fix: issue about  case_info_stat for avs format.
+[sw]dev: enable count stack size and heap size in fpga.
+
+version 1.4.1[SwBuildId=571468]
+[sw]docs: revert  VCDSW_VERSION_MINOR and increase VCDSW_VERSION_MICRO
+[sw:vcdec]docs: Add "Document Revision History".
+[sw:kmd]fix: fix the stable core_type HW_VC8000D, compatible for alone jpeg bit and video bit
+[sw]fix: fix compile error.
+[sw]fix: core dump about case_5083 and case_5084 when use case_info_stat. 
+[sw]chore: Add back a line seems deleted by error operation.
+[sw:vcdec]docs: 1.Apply template to vcdec_api document.2.Give a example comments in decapicommon.h for structure.
+[sw]docs: update comments of DWLReadCoreHwBuildID and DWLReadAsicCoreCount in dwl.h.
+[sw:kmd]style: fix coding style checking issue
+[sw:kmd]fix: provide an unify driver, compatible for jpeg and video format, merge from vc9000d_v1.3_kunlun3@566663 and @5666657, see KL3VC9KD-32
+[sw]docs: update comments of dwl.h to doxygen style.
+[sw]fix: ppdec logmsg command line parsing.
+[sw]chore: move version.h to source/inc.
+[sw]fix: fix error about vcmd driver.
+[sw]fix: fix issue about av1 case infomation printing.
+[sw:jpeg]fix: follow jpeg 1993 spec, the component_id will be indicated by 2bits, so 0, 1, 2, 3 is reasonable, progressive jpeg has no the constraint [1, 3]
+[sw]fix: fix issue about hevc case information printing.
+[sw]fix: fix error about avs2 case information printing.
+[sw]fix: RGB input and RGB output can't exist together.
+[sw>]fix: support high gcc version
+[sw]dev: add CASE_INFO_STAT=y to print case imformation for avs format.
+[sw]fix: fix the compile error for "make clean h264dec_osfree"
+[sw] fix: fix error about error case information printing for error case of vp8 format.
+[sw] fix: deal loop when use_adaptive_buffer=0 for resolution change.
+[sw] dev: add CASE_INFO_STAT=y to print case information for avs2 format.
+[sw:jpeg]fix:fix the compile error
+[sw]fix: merge from vc9000d_v1.2_Eswin@563883
+[sw] fix: fix typo and add comments.
+[sw] fix: fix the issue about CASE_INFO_STAT of h264 case_2233 and case_2611.
+[sw] fix: fix the issue about CASE_INFO_STAT of h264 case_2233 and case_2611.
+[sw] fix: fix typo.
+[sw] fix: cases hang for CL563563.
+[sw]fix: fix the klocwork scan reported error that " sc_dec_rdy_sem+*cmd_buf_id"  may out of range
+[sw] fix: The redundant ref_regs need configured as the address of first right dpb_buffer.
+[sw:driver] fix: Add DTB_SUPPORT for function get_of_property.
+[sw] fix: Update watchdog time for FPGA test.
+[sw:kmd] fix: 1.revert the revision error of "vcmd_timer" 2.add the DTB_SUPPORT in hantrodec_init
+[sw] dev: add CASE_INFO_STAT to print case imformation for AV1 format, fix the issue of case infomation printing for vp8 and vp9.
+[sw:avs2] fix: delete the useless codes to avoid "multiple definition" in some compilation tool chains
+[sw:av1] fix: remove the useless, redundant and unreasonable header file inclusion behavior
+[sw] dev: always memset segment map buffer, because customer get decoding error without memset.
+[sw:vc1]dev:revert VIVDS-71 changing, such change make case 2819 get unstable output data
+[sw] fix: for 10bit and 12bit case, p010 must be enabled.
+[sw:dwl] refeat: 1. For vcmd mode, delete the VCMD_MCTHREAD, unify to get irq from listener thread to optimize the sw perf
+[sw:freertos]maintain:1. refine the freertos.mk and CMakeLists.txt for vc9000d
+[sw] fix: issue about case information printinf of vp9 format.
+[sw] fix: issue about vp9 case information print.
+[sw] fix: crop x/y can't bigger than 16382.
+[sw:mpeg2] fix: compile error when SUPPORT_DMA=y
+[sw] fix:The redundant ref_regs need configured as the address of dpb->buffer[0].
+[sw] dev: add CASE_INFO_STAT=y to print case information of VP9 and VP8 format.
+[sw:mpeg2] feat: unify ec
+[sw:mpeg4] chore: delete the redundant comments
+[sw:mpeg4] fix: 1. maintian the pic_id of output pic for error case; 2. don't output the error_info and error_ratio for current output pic;
+[sw] dev: support pp_area_optimize for buildid ffff.
+[sw:vcdec] chore: delete the redundant code
+[sw:freertos]maintain:1. move the portable/GCC and portable/MSVC-MingW files from //VPU/FreeRTOS to dwl/osal/freertos/ 
+[sw]fix: fix compile error for "make v4l2lib", when compiled cmodel library need to add "USE_MODEL_LIB=" 
+[sw] dev: unify the code about the format of case information printing.
+[sw] fix: issue about case information print.
+[sw] dev: add CASE_INFO_STAT=y to print case information of H264 format.
+[sw] fix: The redundant ref_regs need configured as the address of dpb->buffer[0].
+[sw:kmd]style: fix coding style issue: indent should use tab
+[sw:kmd]style: fix coding style issue: indent should use tab
+[sw:av1] fix: simple workaround when metadata payload_bytes is not enough for itu_t_t35, that is it has error metada size.
+[sw] dev: add CASE_INFO_STAT=y to print case information for hevc format, set CASE_INFO_STAT to n by default.
+[sw:driver] feat: Support getting info from DTB for Qemu tests. Add targets arm32_linux, arm64_linux for ctrl sw.
+[sw] dev: add CASE_INFO_STAT=y to print case information for hevc format, set CASE_INFO_STAT to n by default.
+[sw] fix: only interlace case need CL515099.
+[sw:mpeg4] dev: call SetECPolicy in MP4DecInit, not wait Mp4DecSetInfo to set ec config
+[sw:vc1] fix: for the error case, adjust the timing of ENABLE_FPGA_VERIFICATION for pp_data to avoid the pp_data of  work_out index is memset wrongly when output thread can't fetch the output in times. Also see UNISOC-67.
+[sw:vc1] fix:  according vc1 spec J.1.1 should use VC1_ADVANCED_PROFILE(12) to indicate the vc1 advance profile, not the fixed value 8. Also see UNISOC-67
+[sw:h264] chore: fix typo
+[sw] fix: rename the bitrate_per_mb, bwrd_per_mb and bwwr_per_mb parameters to bitrate_4k60fps, bwrd_in_fs and bwwr_in_fs.
+[sw:kmd]style: fix some coding style issue
+[sw:vc1]dev:support vc1 EC, merge from autochip
+[sw] fix: treat abort as error in asic state.
+[sw] feat: add a watchdog for av1 dec_mode in vcmd.
+[sw]chore: add trailing spaces ,a simple test of whether uploda code with trailing spaces can be submitted successfully
+[sw]dev : when compiling target is v4l2lib, the makefile collects v4l2_vsi_daemon/makefile.cmodel 'prebuild' and store them in the new folder dec_plugin_SDK
+[sw] fix: set video_range by rgb_std.
+[sw:mpeg4] fix: fix the issue reported by Klocwork
+[sw:mpeg4] feat: 1) unify EC, consider the reference frame  to decide whether discard the current frame, see MP4MarkOutputPicInfo, also see ATCPV-183; 2) enable divx3;
+[sw:EC] chore: enum ErrorInfo should use enum param, thus added DEC_NO_ERROR to replace HANTRO_FALSE when set error_info as 0
+[sw] fix: need to return the pp buffer when jpeg decode DEC_STRM_ERROR; 2) delete the reabuandant code;
+[sw] fix: add hevc MC checker "ASSERT(status == expected);"
+[sw][sys]dev:refine generate lib method for v4l2 and libva, v4l2lib target default didn't compile c-model unless specify "USE_MODEL_LIB= " when compile
+[sw:vp9]fix: for vp9 multi-instance, revise the reserved core same with enabled core,fix the runing error for case_17090
+[sw:hevc] feat: remove the unused and redundant decode_id, but maintain the poc info
+[sw:kmd] fix: vcmd_mgr->platformdev need to be initialized before vcmd_init
+[sw] style:remove the trailing spaces in .c/.h files
+[sw] fix: update dmv buffer address to make sure overlap not happen.
+[sw:jpeg] fix: use real core id when calling DWLReadPpConfigure, since it will update ppu_cfg in dwl instance with this core id.
+[sw] dev: set USE_STACK_HEAP_STAT to n by default.
+[sw] dev: add USE_STACK_HEAP_STAT=y to print stack and heap size.
+[sw] dev: change malloc/memset/calloc to DWLmalloc/DWLmemst/DWLcalloc in ctrl sw.
+[sw:kmd]fix: fix "X86_FEATURE_LA57" undefined issue and supoort for higher kernel version
+[sw] fix: compiling error for win64
+[sw] fix: ppdec doesn't currently support X2R10G10B10 and X2B10G10R10.
+[sw] dev: add a method to count stack size of control sw to DWLEnableHw().
+[sw] fix: need check all pp for av1 muti-core.
+[sw] dev: should not return PIC_DECODED when  strm gets new_headers_change_resolution that causes pic number error for some options, such as case 2441 with option '-N62'
+[sw] refeat: 1. support av1 hdr10+;
+[sw:kmd] fix: HWIF_VCMD_MASTER_OUT_CLK_GATE_DISABLE should be set 1 only when need to reset dec400 in asic(like Zebu)
+[sw] dev: add feature list for 1FD8/1FD9
+[sw:pp] fix: enhance the condition to disable AV1 muti-core.
+[sw:jpeg] chore: delete the old and ususeful codes
+[sw] fix: avs2 error case core_dump.
+[sw:kmd]style: fix some coding style check issue
+[sw] fix: error interlace case will hang.
+[sw] fix: fix a bug of wrong replacement pp_support->pp_standalone
+[sw] fix: EC Unify code.
+[sw:kmd] fix: every process manage their own cmdbuf node, only fix the scenario with mutli core multi stream
+[sw:avs2]fix:one thread application v4l2 will hang in WaitOutputEmpty(), case 39900
+[sw:vc1]fix:maintain output well when return DEC_RESOLUTION_CHANGED
+[sw]fix: compile error for CL 512041
+[sw]fix: compile error for CL 512225
+[sw]feat: change dec400 buffer layout, merge from vc9000d_v1.2 CL504113 and CL506857
+[sw:vc1]fix:for VIVDS-71, no need to do "while (flag)" block waiting, actaully IMO no matter whther "GET_FREE_BUFFER_NON_BOLCK" defined or not, whether pp buffer is avaiabled is already ensured by "InputQueueGet/RetureBuffer"
+[sw] fix: add error return value for EXT_TIMEOUT.
+[sw] fix: add EXT_TIMEOUT for all G2 formats.
+[sw]fix:for VIVDS-70, make "InputQueueGetBuffer" didn't block to wait buffer, even "GET_FREE_BUFFER_NON_BOLCK" defined
+[sw] fix: revert code of "max_dpb_size + 1".
+[sw:rv]fix:don't wait for buffer when in GET_FREE_BUFFER_NON_BLOCK mode
+[sw] fix: workaround: Abnormal IRQ force data consumption.
+[sw:vp6]fix: for VIVDS-69, apply vp6 to v4l2 framework, maintain "output" info and didn't wait PP buffer by blocking mode 
+[sw:vp8]fix:hang issue for one thread application such as v4l2, case 1400  
+[sw] fix: avs2 case_3890 will hang with RANDOM_ERROR_TEST.
+[sw] fix: optimize EC Unify code.
+[sw] fix: avs2 error case will core dump.
+[sw] fix: avs2 ring_buffer need turnaround.
+[sw] fix: avs2 error case will core dump.
+[sw:kmd] fix: the first page will not be used, which's address is started with 0, thus the IN region will one less page node. While the size of the mapped region should be in one-to-one correspondence with the size of the pre-mapped.
+[sw] fix: avs2 error case will core_dump when num_of_removed_picture==-1.
+[sw]fix: call "CalcOnePpUnitDec400TblSize" should  after got ppu_cfg-> luma_size and ppu_cfg-> chroma_size
+[sw] fix: avs2 error case will core_dump when num_of_removed_picture==-1.
+[sw] fix: AVS2 need skip P/B/F frame before I frame decoded.
+[sw] fix: logmsg
+[sw] fix: update EC Unify code.
+[sw:dwl]fix: need to use the protect mutex "x170_init_mutex" to protect "n_dwl_instance_count" 
+[sw] fix: vp9_error_case read tile_info error.
+[sw]merge:from vc9000d_v1.2.
+[sw] feat: add EC Unify code for avs2.
+[sw] fix: remove unused variable.
+[sw:dwl]fix: only when "n_dwl_instance_count" =0, multiple decoding thread all ended,  then destroy the multi-mode sync mutex "shadow_mutex" 
+[sw] fix: AVS2 add FAKE_TABLE function.
+[sw] fix: fix a bug of logmsg: when compile "LOG_MSG=y RELEASE=y " and --logoutlevel>2 will result in core dump.
+[sw] fix: VP9 EC Unify code update.
+[sw] feat: EC Unify code for AV1.
+[sw] feat: add FAKE TABLE function for AV1.
+[sw] fix: EC Unify code.
+[sw] fix: EC Unify code.
+[sw] fix: pp param can't exceede max_ppu_count.
+[sw] fix: optimize code.
+[sw] fix: Avs2ParseUserData need to consider the loopback operation of the ringbuffer.
+[sw] fix: reallocate dpb buffer change.
+[sw] fix: avs2 interlace case output error with filed mode.
+[sw] fix: avs2 case_3821 will get diff md5 with -A64.
+[sw] fix: vp9 EC code.
+[sw] fix: SEI info belongs to current pic.
+[sw] fix: change error info from num_err_mbs to error_ratio.
+[sw:av1]fix:assert issue in FindIndex()
+[sw:jpeg]dev:for VIVDS-43, change the way to realize use_apdaptive_buffers=0 like hevc/h264
+[sw:tb]fix:compile error for vcdec when SUPPORT_DEC400
+[sw] fix: GDR function.
+[sw] fix: multi mode has mem leak.
+[sw] feat: update EC code.
+[sw]fix: fix the warning about mem_info code before NULL check in api, reported by Jidan
+[sw] feat: EC Unify codo for VP9.
+[sw]fix: change the "DWLmemset(mem_info, 0, sizeof(*mem_info))" into "(void) DWLmemset(mem_info, 0, sizeof(struct DecBufferInfo))"  in api
+[sw]fix:change the "memset" to "DWLmemset" in api
+[sw:doc] chore: add --dec400-enable to help doc to indicate whether enable dec400 for current pp channel
+[sw:doc] chore: add --dec400-enable to help doc to indicate whether enable dec400 for current pp channel
+[sw] fix: GDR config error.
+[sw]dev: add stride info into xxxGetBufferInfo to adapt some middleware
+[sw] fix: klocwork error detected.
+[sw] fix: multi mode will core dump.
+[sw] fix: case_43 will core dump.
+[sw] fix: case_12089 will get diff md5 with -A64.
+[sw] fix: convert some DTRACE_I to MEMTRACE_I in dwl_pc.c
+[sw] fix: high profile case was assumed to be baseline case.
+[sw:rv]fix: insert DEC_FLUSH to fifo_display when rpr resolution changed.
+[sw:rv] fix: set frame_width/frame_height to correct value in RvDecGetInfo().
+[sw:kmd] chore: some warning need to be removed when build, also see AMAZONR1
+[sw] fix: don't call function of xxReplaceRefAvalible when BUFF_EMPTY IRQ return.
+[sw] fix: Merging
+[sw:pp]fix: compile issue involed by 498931
+[sw] fix: compile error for CL499152.
+[sw:pp]fix: CL498931 involed bug when compile pci
+[sw] feat: EC code optimize.
+[sw:vp9] fix: when DWLMallocRefFrm fail in Vp9MallocRefFrm called by Vp9AllocateFrame, will return DEC_WAITTING_FOR_BUFFER, thus need to remove Vp9AsicReleasePictures to avoid bq==NULL
+[sw:pp]feat: for VIVDS-64, add some ppu function which handle PP channel one by one in  PPSetRegs and CalcPpUnitBufferSize, and expose such function
+[sw]feat:generate pp register trace log fro vaapi
+[sw:pp]chore:remove abandon variable
+[sw] fix: fix compile error.
+[sw] fix: compile error for CL498564.
+[sw] fix: pic_output_flag code.
+[sw] fix: EC code & pic_output_flag code.
+[sw] fix: frame don't need display with pic_output_flag==0. 
+[sw] fix: axife wrong comments.
+[sw] fix: vcdec ctrl error.
+[sw] fix: add USE_ANDROID=y to resolve compile error with android tools
+[sw] fix: info error.
+[sw] fix: workaround for error case: active_sps == NULL.
+[sw] fix: all ASO/FMO code add macro SUPPORT_ASOFMO.
+[sw] fix: delete the redundant code when has_2nd_pipeline=0 and deleted
+[sw] fix: update NON-FATAL error case.
+[sw] fix: compile error with USE_RANDOM_ERROR_TEST=y.
+[sw] fix: error_ratio error.
+[sw:kmd] chore: remove the redundant codes
+[sw:h264] fix: after H264RunAsic, the value of stream remain need to consider buffer turnaround in H264DecDecode
+[sw] fix: h264 error case will core dump, because n_ref_count++.
+[sw] fix: update EC code.
+[sw] fix: error case will core dump.
+[sw] fix: change macro from SUPPORT_ASO to SUPPORT_ASOFMO.
+[sw] fix: interlaced case don't support SEI.(will hang)
+[sw] fix: error case will core dump when bind tile_edge_buffer.
+[sw] fix: SEI will hang because buffer all used.
+[sw] fix: fix a bug of uninitialized skipframemode
+[sw] fix: add axi_lg in DWLInitParam.
+[sw] fix: h264 baseline case will use G2 core defualt when SUPPORT_ASO=n.
+[sw][sys]feat:add some opertion to generate vaapi needed lib and log, make g2dec DEF_HWBUILD_ID=1fc4 GEN_LIBVA_LIB=y generate c-model only for libva, "make valib DEF_HWBUILD_ID=1fc4" generate c-model and libvacommon.a
+[sw]chore:to remove same global variable name as encoder issue, add "static " restrict
+
+version 1.4.0[SwBuildId=493059]
+[sw] feat: EC Unify code.
+[sw:ffmpeg]dev:adjust decoder options
+[sw] fix: bus_address of tile_edge_buff is not controlled by core_id.
+[sw] fix: the bus_address of tile_edge_buff is not controlled by core_id.
+[sw:ffmpeg]dev:readjust decoder options
+[sw] fix: the bus_address of tile_edge_buff is not controlled by core_id.
+[sw] feat: EC unify code.
+[sw:vvc] fix: fix the max number of tile rows. Spec defines the max # of tile cols is 20, and max # of tiles is 440, but hasn't specified the max # of tile rows.
+[sw:vvc] fix: the max width/height supported should be 8192/8192.
+[sw] dev: update the IP offset of cambricon_eagle.
+[sw:common]fix:when hevc low latency and error case return pic_decoded equal 1
+[sw] fix: merge EC error info print to API logmsg.
+[sw] fix: calculate correct error mb/ctb number when decoding error happens.
+[sw] fix: fix a bug of segment fault: *&->** ,and mismatch error: macro precision
+[sw]feat: parse t35 buffer, unify the common HDR10+ interface, just HEVC/H264/AV1
+[sw] fix: 1FCB is lenovo.
+[sw] dev: update the IP offset of lenovo.
+[sw] fix: hevc will core dump in mc mode.
+[sw:kmd]fix: when reset core need clear reg[3]
+[sw:ffmpeg] dev: add exp_of_input_alignment assignment to make stride caculation rightly
+[sw:ffmpeg]dev:adjust default exp_align
+[sw:ffmpeg]dev:adjust default exp_align
+[sw:ffmpeg]dev:adjust parse decoder option method
+[sw:ffmpeg]dev:add crop option
+[sw:ffmpeg]dev:adjust decoder option parse method
+[sw:ffmpeg]dev:fix some issues
+[sw:ffmpeg]feat: support crop
+[sw:ffmpeg]feat:decoder add crop support
+[sw:ffmpeg]dev:adjust the pp_vsv filter option help
+[sw] fix: vcdec compile fail.
+[sw:hevc] fix: don't need to push FLUSHED for the first HDR_RDY.
+[sw] fix: luma/chroma stride error when rfc_bypass.
+[sw:vvc] sw: fix the pp buffer releasing when switching sequences. Case 51417, 52920 pass.
+[sw:hevc] fix: when sw error happens in HevcDecode(), don't return HEVC_SLICE_ERROR, which is a special return code for sbi mode. Just return HEVC_PIC_READY with some tricks so that in HevcDecDecode it's assumed that picture_broken is set and will copy the good reference picture.
+[sw:vvc] dev: add reference picture base info in struct VvcSwCtrl.
+[sw] fix: rgb2yuv code.
+[sw:ffmpeg]dev:fix pp_vs help
+[sw:ffmpeg]feat:add pp_vsv filter
+[sw:vvc] dev: set dpb->dpb_size to sps.dpb_max_dec_pic_buffering_minus1 + 1.
+[sw] feat: GDR support default.
+[sw] feat: merge GDR function from vc8000d_h264hevc422 branch.
+[sw:ffmpeg]dev:free input pool frame
+[sw:ffmpeg]dev:adjust pp vsv filter options
+[sw:vvc] dev: only explict reference pictures will be set to reference picture registers.
+[sw]workaround: svct nal_ref_idc should be 0 for the hightest layer
+[sw]fix:limit the max line is height
+[sw][sys]dev: Add heap allocation statistics for cu/tr
+[sw:ffmpeg]feat:add pp_vsv filter
+[sw:ffmpeg]feat:add pp_vsv filter
+[sw] fix: optimize code.
+[sw] feat: API return value code.
+[sw] fix: delete file.
+[sw] dev: update IP offset of nxvi.
+[sw:ffmpeg] dev: update output format.
+[sw] fix: change all padding from 0x80/0x8000 to 0x0 for AFBC[TILED16x16].
+[sw] feat: add ChangeLog into source/common.
+[sw] feat: v1.3 uses ddr mode when using low latency.
+[sw] fix: when inputLineBufferMode=3 without amountPerLoopback will hang
+[sw] fix: rgb2yuv trace file.
+[sw] fix: win64 compiling error.
+
+version 1.3.0[SwBuildId=489858]
+Initial version to maintain version number.
+

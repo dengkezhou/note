@@ -1,0 +1,21 @@
+config TBH_VENC
+	bool "testbench video encode support"   
+	default n
+	help:
+		enable testbench video encode
+
+
+config TBH_VENC_LOCALCASE
+	bool "testbench video encode localcase support"   
+	depends on TBH_VENC
+
+
+config TBH_VENC_SPEED_TEST
+	bool "testbench video encode localcase speed test"   
+	depends on TBH_VENC
+
+
+config TBH_VENC_JOINT_TEST
+	bool "testbench video encode localcase joint test"   
+	depends on TBH_VENC
+

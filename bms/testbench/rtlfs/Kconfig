@@ -1,0 +1,6 @@
+config TBH_RTLFS
+	bool "testbench rtlfs support"
+	default n
+	help:
+		enable testbench rtlfs
+

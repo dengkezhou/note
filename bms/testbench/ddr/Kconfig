@@ -1,0 +1,6 @@
+config TBH_DDR
+	bool "testbench ddr support"
+	default n
+	help:
+		enable testbench ddr
+

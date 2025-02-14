@@ -1,0 +1,6 @@
+config TBH_PVT
+	bool "testbench pvt support"
+	default n
+	help:
+		enable testbench pvt
+

@@ -1,0 +1,6 @@
+config TBH_SKULL
+	bool "testbench skull support"
+	default n
+	help:
+		enable testbench skull
+

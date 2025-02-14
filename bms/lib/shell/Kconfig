@@ -1,0 +1,6 @@
+config LIB_SHELL
+	bool "shell support"
+	default n
+	help:
+		enable shell
+

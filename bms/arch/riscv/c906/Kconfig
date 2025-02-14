@@ -1,0 +1,6 @@
+config DRV_CORE_C906
+	bool "core c906 support"
+	default n
+	help:
+		enable core c906
+

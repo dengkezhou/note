@@ -1,0 +1,5 @@
+config DRV_RXA
+	bool "rxa driver support"
+	default n
+	help:
+		enable rxa

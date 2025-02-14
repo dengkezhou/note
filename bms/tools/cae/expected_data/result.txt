@@ -1,0 +1,6905 @@
+liu@ubuntu:~/src/bms/tools/cae$ ./generate_demo_data.sh 
+./generate_demo_data.sh: line 1350: [: ==: unary operator expected
+./generate_demo_data.sh: line 1353: [: ==: unary operator expected
+./generate_demo_data.sh: line 1357: [: ==: unary operator expected
+./generate_demo_data.sh: line 1364: [: ==: unary operator expected
+liu@ubuntu:~/src/bms/tools/cae$ ./generate_demo_data.sh all
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-128-ccm plain string:
+c8d275f919e17d7fe69c2a1f58939dfe
+aes-128-ccm key hex:
+ceb009aea4454451feadf0e6b36f4555
+aes-128-ccm aad hex:
+6e80dd7f1badf3a1c9ab25c75f10bde78c23fa0eb8f9aaa53adefbf4cbf78fe1
+aes-128-ccm nonce hex:
+764043c49460b1
+aes-128-ccm cipher hex:
+945afe212844052134b1b4807345c4f2
+
+aes-128-gcm plain string:
+f56e87055bc32d0eeb31b2eacc2bf2a5
+aes-128-gcm key hex:
+eebc1f57487f51921c0465665f8ae6d1
+aes-128-gcm aad hex:
+64d23c3cec334b49bdb370c437fec78d1
+aes-128-gcm iv hex:
+99aa3e68ed8173a0eed06681
+aes-128-gcm cipher hex:
+6e96f25f8aa3580abb53caeab2e516c6
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-192-ccm plain string:
+c8d275f919e17d7fe69c2a1f58939dfe4d403791b5df1310
+aes-192-ccm key hex:
+ceb009aea4454451feadf0e6b36f45555dd04723baa448e8
+aes-192-ccm aad hex:
+6e80dd7f1badf3a1c9ab25c75f10bde78c23fa0eb8f9aaa53adefbf4cbf78fe4
+aes-192-ccm nonce hex:
+764043c49460b7
+aes-192-ccm cipher hex:
+8a0f3d8229e48e7487fd95a28ad392c80b3681d4fbc7bbed
+
+aes-192-gcm plain string:
+f56e87055bc32d0eeb31b2eacc2bf2a5
+aes-192-gcm key hex:
+eebc1f57487f51921c0465665f8ae6d1658bb26de6f8a062
+aes-192-gcm aad hex:
+4d23c3cec334b49bdb370c437fec78d2
+aes-192-gcm iv hex:
+99aa3e68ed8173a0eed06682
+aes-192-gcm cipher hex:
+1fff186aff38ee9fe761c23965694edb
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-256-ccm plain string:
+c8d275f919e17d7fe69c2a1f58939dfe4d403791b5df13101020304050607080
+aes-256-ccm key hex:
+ceb009aea4454451feadf0e6b36f455555dd04723baa448e80102030405060708
+aes-256-ccm aad hex:
+6e80dd7f1badf3a1c9ab25c75f10bde78c23fa0eb8f9aaa53adefbf4cbf78fe3
+aes-256-ccm nonce hex:
+764043c49460b3
+aes-256-ccm cipher hex:
+09df6d727d88c664cbb33c9bf85c07505fd7e61a3c604c825b8af9f1b324c6be
+
+aes-256-gcm plain string:
+f56e87055bc32d0eeb31b2eacc2bf2a5
+aes-256-gcm key hex:
+eebc1f57487f51921c0465665f8ae6d1658bb26de6f8a069a3520293a572078f
+aes-256-gcm aad hex:
+4d23c3cec334b49bdb370c437fec78de
+aes-256-gcm iv hex:
+99aa3e68ed8173a0eed06684
+aes-256-gcm cipher hex:
+f7264413a84c0e7cd536867eb9f21793
+
+md5 plain string:
+12345678901234567890123456789012345678901234567890123456789012345678901234567890
+md5 hashed hex:
+57edf4a22be3c955ac49da2e2107b67a
+
+sha1 plain string:
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+sha1 hashed hex:
+84983e441c3bd26ebaae4aa1f95129e5e54670f1
+
+sha224 plain string:
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+sha224 hashed hex:
+75388b16512776cc5dba5da1fd890150b0c6455cb4f58b1952522525
+
+sha256 plain string:
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+sha256 hashed hex:
+248d6a61d20638b8e5c026930c3e6039a33ce45964ff2167f6ecedd419db06c1
+
+sha384 plain string:
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+sha384 hashed hex:
+3391fdddfc8dc7393707a65b1b4709397cf8b1d162af05abfe8f450de5f36bc6b0455a8520bc4e6f5fe95b1fe3c8452b
+
+sha512 plain string:
+abcdbcdecdefdefgefghfghighijhijkijkljklmklmnlmnomnopnopq
+sha512 hashed hex:
+204a8fc6dda82f0a0ced7beb8e08a41657c16ef468b228a8279be331a703c33596fd15c13b1b07f9aa1d3bea57789ca031ad85c7a71dd70354ec631238ca3445
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+crc32 plain string:
+12345678
+crc32 hashed hex:
+9ae0daaf
+
+ghash plain string:
+4f4f95668c83dfb6401762bb2d01a262d1a24ddd2721d006bbe45f20d3c9f362
+ghash key string:
+25629347589242761d31f826ba4b757b
+ghash hashed hex:
+bd9b3997046731fb96251b91f9c99d7a
+
+aes-128-cmac plain string:
+6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411
+aes-128-cmac key string:
+2b7e151628aed2a6abf7158809cf4f3c
+aes-128-cmac hashed hex:
+070a16b46b4d4144f79bdd9dd04a287c
+
+aes-192-cmac plain string:
+6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411
+aes-192-cmac key string:
+2b7e151628aed2a6abf7158809cf4f3c1122334455667788
+aes-192-cmac hashed hex:
+49fa480c28a7526f6b4c8b55958b6253
+
+aes-256-cmac plain string:
+6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411
+aes-256-cmac key string:
+2b7e151628aed2a6abf7158809cf4f3c11223344556677881122334455667788
+aes-256-cmac hashed hex:
+44180a6c0856f440cde2f6a1b12fa877
+
+aes-128-xcbc-mac-96 plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+8e986f4c0bb8c2a519c887277663262a
+
+aes-192-xcbc-mac-96 plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+24f358a9c7b201c595bf7790aa57ff4a
+
+aes-256-xcbc-mac-96 plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+2b16f25665c1e77ac1b4b9f3fa49e097
+
+aes-128-xcbc-mac-prf plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+8e986f4c0bb8c2a519c887277663262a
+
+aes-192-xcbc-mac-prf plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+24f358a9c7b201c595bf7790aa57ff4a
+
+aes-256-xcbc-mac-prf plain string:
+000102030405060708090a0b0c0d0e0f10111213
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+2b16f25665c1e77ac1b4b9f3fa49e097
+
+aes-128-cbc-mac plain string:
+1234567812345678
+aes-128-cbc-mac key string:
+c0c1c2c3c4c5c6c7c8c9cacbcccdcecf
+aes-128-cbc-mac hashed hex:
+76f1aab32cc518c6
+
+aes-192-cbc-mac plain string:
+1234567812345678
+aes-192-cbc-mac key string:
+2b7e151628aed2a6abf7158809cf4f3c1122334455667788
+aes-192-cbc-mac hashed hex:
+c277174ea1047baf
+
+aes-256-cbc-mac plain string:
+1234567812345678
+aes-256-cbc-mac key string:
+2b7e151628aed2a6abf7158809cf4f3c11223344556677881122334455667788
+aes-256-cbc-mac hashed hex:
+de0e9d3d342ba39d
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5 hashed hex:
+1bddd4e398059f0709907bbc8c3c79f4
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1 hashed hex:
+ca2e204f12e193b38058e9e5fe45a6ff375faacc
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224 hashed hex:
+3919c15f23c70b7d7e6b45ca0356e2655e1f4ce058639f263799a926
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256 hashed hex:
+b1225eae5ed267427b92d9112332c279880f34f5cd5aeb63dbd720b403750574
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384 hashed hex:
+4830276fa1af8067dbdf6e8336c795963f08b1997f4d61f5595d2f21e6ba6b9f2484cf43849d13cc10b1cea85d11ebf9
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512 hashed hex:
+8f54f43a32cb7cdea5ea45d93881f56a33eb6807af68a59b219f2792c9d88f64161f724f4901fbeee952ac5a4719ecc2200ab352d50896bfb7c0db0163d8d874
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+crc32 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+crc32 hashed hex:
+82b6ebae
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+d7f1905786c5d7ee0c36e783e9235944
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+02b4c0e00781dae86b451cf5119aec99
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+0c342d3a64532bdd62a62fe46fe7f4f7
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+d7f1905786c5d7ee0c36e783e9235944
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+02b4c0e00781dae86b451cf5119aec99
+
+des-ecb plain string:
+Single block msg
+des-ecb key hex:
+1122334455667788
+des-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+0c342d3a64532bdd62a62fe46fe7f4f7
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5 hashed hex:
+9cd271cbadd67193abc40b7ad22d9b32
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1 hashed hex:
+cef4983a17d4ee4d15073d85bff1b91bb821a7e4
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224 hashed hex:
+320eb835c4eb42503be6f457fabeeaffabf106ffa037d7bd812ffb00
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256 hashed hex:
+d4ed875bf320f5f6c892cd200589070a3d9399422f56f24cc7a1fac527c47014
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384 hashed hex:
+2c3820c0e2a358142852577e38de15be1efe806fb535ed64ffda464717dcb06d85b693dd4255f93c9d6766a25d89b6a8
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512 hashed hex:
+6953740f81585f23fecfa0823d98fe6a3405dc4b99c478676057ce8b424f353badb9842de6a3f66e3135bd6a340a4457f6462079f5fffcf2be0497f91a728ed7
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+crc32 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+crc32 hashed hex:
+70dab6d3
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+27026ade56dfaf341808a8fa763d857d
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+cad6f2a1b3ed576bea233a092e0c6670
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+a5e7516c7ad460b3810e6de35ecc4178
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+27026ade56dfaf341808a8fa763d857d
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+cad6f2a1b3ed576bea233a092e0c6670
+
+des-cbc plain string:
+Single block msg
+des-cbc key hex:
+1122334455667788
+des-cbc iv hex:
+1122334455667788
+des-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+a5e7516c7ad460b3810e6de35ecc4178
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5 hashed hex:
+1bddd4e398059f0709907bbc8c3c79f4
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1 hashed hex:
+ca2e204f12e193b38058e9e5fe45a6ff375faacc
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224 hashed hex:
+3919c15f23c70b7d7e6b45ca0356e2655e1f4ce058639f263799a926
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256 hashed hex:
+b1225eae5ed267427b92d9112332c279880f34f5cd5aeb63dbd720b403750574
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384 hashed hex:
+4830276fa1af8067dbdf6e8336c795963f08b1997f4d61f5595d2f21e6ba6b9f2484cf43849d13cc10b1cea85d11ebf9
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512 hashed hex:
+8f54f43a32cb7cdea5ea45d93881f56a33eb6807af68a59b219f2792c9d88f64161f724f4901fbeee952ac5a4719ecc2200ab352d50896bfb7c0db0163d8d874
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+crc32 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+crc32 hashed hex:
+82b6ebae
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+d7f1905786c5d7ee0c36e783e9235944
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+02b4c0e00781dae86b451cf5119aec99
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-96 plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+0c342d3a64532bdd62a62fe46fe7f4f7
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+d7f1905786c5d7ee0c36e783e9235944
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+02b4c0e00781dae86b451cf5119aec99
+
+des-ede3-ecb plain string:
+Single block msg
+des-ede3-ecb key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-ecb cipher hex:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-prf plain string:
+5e5d4a9042883467e7dce2a03b1e410951d57f923ee29886
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+0c342d3a64532bdd62a62fe46fe7f4f7
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5 hashed hex:
+9cd271cbadd67193abc40b7ad22d9b32
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1 hashed hex:
+cef4983a17d4ee4d15073d85bff1b91bb821a7e4
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224 hashed hex:
+320eb835c4eb42503be6f457fabeeaffabf106ffa037d7bd812ffb00
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256 hashed hex:
+d4ed875bf320f5f6c892cd200589070a3d9399422f56f24cc7a1fac527c47014
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384 hashed hex:
+2c3820c0e2a358142852577e38de15be1efe806fb535ed64ffda464717dcb06d85b693dd4255f93c9d6766a25d89b6a8
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512 hashed hex:
+6953740f81585f23fecfa0823d98fe6a3405dc4b99c478676057ce8b424f353badb9842de6a3f66e3135bd6a340a4457f6462079f5fffcf2be0497f91a728ed7
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+crc32 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+crc32 hashed hex:
+70dab6d3
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+27026ade56dfaf341808a8fa763d857d
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+cad6f2a1b3ed576bea233a092e0c6670
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-96 plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+a5e7516c7ad460b3810e6de35ecc4178
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+27026ade56dfaf341808a8fa763d857d
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+cad6f2a1b3ed576bea233a092e0c6670
+
+des-ede3-cbc plain string:
+Single block msg
+des-ede3-cbc key hex:
+112233445566778811223344556677881122334455667788
+des-ede3-cbc iv hex:
+1122334455667788
+des-ede3-cbc cipher hex:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-prf plain string:
+f1563b45126df57a94396ffd7de769d55b5dde9d205b77d3
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+a5e7516c7ad460b3810e6de35ecc4178
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+md5 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+md5 hashed hex:
+5b6266ef7e2f02567135bd0098ee7a60
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha1 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha1 hashed hex:
+7daed21269575af7612636a174086a9039d3a373
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha224 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha224 hashed hex:
+212f920f784d69b2d02c4fd03d1307d8d4fd6efb01bf842709d49048
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha256 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha256 hashed hex:
+023cd5e487580e98a09edb7aa782eb00179b29599d90263da7d89997f1d83017
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha384 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha384 hashed hex:
+63c1ee97524dbb87b2848b522a60054f563d8bc87e608e6812f7ada7b9dfc228e047ff3059519e29e77fe9c15ff85045
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha512 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha512 hashed hex:
+1ea1c0565c33d8c19e737e98dd3b23c0cfbde4495d2423c519f8f42b1bd36cab625078326f7fa44103b63aa59f2c22c7f7d9aca2acad68d40f29d9fbfd98e23d
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+crc32 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+crc32 hashed hex:
+32dd82c4
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-128-xcbc-mac-96 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+904f9af000c61123dc45ea04d99c5a5f
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-192-xcbc-mac-96 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+ad4121f0ef6862149fae893a61a89b52
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-256-xcbc-mac-96 plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+6a9e806ead6286764ee2ebe951636937
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-128-xcbc-mac-prf plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+904f9af000c61123dc45ea04d99c5a5f
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-192-xcbc-mac-prf plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+ad4121f0ef6862149fae893a61a89b52
+
+aes-128-ecb plain string:
+Single block msg
+aes-128-ecb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ecb cipher hex:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-256-xcbc-mac-prf plain string:
+3ae00fbd31dfaeed4da6e44fe2c11b4f8b1ccc6f8cd525ffe22d6327d891a063
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+6a9e806ead6286764ee2ebe951636937
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+md5 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+md5 hashed hex:
+43512e297a010edaf709ba4610722261
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha1 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha1 hashed hex:
+5fad85ce1dd0cbe79b10e5f49e82c6db2d2f4e18
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha224 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha224 hashed hex:
+081689f41cde5f500d359fcd9d8717e5ad664fa10e3879fce23a2f5d
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha256 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha256 hashed hex:
+0143221c27ba224917524aa616e595b0051bb1b19efc92cb072c13ad1134856c
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha384 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha384 hashed hex:
+3ade93139f4f48746833eec354ab468fac04743c4b0cd37143ae00fdc2a9eff54a5285c7c3356faa11af1e1558a21dbf
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha512 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha512 hashed hex:
+cf207537f9d0c972c74bb1c8017250a834ad2486b772479ba2671e788154ec114cc4baecafb772fc32a3cb7945977dbb9c54c9286ed887cc4d4ca8f018b40d97
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+crc32 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+crc32 hashed hex:
+b40f894a
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-128-xcbc-mac-96 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+913ca58592b222fc3ee0c8002d5b5828
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-192-xcbc-mac-96 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+2d697c10b7c8c36763583d3a634608da
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-256-xcbc-mac-96 plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+93ada07261386f0bb93c8e1939f326b3
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-128-xcbc-mac-prf plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+913ca58592b222fc3ee0c8002d5b5828
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-192-xcbc-mac-prf plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+2d697c10b7c8c36763583d3a634608da
+
+aes-128-cbc plain string:
+This is a 48-byte message (exactly 3 AES blocks)
+aes-128-cbc key hex:
+6c3ea0477630ce21a2ce334aa746c2cd
+aes-128-cbc iv hex:
+c782dc4c098c66cbd9cd27d825682c81
+aes-128-cbc cipher hex:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-256-xcbc-mac-prf plain string:
+d0a02b3836451753d493665d33f0e8862dea54cdb293abc7506939276772f8d5021c19216bad525c8579695d83ba2684d248b3e0f2388c137102846eb06272ff
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+93ada07261386f0bb93c8e1939f326b3
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 hashed hex:
+73301bcfe87e77847d65692244b49ae3
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 hashed hex:
+20fe846ceb6307d2a6bff028e5b6d40929d4dac3
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 hashed hex:
+0817435ac5e0943479db40bb5e3b540de189d03c386c3c3a868c20a9
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 hashed hex:
+acb13821088c58ea7c772136b1cceec95f561191876dcf65200736e97b86c94c
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 hashed hex:
+315bb7d4c14af5c4528d255aa99e0084ec2bf5e699057e73aa1bdadacb6f58764d7ecf2c4173528276be5390cfef3942
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 hashed hex:
+f52055be462a8be689e58ded22add8d32d7abda07e3f1ad087cfa2fc6497505cd5ab47a8c77eefcaa88fa1d3dd8e39119c0f2cf8541a4096f7851d4c10ae80b2
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 hashed hex:
+20fe5ad6
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-ofb plain string:
+Single block msg
+aes-128-ofb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ofb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 hashed hex:
+73301bcfe87e77847d65692244b49ae3
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 hashed hex:
+20fe846ceb6307d2a6bff028e5b6d40929d4dac3
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 hashed hex:
+0817435ac5e0943479db40bb5e3b540de189d03c386c3c3a868c20a9
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 hashed hex:
+acb13821088c58ea7c772136b1cceec95f561191876dcf65200736e97b86c94c
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 hashed hex:
+315bb7d4c14af5c4528d255aa99e0084ec2bf5e699057e73aa1bdadacb6f58764d7ecf2c4173528276be5390cfef3942
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 hashed hex:
+f52055be462a8be689e58ded22add8d32d7abda07e3f1ad087cfa2fc6497505cd5ab47a8c77eefcaa88fa1d3dd8e39119c0f2cf8541a4096f7851d4c10ae80b2
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 hashed hex:
+20fe5ad6
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-cfb plain string:
+Single block msg
+aes-128-cfb key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-cfb cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5 hashed hex:
+73301bcfe87e77847d65692244b49ae3
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1 hashed hex:
+20fe846ceb6307d2a6bff028e5b6d40929d4dac3
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224 hashed hex:
+0817435ac5e0943479db40bb5e3b540de189d03c386c3c3a868c20a9
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256 hashed hex:
+acb13821088c58ea7c772136b1cceec95f561191876dcf65200736e97b86c94c
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384 hashed hex:
+315bb7d4c14af5c4528d255aa99e0084ec2bf5e699057e73aa1bdadacb6f58764d7ecf2c4173528276be5390cfef3942
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512 hashed hex:
+f52055be462a8be689e58ded22add8d32d7abda07e3f1ad087cfa2fc6497505cd5ab47a8c77eefcaa88fa1d3dd8e39119c0f2cf8541a4096f7851d4c10ae80b2
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+crc32 hashed hex:
+20fe5ad6
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+60299df46f4a1517d55994564e631789
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+9578c9a18e03ed3ddea1aeaafe1b3a16
+
+aes-128-ctr plain string:
+Single block msg
+aes-128-ctr key hex:
+06a9214036b8a15b512e03d534120006
+aes-128-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-128-ctr cipher hex:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf plain string:
+d43130f652c4c81be62fdf5e72e48cbc
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+180a2650db2ea79188f91bd0ee627bd5
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+md5 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+md5 hashed hex:
+0bd9b8299086407a64b1a016cc0dff57
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha1 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha1 hashed hex:
+7f1ef68f2d846cff58bf90e96207fd7feeaa54e9
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha224 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha224 hashed hex:
+0bac146ecc22c3c9c82530b22f2fb4ff4ef515f41f1dd4ea98d04026
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha256 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha256 hashed hex:
+07396450600a87425dc2ee92d3f70db24a48e96e0fb1599fc8e3cf8429f8727d
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha384 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha384 hashed hex:
+71a9fad7d479ffd0aad276819c7c6be42c65bfc44d4f8bcb633be20d2456089ee3526cb220800c2a0ade0ec38146ac18
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha512 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha512 hashed hex:
+4e3ff130a03c105263b1e0483042f5a0fd2e6000a129a0cd69eb0d2caa07e1de64887599e58db49294374fd92edfd6eff32c069583ec2f1d0e4a2be61d93c539
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+crc32 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+crc32 hashed hex:
+cebcbfd2
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-128-xcbc-mac-96 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+5031ed727608ee23d2764ed98f92c031
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-192-xcbc-mac-96 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+36fec1afea609d20cb91da0fb4cc6d7b
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-256-xcbc-mac-96 plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+b17a0771459385823cf35b8d14dddbad
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-128-xcbc-mac-prf plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+5031ed727608ee23d2764ed98f92c031
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-192-xcbc-mac-prf plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+36fec1afea609d20cb91da0fb4cc6d7b
+
+aes-128-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-128-icm key hex:
+2b7e151628aed2a6abf7158809cf4f3cf0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-128-icm nonce hex:
+00000000000000000000000000000000
+aes-128-icm cipher hex:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-256-xcbc-mac-prf plain string:
+e03ead0935c95e80e166b16dd92b4eb4d23513162b02d0f72a43a2fe4a5f97ab
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+b17a0771459385823cf35b8d14dddbad
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+md5 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+md5 hashed hex:
+ace1e5c4dcbe520057f515ed6bdcb983
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha1 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha1 hashed hex:
+33cf56dd9b676113afa6a1e11bcf349a349e0db0
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha224 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha224 hashed hex:
+b79d342b51637c8552ddf6eca36377a24ea9dc8d8622db002ea76e22
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha256 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha256 hashed hex:
+dec39bd903f6a57c2b64a529db0e9216a3c72a1721b75d6a06ade836059aafea
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha384 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha384 hashed hex:
+92111968e9d14f5a2ddc4f1fe7cfe08ede8270729934ecae7a6093dd248e7ce81140ec154878eddf2c720153f00147bb
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha512 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha512 hashed hex:
+94b4470c8a84fc2cd452c98bfd38028e7c85acbe474eec93307ceb6038c678f5c4d546d3281a91a3612c3dfd727af580b769bb5d1078f75602ab262cf659e283
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+crc32 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+crc32 hashed hex:
+931a24f0
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-128-xcbc-mac-96 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+2266910609178f7f948daad72ff27fe9
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-192-xcbc-mac-96 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+321cd72b7ae933b50643caf83062bdeb
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-256-xcbc-mac-96 plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+283e3185e50641c9addc244214346f93
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-128-xcbc-mac-prf plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+2266910609178f7f948daad72ff27fe9
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-192-xcbc-mac-prf plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+321cd72b7ae933b50643caf83062bdeb
+
+aes-192-ecb plain string:
+Single block msg
+aes-192-ecb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ecb cipher hex:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-256-xcbc-mac-prf plain string:
+4c8fe39477feb55d056d1dc97c41697a5fd67d23f4dcde44947eef7afa7808bb
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+283e3185e50641c9addc244214346f93
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+md5 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+md5 hashed hex:
+585faadfa4e16992f9a90167dc71cb78
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha1 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha1 hashed hex:
+260a5e729dc7ef6302f6c97105f9157178abaf78
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha224 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha224 hashed hex:
+d57f04ce401c8ba2dfbe5a29c8a030b73b33e3ff236a4e2e61ae359c
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha256 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha256 hashed hex:
+027ffa7dc1cbd62f971585870884f8097eaf836da4c8292fa03bf084c915155f
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha384 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha384 hashed hex:
+ce3623d8ca78042d79e32c1bed884205ac7ab633bb61262f8a41746c02874bde87630acc7f843a3dc8c2361f0c1b3e6d
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha512 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha512 hashed hex:
+d88d17bd9c56394beae7dddaa8e32a0ebdc1a3fe9cb3acc303d40d30466925f8607e44871c3ded27aa5bf4cb9930182c80a62f8b143048b6eed848c648641025
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+crc32 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+crc32 hashed hex:
+69866e05
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-128-xcbc-mac-96 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+f790b006a4574793212cfa1bc7b17dc8
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-192-xcbc-mac-96 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+071549870ffa96847d03f45ac8dbb108
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-256-xcbc-mac-96 plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+515d440c642e7e49330bcd142802c405
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-128-xcbc-mac-prf plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+f790b006a4574793212cfa1bc7b17dc8
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-192-xcbc-mac-prf plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+071549870ffa96847d03f45ac8dbb108
+
+aes-192-cbc plain string:
+Single block msg
+aes-192-cbc key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cbc cipher hex:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-256-xcbc-mac-prf plain string:
+b47960880a0d711f83e579f5d547b0dfbe8096723079b87bdf52aeead87b2e1a
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+515d440c642e7e49330bcd142802c405
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 hashed hex:
+186c91bd38a8fc75b930f135a8e65cfb
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 hashed hex:
+e9a56771f12e31e324ca40836989eba87c808ab1
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 hashed hex:
+65f43432aff8bf30ee2588161d78d9cf4c4d11171b7d2d5ffea0c977
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 hashed hex:
+83de1f201188942cef4f10e8e97bb2fc526cf90099d5cb8ef1e959318f6fae88
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 hashed hex:
+7f6d29d60052bbe551988fdb06d837d4af957e0d9f5ef027e5de2167dde3f2abb657aaaa5fb5bbfc58e2be0318bd9655
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 hashed hex:
+4a28b83fd7659b30399165e0291d98cf421931c9c347c01ce5efaf31c527bbb360d1c3a8e7f0f8184eba9fc8ea69f12ab3ff487f5c6169e74ebb29eda58a36db
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 hashed hex:
+48e1fca4
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-ofb plain string:
+Single block msg
+aes-192-ofb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ofb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 hashed hex:
+186c91bd38a8fc75b930f135a8e65cfb
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 hashed hex:
+e9a56771f12e31e324ca40836989eba87c808ab1
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 hashed hex:
+65f43432aff8bf30ee2588161d78d9cf4c4d11171b7d2d5ffea0c977
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 hashed hex:
+83de1f201188942cef4f10e8e97bb2fc526cf90099d5cb8ef1e959318f6fae88
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 hashed hex:
+7f6d29d60052bbe551988fdb06d837d4af957e0d9f5ef027e5de2167dde3f2abb657aaaa5fb5bbfc58e2be0318bd9655
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 hashed hex:
+4a28b83fd7659b30399165e0291d98cf421931c9c347c01ce5efaf31c527bbb360d1c3a8e7f0f8184eba9fc8ea69f12ab3ff487f5c6169e74ebb29eda58a36db
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 hashed hex:
+48e1fca4
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-cfb plain string:
+Single block msg
+aes-192-cfb key hex:
+112233445566778811223344556677881122334455667788
+aes-192-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-cfb cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5 hashed hex:
+186c91bd38a8fc75b930f135a8e65cfb
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1 hashed hex:
+e9a56771f12e31e324ca40836989eba87c808ab1
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224 hashed hex:
+65f43432aff8bf30ee2588161d78d9cf4c4d11171b7d2d5ffea0c977
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256 hashed hex:
+83de1f201188942cef4f10e8e97bb2fc526cf90099d5cb8ef1e959318f6fae88
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384 hashed hex:
+7f6d29d60052bbe551988fdb06d837d4af957e0d9f5ef027e5de2167dde3f2abb657aaaa5fb5bbfc58e2be0318bd9655
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512 hashed hex:
+4a28b83fd7659b30399165e0291d98cf421931c9c347c01ce5efaf31c527bbb360d1c3a8e7f0f8184eba9fc8ea69f12ab3ff487f5c6169e74ebb29eda58a36db
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+crc32 hashed hex:
+48e1fca4
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+038a69bbcb076d2e1f3e943b8f827af8
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+507b606cfb74a1515503341950bd09fb
+
+aes-192-ctr plain string:
+Single block msg
+aes-192-ctr key hex:
+112233445566778811223344556677881122334455667788
+aes-192-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-192-ctr cipher hex:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf plain string:
+e4b5cda5f0d68de9d81441c95be9e09a
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+fe715481f3389fe54cfae7dd8baf3507
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+md5 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+md5 hashed hex:
+04dcb2213e421054611b4be4b0136757
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha1 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha1 hashed hex:
+1c9f1a2424d8d2665a671b3d1224baed627205d0
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha224 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha224 hashed hex:
+7ad47a4da3cddf1ad7c8ba60e001673f941db4176388dc0f418da555
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha256 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha256 hashed hex:
+f7b293a8433ac708be605c72d94f6c91f8039a760740d47242f6856dd62a5e85
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha384 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha384 hashed hex:
+b7b08e15937bbc3b7080fd80d00c2add3c2aa0cc06fa5f2d5fba91e4406404e240fe0271fe7bc0ccd1e439b94609d10b
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha512 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha512 hashed hex:
+b3640302353a9818d8744683c8f6f6ba64d23c08c1cc5ccb6a714389f9a88f082f6427f72ea893bfe88e1deac49691d3a7e07f5e1d0d2075720bad97d26957a3
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+crc32 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+crc32 hashed hex:
+b8580f29
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-128-xcbc-mac-96 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+f4d81de0687119b31e12419308b5e156
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-192-xcbc-mac-96 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+30a2604470f70803efae084c8423d669
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-256-xcbc-mac-96 plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+47d3736fcbe068d5569a61b4e0853a46
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-128-xcbc-mac-prf plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+f4d81de0687119b31e12419308b5e156
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-192-xcbc-mac-prf plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+30a2604470f70803efae084c8423d669
+
+aes-192-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-192-icm key hex:
+eab234764e517b2d3d160d587d8c86219740f65f99b6bcf7f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-192-icm nonce hex:
+00000000000000000000000000000000
+aes-192-icm cipher hex:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-256-xcbc-mac-prf plain string:
+35096cba4610028dc1b57503804ce37c5de986291dcce161d5165ec4568f5c9a
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+47d3736fcbe068d5569a61b4e0853a46
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+md5 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+md5 hashed hex:
+bdcf46dbb3e0b07f8a00348d670a2fd8
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha1 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha1 hashed hex:
+ce2cbfa0003312a1fd46bab2109382ae8e163452
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha224 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha224 hashed hex:
+b436f3d20557a3804088f67e716e921170ebd0c5204faab755cb1d18
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha256 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha256 hashed hex:
+b7077b26cba4f9d4205f0f7320b4f2ba97ac77ae7b821db36f84abce32deafdf
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha384 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha384 hashed hex:
+2f1e05e619649bebd4ac96e1f5d664e0cd515c61dae8076753d5a2f52d304feb50109f9aa3674d53467fbcce7072260e
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha512 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha512 hashed hex:
+bc713b2a32e9d05dae21b40ba7c5ee28a7f591519944a672493137f1d0e6196aad157b2a7e26ef4552a33cf1ba89184ece14668da8c53fa2877e1f11882a0710
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+crc32 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+crc32 hashed hex:
+9ee29143
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-128-xcbc-mac-96 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+08364e5d1560d75a26298d7f1f4435bd
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-192-xcbc-mac-96 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+b2921973f34fc6a3d00a37453530ff9e
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-256-xcbc-mac-96 plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+a15f7781279f47b086ae5df6fe69042c
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-128-xcbc-mac-prf plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+08364e5d1560d75a26298d7f1f4435bd
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-192-xcbc-mac-prf plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+b2921973f34fc6a3d00a37453530ff9e
+
+aes-256-ecb plain string:
+Single block msg
+aes-256-ecb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ecb cipher hex:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-256-xcbc-mac-prf plain string:
+37c4f7bffd736584e950455b72bc04709dc39dbf657ed9fc41e161c951c076ae
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+a15f7781279f47b086ae5df6fe69042c
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+md5 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+md5 hashed hex:
+35cf4ec2b382a379da34136eabeee04c
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha1 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha1 hashed hex:
+e68d7cda2c45935135b7d8e3b06668c680d1c24c
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha224 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha224 hashed hex:
+a87f55e5e16673ef44d1a59541440d05314b91a0769b91454a3fa490
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha256 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha256 hashed hex:
+6710c3886e08ecc84c2285b7e92f8cbd1490a9b3f6f5b23746ff951ac243be60
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha384 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha384 hashed hex:
+01cbc1e74cbf5ced587964389de814dd860effe27b91e9226c03109492ace47de4e0c86d5d1df33a48a01443ab4ba929
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha512 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha512 hashed hex:
+1262dfc696dadb8111450fa28806dc50c5f5a368c263b8f8b01d729c56f6e124a4aea4dccc54e78d148ad9a0ffb83e16ac01ca41839426f18864444058d0b67e
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+crc32 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+crc32 hashed hex:
+562d5786
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-128-xcbc-mac-96 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+7c055eb7097b08b837d5322d07e8d0ba
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-192-xcbc-mac-96 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+50fb158df26731b643989b4514bbb03f
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-256-xcbc-mac-96 plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+3eb8843799235546d7310839658c296b
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-128-xcbc-mac-prf plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+7c055eb7097b08b837d5322d07e8d0ba
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-192-xcbc-mac-prf plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+50fb158df26731b643989b4514bbb03f
+
+aes-256-cbc plain string:
+Single block msg
+aes-256-cbc key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cbc iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cbc cipher hex:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-256-xcbc-mac-prf plain string:
+7368de8205b8eee1afab6031c409b3d8b46e1b68f50cd91e029d38cda2536d39
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+3eb8843799235546d7310839658c296b
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5 plain string:
+e95de147d8336277079912191ab9dd24
+
+md5 hashed hex:
+aac1326dc5d36a1aea1819b18788d774
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha1 hashed hex:
+317d7ea820c6f0af82396fafc9c06cf107107605
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha224 hashed hex:
+ba1372c7ecff0460efad16f2f27f8a75fa59c11bf8f40d223fc7b602
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha256 hashed hex:
+b76014d32150b37bb59400e9ff088a2a3061a2d4a05568770beb6dd23f050ff4
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha384 hashed hex:
+21ccefc9623a721af2389781577ec2100057f0ff969127ce3ed2123756f459eec2256d9a5642c2c80e3c7ca8ef9276f3
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha512 hashed hex:
+cbcf2dd2574ab31df668d55b8bcf538a71e6db54a133497000e243fed1a0b9c10bd7db39343a8e3c7ebd017e281042a6cc83f812230c49c448e8858de3085882
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+crc32 plain string:
+e95de147d8336277079912191ab9dd24
+
+crc32 hashed hex:
+5b1f8c12
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-ofb plain string:
+Single block msg
+aes-256-ofb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ofb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ofb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5 plain string:
+e95de147d8336277079912191ab9dd24
+
+md5 hashed hex:
+aac1326dc5d36a1aea1819b18788d774
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha1 hashed hex:
+317d7ea820c6f0af82396fafc9c06cf107107605
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha224 hashed hex:
+ba1372c7ecff0460efad16f2f27f8a75fa59c11bf8f40d223fc7b602
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha256 hashed hex:
+b76014d32150b37bb59400e9ff088a2a3061a2d4a05568770beb6dd23f050ff4
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha384 hashed hex:
+21ccefc9623a721af2389781577ec2100057f0ff969127ce3ed2123756f459eec2256d9a5642c2c80e3c7ca8ef9276f3
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha512 hashed hex:
+cbcf2dd2574ab31df668d55b8bcf538a71e6db54a133497000e243fed1a0b9c10bd7db39343a8e3c7ebd017e281042a6cc83f812230c49c448e8858de3085882
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+crc32 plain string:
+e95de147d8336277079912191ab9dd24
+
+crc32 hashed hex:
+5b1f8c12
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-cfb plain string:
+Single block msg
+aes-256-cfb key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-cfb iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-cfb cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5 plain string:
+e95de147d8336277079912191ab9dd24
+
+md5 hashed hex:
+aac1326dc5d36a1aea1819b18788d774
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha1 hashed hex:
+317d7ea820c6f0af82396fafc9c06cf107107605
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha224 hashed hex:
+ba1372c7ecff0460efad16f2f27f8a75fa59c11bf8f40d223fc7b602
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha256 hashed hex:
+b76014d32150b37bb59400e9ff088a2a3061a2d4a05568770beb6dd23f050ff4
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha384 hashed hex:
+21ccefc9623a721af2389781577ec2100057f0ff969127ce3ed2123756f459eec2256d9a5642c2c80e3c7ca8ef9276f3
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512 plain string:
+e95de147d8336277079912191ab9dd24
+
+sha512 hashed hex:
+cbcf2dd2574ab31df668d55b8bcf538a71e6db54a133497000e243fed1a0b9c10bd7db39343a8e3c7ebd017e281042a6cc83f812230c49c448e8858de3085882
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+crc32 plain string:
+e95de147d8336277079912191ab9dd24
+
+crc32 hashed hex:
+5b1f8c12
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+8a6671295631b6b12149ed181250fa16
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+4d9053fd397fc2f29dff7de0161dff7a
+
+aes-256-ctr plain string:
+Single block msg
+aes-256-ctr key hex:
+1122334455667788112233445566778811223344556677888877665544332211
+aes-256-ctr iv hex:
+3dafba429d9eb430b422da802c9fac41
+aes-256-ctr cipher hex:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf plain string:
+e95de147d8336277079912191ab9dd24
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+22c603e69421f80347cafc80c13f81ca
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+md5 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+md5 hashed hex:
+bb98c9368509e85d5e37935dc0d4c265
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha1 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha1 hashed hex:
+05ca27b1b1e96d239f619122078e34098e2742d0
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha224 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha224 hashed hex:
+d9e1c4adb1c1ac232947174940c14add363a44207afc6645d0cb1ecf
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha256 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha256 hashed hex:
+ff6ead50a9be79470a2f1b75f3a4ea79ada96db3e58b35772fb320fb1f38cacd
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha384 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha384 hashed hex:
+6423848574642f495e2373ee48835f7acc4d5f465bf11ad55a7818ffa54862c239bc426e240cf49b1955a6e73ceb252b
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha512 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha512 hashed hex:
+3f2001a9dfaadf0f7b722e29ee0eeaf2693ae0ef15d256081736c6c3a17a4c924293d255d315fb35edb12077716922794e7ede3d7cc3fb95b332e62c94d5b51c
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+md5-hmac plain string:
+what do ya want for nothing?
+md5-hmac key string:
+Jefe
+md5-hmac hashed hex:
+750c783e6ab0b503eaa86e310a5db738
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha1-hmac plain string:
+what do ya want for nothing?
+sha1-hmac key string:
+Jefe
+sha1-hmac hashed hex:
+effcdf6ae5eb2fa2d27416d5f184df9c259a7c79
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha224-hmac plain string:
+what do ya want for nothing?
+sha224-hmac key string:
+Jefe
+sha224-hmac hashed hex:
+a30e01098bc6dbbf45690f3a7e9e6d0f8bbea2a39e6148008fd05e44
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha256-hmac plain string:
+what do ya want for nothing?
+sha256-hmac key string:
+Jefe
+sha256-hmac hashed hex:
+5bdcc146bf60754e6a042426089575c75a003f089d2739839dec58b964ec3843
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha384-hmac plain string:
+what do ya want for nothing?
+sha384-hmac key string:
+Jefe
+sha384-hmac hashed hex:
+af45d2e376484031617f78d2b58a6b1b9c7ef464f5a01b47e42ec3736322445e8e2240ca5e69e2c78b3239ecfab21649
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+sha512-hmac plain string:
+what do ya want for nothing?
+sha512-hmac key string:
+Jefe
+sha512-hmac hashed hex:
+164b7a7bfcf819e2e395fbe73b56e0a387bd64222e831fd610270cd7ea2505549758bf75c05a994a6d034f65f8f0e6fdcaeab1a34d4a6b4b636e070a38bce737
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+crc32 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+crc32 hashed hex:
+83f6cf04
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-128-xcbc-mac-96 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-128-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-96 hashed hex:
+62783548f5d1ba699a44d3ee05b560bd
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-192-xcbc-mac-96 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-192-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-96 hashed hex:
+3180fb0b8f8c0a7e5c7c56f23e4ac7b7
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-256-xcbc-mac-96 plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-256-xcbc-mac-96 key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-96 hashed hex:
+2cd04da4bbed9e00fff7dfe3ea380c56
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-128-xcbc-mac-prf plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-128-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f
+aes-128-xcbc-mac-prf hashed hex:
+62783548f5d1ba699a44d3ee05b560bd
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-192-xcbc-mac-prf plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-192-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f0001020304050607
+aes-192-xcbc-mac-prf hashed hex:
+3180fb0b8f8c0a7e5c7c56f23e4ac7b7
+
+aes-256-icm plain string:
+0000000000000000000000000000000000000000000000000000000000000000
+aes-256-icm key hex:
+57f82fe3613fd170a85ec93c40b1f0922ec4cb0dc025b58272147cc438944a98f0f1f2f3f4f5f6f7f8f9fafbfcfd
+aes-256-icm nonce hex:
+00000000000000000000000000000000
+aes-256-icm cipher hex:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-256-xcbc-mac-prf plain string:
+92bdd28a93c3f52511c677d08b5515a49da71b2378a854f67050756ded165bac
+
+aes-256-xcbc-mac-prf key string:
+000102030405060708090a0b0c0d0e0f00010203040506070001020304050607
+aes-256-xcbc-mac-prf hashed hex:
+2cd04da4bbed9e00fff7dfe3ea380c56
+
+liu@ubuntu:~/src/bms/tools/cae$ 

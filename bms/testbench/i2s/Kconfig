@@ -1,0 +1,5 @@
+config TBH_I2S
+	bool "testbench i2s support"
+	default n
+	help:
+		enable testbench i2s

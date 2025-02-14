@@ -1,0 +1,6 @@
+config DRV_PVT
+	bool "pvt driver support"
+	default n
+	help:
+		enable pvt
+

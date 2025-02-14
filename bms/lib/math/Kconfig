@@ -1,0 +1,6 @@
+config LIB_MATH
+	bool "math support"
+	default n
+	help:
+		enable math
+

@@ -1,0 +1,5 @@
+config DRV_SPI
+	bool "spi driver support"
+	default n
+	help:
+		enable spi

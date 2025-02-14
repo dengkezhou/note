@@ -1,0 +1,8 @@
+config TBH_FATFS
+	bool "testbench fatfs support"
+	default n
+	select DRV_PUFCC
+	select LIB_FATFS
+	help:
+		enable testbench fatfs
+

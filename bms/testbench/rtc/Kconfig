@@ -1,0 +1,6 @@
+config TBH_RTC
+	bool "testbench rtc support"
+	default n
+	help:
+		enable testbench rtc
+

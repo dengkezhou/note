@@ -1,0 +1,5 @@
+config DRV_LPDDR4
+	bool "lpddr4 driver support"
+	default n
+	help:
+	  enable lpddr4

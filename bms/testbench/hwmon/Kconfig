@@ -1,0 +1,5 @@
+config TBH_HWMON
+	bool "testbench hwmon support"
+	default n
+	help:
+		enable testbench hwmon

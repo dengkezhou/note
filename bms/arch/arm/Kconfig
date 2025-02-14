@@ -1,0 +1,3 @@
+if CONFIG_Q3
+source "arch/arm/q3/Kconfig"
+endif

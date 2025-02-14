@@ -1,0 +1,6 @@
+config DRV_DMA
+	bool "dma driver support"
+	default n
+	help:
+		enable dma driver
+

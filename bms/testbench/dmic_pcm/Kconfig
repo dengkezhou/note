@@ -1,0 +1,5 @@
+config TBH_DMIC_PCM
+	bool "testbench dmic_pcm support"
+	default n
+	help:
+		enable testbench dmic_pcm

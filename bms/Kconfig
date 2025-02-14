@@ -1,0 +1,290 @@
+mainmenu "BareMetal System Configuration"
+
+menu "Target options"
+
+choice
+	prompt "Target Architecture"
+	default RISCV
+
+config RISCV
+	bool "risc-v"
+	help
+	  risc-v architecture
+
+config ARM
+	bool "arm"
+	help
+	  arm architecture
+endchoice
+	
+if RISCV
+choice
+	prompt "Machine"
+	default C920
+
+config C920
+	bool "c920"
+	help
+		T-head c920 core
+
+config C906
+	bool "c906"
+	help
+		T-head c906 core
+	
+config E906
+	bool "e906"
+	help
+		T-head e906 core
+
+config E902
+	bool "e902"
+	help
+		T-head e902 core
+
+endchoice
+
+config RISCV_SMODE
+	bool "run in supervisor mode"
+	default n
+	help
+		run in supervisor mode
+
+endif
+
+if ARM
+choice
+	prompt "Machine"
+	default Q3
+
+config Q3
+	bool "q3"
+	help
+		arm a9 core
+
+endchoice
+endif
+
+config MACHINE
+	string
+	default "c920" if C920
+	default "c906" if C906
+	default "e906" if E906
+	default "e902" if E902
+	default "q3" if Q3
+
+choice
+	prompt "Target Mode"
+	default COMPILE_SIM
+
+config COMPILE_RTL
+	bool "rtl"
+	help
+		RTL Test
+
+config COMPILE_FPGA
+	bool "fpga"
+	help
+		FPGA Test
+
+config COMPILE_ASIC
+	bool "asic"
+	help
+		ASIC Test
+
+config COMPILE_SIM
+	bool "cskysim"
+	help
+		Cskysim Test
+
+config COMPILE_EVB
+	bool "evb"
+	help
+		EVB Test
+
+endchoice
+
+config NR_CPUS
+	int "CPU Max Cores"
+	range 0 32
+	default 4
+	help
+		cpu numbers
+
+config COMPILE_ROM
+	bool "compile as rom.bin"
+	default n
+	help
+		compile rom.bin
+
+if COMPILE_ROM
+config BOOT_OTHER_CORE
+	bool "boot other core to run soc.bin"
+	default n
+	help
+		boot other core to run soc.bin
+config DDR_INTERLEAVE
+	bool "ddr interleave"
+	default n
+	help
+		ddr interleave
+config BOOTM
+	depends on COMPILE_ASIC
+	hex "set bootm"
+	default 0x1
+	help
+		Set boom for asic to init ddr
+		  - BOOTM_LPDDR4_DDR1_NO_INTLEAVE = 0xd,
+		  - BOOTM_LPDDR4_NO_INTLEAVE = 0xf,
+		  - BOOTM_LPDDR4_WITH_INTLEAVE = 0xe,
+		  - BOOTM_DDR_NO_INTLEAVE = 0x1,
+		  - BOOTM_DDR_WITH_INTLEAVE = 0x2,
+		  - BOOTM_DDR1_NO_INTLEAVE = 0x3
+config TB
+	bool "rom.bin would run testbench"
+	default n
+	help
+	  rom.bin would run testbench
+endif
+
+choice
+	prompt "ASIC Test Platform"
+	default ASIC_TEST_ON_EVB
+	depends on COMPILE_ASIC
+
+config ASIC_TEST_ON_FPGA
+	bool "ASIC Test On FPGA"
+	help
+		ASIC Test On FPGA
+config ASIC_TEST_ON_EVB
+	bool "ASIC Test On EVB"
+	help
+		ASIC Test On EVB
+endchoice
+
+choice
+	prompt "memory for running testbench"
+	default TB_RUN_IRAM
+
+config TB_RUN_DDR
+	bool "ddr"
+	help
+		Testbench run in ddr
+
+config TB_RUN_DDR1
+	bool "ddr1"
+	help
+		Testbench run in ddr1
+
+config TB_RUN_IRAM
+	bool "iram"
+	help
+		Testbench run in iram
+
+endchoice
+
+config CACHE
+	bool "support cache"
+	depends on !TB_RUN_IRAM || !C920
+	help
+		support cache
+
+config DCACHE
+	bool "support d-cache"
+	depends on CACHE
+	help
+		support d-cache
+config ICACHE
+	bool "support i-cache"
+	depends on CACHE
+	help
+		support i-cache
+
+config CACHE_LITE
+	bool "Lite cache(Do not support invalid, clean and flush)"
+	depends on CACHE && (ICACHE || DCACHE)
+	help
+		lite cache(support only enable & disable)
+
+config L2CACHE
+	depends on CACHE && !E906
+	bool "support L2 cache"
+	help
+		support L2 cache
+
+config MMU
+	bool "support mmu"
+	depends on !TB_RUN_IRAM || !C920
+	help
+	 support mmu
+
+config SYSMAP
+	bool "support reconfig sysmap"
+	help
+		support reconfig sysmap
+
+choice
+	prompt "Target System"
+	default 64BIT
+
+config 64BIT
+	bool "64bit"
+	help
+		64bit system
+
+config 32BIT
+	bool "32bit"
+	help
+		32bit system
+
+endchoice
+config DDR_DATA_UNCACHEABLE
+	bool "only cacheable text segment"
+	help
+		support data uncacheable
+
+config CPU_CORES_TEST
+	bool "cpu cores test"
+	help
+		support cpu cores test
+endmenu
+
+menuconfig COMPILE_DRV
+  bool "BareMetal System Driver"
+  default y
+	help
+		BareMetal System Driver
+
+if COMPILE_DRV
+source "drivers/Kconfig"
+endif
+
+menuconfig COMPILE_TBH
+  bool "BareMetal System TestBench"
+  default y
+	help
+		BareMetal System TestBench
+
+if COMPILE_TBH
+source "testbench/Kconfig"
+endif
+
+menuconfig COMPILE_LIB
+  bool "BareMetal System Lib"
+	default y
+	help
+		BareMetal System Libs
+
+if COMPILE_LIB
+source "lib/Kconfig"
+endif
+
+menuconfig COMPILE_ARCH
+	bool "BareMetal System Arch"
+	default y
+	help
+		BareMetal System Arch
+
+if COMPILE_ARCH
+source "arch/Kconfig"
+endif

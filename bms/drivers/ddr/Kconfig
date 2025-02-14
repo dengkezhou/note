@@ -1,0 +1,5 @@
+config DRV_DDR
+	bool "ddr driver support"
+	default n
+	help:
+	  enable ddr

@@ -1,0 +1,5 @@
+config DRV_XSPI
+	bool "xspi driver support"
+	default n
+	help:
+		enable xspi

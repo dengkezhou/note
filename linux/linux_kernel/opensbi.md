@@ -310,3 +310,111 @@ struct sbi_console_device {
 };
 ```
 
+### 4.2 platform 驱动
+
+定义一个 platform driver
+
+```c
+static int icg_pmic_final_init(bool cold_boot, const struct fdt_match *match)
+{
+	if (cold_boot) {
+
+		sbi_printf("-------icg pmic\n");
+
+		/* TODO: probe pmic */
+		sbi_system_reset_add_device(&pm_reset);	
+	}
+	return 0;
+}
+
+static const struct fdt_match icg_pmic_match[] = {
+	{ .compatible = "thead,icg-evb" },
+	{},
+};
+
+
+const struct platform_override icg_pmic = {
+	.match_table = icg_pmic_match,
+	.final_init = icg_pmic_final_init,
+};
+```
+
+在 objects.mk 中声明该drv
+
+```makefile
+carray-platform_override_modules-$(CONFIG_ICG_PMIC_DEV) += icg_pmic
+platform-objs-$(CONFIG_ICG_PMIC_DEV) += icg/icg_pmic.o
+```
+
+在 opensbi 编译过程中，所有声明的驱动会查询，并被放入一个数组中, 并在匹配root节点( 只匹配root 节点的属性，且只挂载一个 )。
+
+```c
+/* platform/generic/platform.c */
+
+/* List of platform override modules generated at compile time */
+extern const struct platform_override *platform_override_modules[];
+extern unsigned long platform_override_modules_size;
+
+
+static void fw_platform_lookup_special(void *fdt, int root_offset)
+{
+	const struct platform_override *plat;
+	const struct fdt_match *match;
+	int pos;
+
+	for (pos = 0; pos < platform_override_modules_size; pos++) {
+		plat = platform_override_modules[pos];
+		if (!plat->match_table)
+			continue;
+
+		match = fdt_match_node(fdt, root_offset, plat->match_table);
+		if (!match)
+			continue;
+
+		generic_plat = plat;
+		generic_plat_match = match;
+		break;
+	}
+}
+```
+
+### 4.3 其他类型驱动
+
+和 platform driver 的初始化方式一样，如 reste driver，区别在于compatible匹配 可以匹配设备树的所有节点。 
+
+```c
+/* List of FDT reset drivers generated at compile time */
+extern struct fdt_reset *fdt_reset_drivers[];
+extern unsigned long fdt_reset_drivers_size;
+
+int fdt_reset_driver_init(void *fdt, struct fdt_reset *drv)
+{
+	int noff, rc = SBI_ENODEV;
+	const struct fdt_match *match;
+
+	noff = fdt_find_match(fdt, -1, drv->match_table, &match);
+	if (noff < 0)
+		return SBI_ENODEV;
+
+	if (drv->init) {
+		rc = drv->init(fdt, noff, match);
+		if (rc && rc != SBI_ENODEV) {
+			sbi_printf("%s: %s init failed, %d\n",
+				   __func__, match->compatible, rc);
+		}
+	}
+
+	return rc;
+}
+
+void fdt_reset_init(void)
+{
+	int pos;
+	void *fdt = fdt_get_address();
+
+	for (pos = 0; pos < fdt_reset_drivers_size; pos++)
+		fdt_reset_driver_init(fdt, fdt_reset_drivers[pos]);
+}
+```
+
+特别的，若实现了 platform driver， 可以直接在 platform driver init 中调用 fdt_reset_driver_init 去初始化一个reset 驱动。

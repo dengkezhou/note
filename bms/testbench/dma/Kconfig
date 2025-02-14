@@ -1,0 +1,6 @@
+config TBH_DMA
+	bool "testbench dma support"
+	default n
+	help:
+		enable testbench dma
+

@@ -1,0 +1,6 @@
+config DRV_ETH
+	bool "eth driver support"
+	default n
+	help:
+		enable eth
+

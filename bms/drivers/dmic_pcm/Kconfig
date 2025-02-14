@@ -1,0 +1,7 @@
+config DRV_DMIC_PCM
+	bool "dmic_pcm driver support"
+	default n
+	select DRV_DMA
+	select TBH_DMA
+	help:
+		enable dmic_pcm driver

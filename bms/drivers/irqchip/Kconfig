@@ -1,0 +1,23 @@
+config DRV_IRQCHIP
+	bool "irqchip driver support"
+	default n
+	help:
+		enable irqchip
+
+if DRV_IRQCHIP
+choice
+		prompt "Irq Controller"
+		default PLIC
+
+config PLIC
+		bool "plic controller"
+		help
+			plic irq controller
+
+config CLIC
+		bool "clic controller"
+		help
+			clic irq controller
+
+endchoice
+endif

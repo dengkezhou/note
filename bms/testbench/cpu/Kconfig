@@ -1,0 +1,17 @@
+config TBH_CPU
+	bool
+
+config TBH_E906
+	bool "testbench e906 support"
+	default n
+	select TBH_CPU
+	help:
+		enable testbench e906
+
+config TBH_C920
+	bool "testbench c920 support"
+	default n
+	select TBH_CPU
+	help:
+		enable testbench c920
+

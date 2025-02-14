@@ -1,0 +1,5 @@
+config DRV_I2C
+	bool "i2c driver support"
+	default n
+	help:
+		enable i2c driver

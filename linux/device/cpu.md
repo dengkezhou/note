@@ -1,4 +1,4 @@
-## 一、riscv架构下多核开关
+## 一、riscv架构下多核启动
 
 参考文档：https://tinylab.org/opensbi-firmware-and-sbi-hsm/
 
@@ -79,12 +79,28 @@ static int sbi_ecall_hsm_handler(unsigned long extid, unsigned long funcid,
 ```shell
 # 查看cpu info， processor 表示打开的cpu id
 cat /proc/cpuinfo
+
 # 关闭/打开 cpu core， 其中 X 表示 cpu id
 echo 0 > /sys/devices/system/cpu/cpuX/online
 echo 1 > /sys/devices/system/cpu/cpuX/online
+
+# 绑定进程到cpu --- taskset
+# 查看绑定情况
+taskset -p pid
+# 启动程序并绑定
+taskset -c core1,core2 func &
+# 启动程序后绑定
+taskset -cp core1,core2 pid
+taskset -cp core1,core2-core5 pid
+taskset -p core_mask pid
+
+# 绑定中断到cpu
+echo core_mask > /proc/irq/irqn/smp_affinity  
 ```
 
 ### 1.3 opensbi hsm 控制实现
+
+
 
 ![sbi_hsm_hart_start](assets/sbi_hsm_hart_start.png)
 
@@ -120,18 +136,9 @@ struct sbi_hsm_device {
 };
 ```
 
-```
-cpu 实际断电的位置，
-ddr 自刷新的时机
-
-多核启动时的入口地址，一些csr寄存器是否配置了
-确认spin_lock中停止的位置；
-对比c910 中hsm驱动怎么做。
-
-setup_features 
-```
-
 ## 二、多核启动流程分析
+
+### 2.1 start second cpu
 
 内核在初始化阶段会为每个cpu创建一个idle线程，作为cpu启动时的起始地址。
 
@@ -238,6 +245,192 @@ const struct cpu_operations cpu_ops_sbi = {
 	.cpu_is_stopped	= sbi_cpu_is_stopped,
 #endif
 };
+
+/* linux：arch/riscv/kernel/cpu_ops_sbi.c */
+static int sbi_cpu_start(unsigned int cpuid, struct task_struct *tidle)
+{
+    unsigned long boot_addr = __pa_symbol(secondary_start_sbi);
+    unsigned long hartid = cpuid_to_hartid_map(cpuid);
+    unsigned long hsm_data;
+    struct sbi_hart_boot_data *bdata = &per_cpu(boot_data, cpuid);
+ 
+    /* Make sure tidle is updated */
+    smp_mb();
+    bdata->task_ptr = (ulong)tidle;
+    bdata->stack_ptr = (ulong)task_stack_page(tidle) + THREAD_SIZE;
+    /* Make sure boot data is updated */
+    smp_mb();
+    hsm_data = __pa(bdata);
+    return sbi_hsm_hart_start(hartid, boot_addr, hsm_data);
+}
+ 
+static int sbi_hsm_hart_start(unsigned long hartid, unsigned long saddr,
+                  unsigned long priv)
+{
+    struct sbiret ret;
+    ret = sbi_ecall(SBI_EXT_HSM, SBI_EXT_HSM_HART_START,
+            hartid, saddr, priv, 0, 0, 0);
+}
+```
+
+opensbi 注册了 sbi_ecall_hsm_handler 处理 SBI_EXT_HSM 调用，根据 func_id处理不同的功能
+
+```c
+/* opensbi：lib/sbi/sbi_ecall_hsm.c */
+static int sbi_ecall_hsm_handler(unsigned long extid, unsigned long funcid,
+                 const struct sbi_trap_regs *regs,
+                 unsigned long *out_val,
+                 struct sbi_trap_info *out_trap)
+{
+    switch (funcid) {
+    case SBI_EXT_HSM_HART_START:
+        ret = sbi_hsm_hart_start(scratch, sbi_domain_thishart_ptr(),
+                     regs->a0, regs->a1, smode, regs->a2);
+    }
+}
+```
+
+在 sbi_hsm_hart_start 中设置了opensbi 跳转内核时的地址和参数，
+
+其中 next_addr 是 cpu0 和 second cpu 从 opensbi 跳转到内核的地址，即 kenel 的 secondary_start_sbi;
+
+scratch->warmboot_addr 是 cpu0 启动 second cpu 的初始地址，即 opensbi 的 _start_warm;
+
+```c
+/* opensbi：lib/sbi/sbi_hsm.c */
+int sbi_hsm_hart_start(struct sbi_scratch *scratch,
+               const struct sbi_domain *dom,
+               u32 hartid, ulong saddr, ulong smode, ulong arg1)
+{
+    rscratch = sbi_hartid_to_scratch(hartid);
+    if (!rscratch)
+        return SBI_EINVAL;
+     
+    rscratch->next_arg1 = arg1;
+    rscratch->next_addr = saddr;
+    rscratch->next_mode = smode;
+ 
+    rc = hsm_device_hart_start(hartid, scratch->warmboot_addr);
+}
+ 
+static int hsm_device_hart_start(u32 hartid, ulong saddr)
+{
+    if (hsm_dev && hsm_dev->hart_start)
+        return hsm_dev->hart_start(hartid, saddr);
+    return SBI_ENOTSUPP;
+}
+```
+
+hsm_device 是自定义的 hsm 驱动，通过特定的硬件接口来管理cpu 状态，实现cpu core的上下电
+
+```c
+static int icg_hart_start(u32 hartid, ulong saddr)
+{
+    struct icg_hsm_data *p_data = &icg_hsm_data;
+    itcs_core_enable(p_data->addr[harid], core_id, saddr);
+    return 0;
+}
+```
+
+唤醒 core1 之后， cpu0 返回 kernel（next_addr）执行，   cpu1 从 scratch→warmboot_addr开始运行。
+
+```c
+/* opensbi: firmware/fw_base.S */
+_start_warm:
+    /* Reset all registers for non-boot HARTs */
+    li  ra, 0
+    call    _reset_regs
+ 
+    /* Disable all interrupts */
+    csrw    CSR_MIE, zero
+....
+    /* Find the scratch space based on HART index */
+    lla tp, _fw_end
+    mul a5, s7, s8
+    add tp, tp, a5
+    mul a5, s8, s6
+    sub tp, tp, a5
+    li  a5, SBI_SCRATCH_SIZE
+    sub tp, tp, a5
+ 
+    /* update the mscratch */
+    csrw    CSR_MSCRATCH, tp
+ 
+    /* Setup stack */
+    add sp, tp, zero
+...
+    /* Initialize SBI runtime */
+    csrr    a0, CSR_MSCRATCH
+    call    sbi_init
+```
+
+之后 sbi_init 进行 core1 opensbi 的初始化。
+
+### 2.2 stop second cpu
+
+应用层通过操作 cpu node 关闭cpu core
+
+```shell
+echo 0 > /sys/devices/system/cpu/cpuX/online
+```
+
+内核根据请求的状态进行处理，最终调用 sbi_cpu_stop 函数进入opensbi 关闭内核。
+
+```c
+    [CPUHP_TEARDOWN_CPU] = {
+        .name           = "cpu:teardown",
+        .startup.single     = NULL,
+        .teardown.single    = takedown_cpu,
+        .cant_stop      = true,
+    },
+ 
+[   91.134677] [<ffffffff80008628>] __cpu_disable+0x48/0x62
+[   91.143425] [<ffffffff80016552>] take_cpu_down+0x36/0x86
+[   91.151838] [<ffffffff8009dba0>] multi_cpu_stop+0x8a/0x166
+[   91.160544] [<ffffffff8009d6b8>] cpu_stopper_thread+0xa2/0x13a
+[   91.169596] [<ffffffff80039b0a>] smpboot_thread_fn+0xe2/0x1ba
+[   91.177857] [<ffffffff800350bc>] kthread+0xb8/0xd4
+[   91.185297] [<ffffffff80002576>] ret_from_fork+0xa/0x1c
+ 
+ 
+[   91.227812] [<ffffffff80784e38>] sbi_cpu_stop+0xc/0x5a
+[   91.229878] [<ffffffff8000866a>] arch_cpu_idle_dead+0x28/0x2a
+[   91.232767] [<ffffffff8004c9dc>] do_idle+0x19c/0x24a
+[   91.234946] [<ffffffff8004cbec>] cpu_startup_entry+0x26/0x28
+[   91.237205] [<ffffffff800066dc>] smp_callin+0x68/0x88
+```
+
+cpu1 执行下电操作，进入wfi模式。
+
+```c
+static void light_auxcore_save(void)
+{
+    /* a) disable all irq */
+    csr_clear(CSR_MSTATUS, MSTATUS_MIE | MSTATUS_SIE);
+    csr_clear(CSR_MIE, MIP_MSIP | MIP_MTIP | MIP_MEIP | MIP_SSIP |
+                   MIP_STIP | MIP_SEIP);
+ 
+    /* b) close prefetch */
+    csr_clear(CSR_MHINT, MHINT_L2PLD | MHINT_IPLD | MHINT_DPLD);
+ 
+    /* c) inv&clr d-call all */
+    dcache_ciall();
+    sync_is();
+ 
+    /* d) close dcache */
+    csr_clear(CSR_MHCR, MHCR_DE);
+ 
+    /* e) close smpen */
+    csr_clear(CSR_SMPEN, MSMPR_MSPEN);
+ 
+    /* f) fence iorw,iorw*/
+    mb();
+ 
+    /* g) sleepmode reg */
+    /* h) wfi : when test hotplug just comment wfi to continue run */
+    //wfi();
+    sbi_hart_hang();
+}
 ```
 
 ## 三、cpu 拓扑
@@ -529,7 +722,7 @@ static void notrace cci_port_control(unsigned int port, bool enable)
 }
 ```
 
-
+### 3.5 多核
 
 ## 四、arm多cluster多核电源管理
 
@@ -693,6 +886,14 @@ hsm_platform_ops 驱动位于 opensbi，cpu_ops_sbi 通过 sbi_ecall 接口间�
 
 linux提供了多种休眠方式：freeze、standyby、STR-suspend to RAM、STD-suspend to disk，这些休眠方式通过文件节点/sys/power/state提供给用户操作，在用户空间向该节点分别写入 freeze、standy、mem、disk，系统会入相应的状态。
 
+freeze: 冻结 IO设备，使cpu 进入 idle状态，设备中断就可以将其唤醒；
+
+standby: 除了冻结io设备，还会暂停系统。由于系统核心逻辑单元爆保持在上电状态，操作的状态不会丢失，很容易恢复到之前的状态；需要平台设置唤醒源；
+
+mem:运行状态数据存到内存，除了mem需要设置为自刷新模式来保存数据外，其他模块包括cpu都断电操作。所以在 suspend 之前，各模块需要保存配置信息，在resume之后重新配置。需要平台设置唤醒源；
+
+disk: 将运行数据保存到disk，整个系统断电。需要外部按键进行唤醒，然后恢复。
+
 系统休眠唤醒过程涉及到 pm core框架、device pm框架、各设备驱动、PowerDomain、cpu管理等模块。
 
 ![img](assets/v2-9572e8ec2d978ef631c9558e69878eb5_720w.webp)
@@ -715,11 +916,15 @@ echo freeze > /sys/power/state
 
 ### 6.2 pm core 流程
 
-设备驱动可以设置  pm 接口，一般设置disable clk；
-
-设备的低功耗由 pm_domains控制，休眠时关闭设备模块电源；
-
-系统的休眠唤醒由 pm device  控制，
+- system suspend 过程执行的步骤
+- sysfs sync
+- 冻结用户进程、内核进程
+- disabled plic irqs
+- 设备 pm suspend
+- 设备 poweroff
+- disabled non-boot cpus
+- disabled irqs （ csr_clear(CSR_STATUS, SR_IE); ）
+- syscore suspend
 
 流程：
 
@@ -889,20 +1094,402 @@ cpuidle初始化数据 从 设备树中读取，需要设备树在 /cpus 下配�
 
 #### 6.3.2 platform suspend
 
+platform suspend 使用 接口suspend_set_ops 注册 platform_ops;
+
+若cpu 休眠状态是进入 wfi 时，使用中断作为唤醒源，申请中断应时使用  IRQF_NO_SUSPEND，使plic 控制器不disable 该中断；注：写 CSR_STATUS，禁止的是中断的处理；plic disable irq，禁止的是中断的产生。
+
+cpu_suspend 接口是 SBI_HSM_SUSP_NON_RET_BIT 类型的 suspend 需要调用的默认接口，该函数主要调用两段汇编代码 \__cpu_suspend_enter 和 __cpu_suspend_resume (arch/riscv/kernel/suspend_entry.S)，保存和恢复特定的寄存器。
+
+suspend_enter 接口完全参考 cpu_idle 处理过程的 sbi_suspend()函数。
+
 ```c
-struct platform_suspend_ops {
-	int (*valid)(suspend_state_t state);
-	int (*begin)(suspend_state_t state);
-	int (*prepare)(void);
-	int (*prepare_late)(void);
-	int (*enter)(suspend_state_t state);
-	void (*wake)(void);
-	void (*finish)(void);
-	bool (*suspend_again)(void);
-	void (*end)(void);
-	void (*recover)(void);
+static int icg_suspend_finish(unsigned long arg, unsigned long entry,
+			      unsigned long context)
+{
+	struct sbiret ret;
+
+	ret = sbi_ecall(SBI_EXT_HSM, SBI_EXT_HSM_HART_SUSPEND,
+			SBI_HSM_SUSP_NON_RET_BIT, entry, context, 0, 0, 0);
+ 
+    /* 该处代码不会执行到，opensbi 会在 ecall 结束后跳转到 entry 即 __cpu_suspend_resume 处执行。*/
+	pr_err("%s: Failed to suspend\n", __func__);
+
+	return 1;
+}
+
+/* 进入休眠 */
+static int icg_suspend_enter(suspend_state_t state)
+{
+	printk("========enter suspend\n");
+	cpu_suspend(0, icg_suspend_finish);
+	printk("========over suspend\n");
+	return 0;
+}
+
+static int icg_suspend_begin(suspend_state_t state)
+{
+	return 0;
+}
+
+/* 支持休眠的类型 */
+static int icg_suspend_valid_state(suspend_state_t state)
+{
+	return (state == PM_SUSPEND_MEM);
+}
+
+static const struct platform_suspend_ops icg_suspend_mem_ops = {
+	.valid	= icg_suspend_valid_state,
+	.begin	= icg_suspend_begin,
+	.enter	= icg_suspend_enter,
+};
+
+static int icg_suspend_probe(struct platform_device *pdev)
+{
+	int pin, ret;
+	void __iomem *base_addr;
+	struct icg_suspend_data *suspend_data;
+	const struct gpio_desc *resume_gpio;
+	int irq;
+
+	suspend_data = devm_kzalloc(&pdev->dev, sizeof(*suspend_data), GFP_KERNEL);
+	if (!suspend_data) 
+		return -ENOMEM;
+
+	/* set resume source */
+	resume_gpio = devm_gpiod_get_optional(&pdev->dev, "resume", GPIOD_IN);
+	if(resume_gpio == NULL)
+	{
+		dev_err(&pdev->dev, "icg_suspend_probe failed to get resume gpio\n");
+		return -EINVAL;
+	}
+	pin = gpiod_count(&pdev->dev, "resume") - 1;
+
+	irq = platform_get_irq(pdev, 0);
+  	if (irq >= 0) {
+    	ret = devm_request_irq(&pdev->dev, irq, icg_suspend_irq_handler, IRQF_NO_SUSPEND,
+                           pdev->name, suspend_data);
+    	if (ret < 0) {
+      		dev_err(&pdev->dev, "request_irq failed\n");
+      		return ret;
+    	}
+  	}
+	suspend_set_ops(&icg_suspend_mem_ops);
+	return 0;
+}
+```
+
+### 6.4 休眠唤醒调试
+
+#### 6.4.1 串口打印
+
+linux/kernel/printk/printk.c 中设置 console_suspend_enabled = false，可以禁止串口进入suspend状态，但实质上该功能只是禁止 holding the console_list_lock，还需要自己控制串口打印相关的设备不进入suspend，如：powerdomain、pinctrl、gpio等。
+
+#### 6.4.2 休眠过程涉及的设备
+
+emmc： sysfs sync 操作，emmc 唤醒异常可能导致 sysfs操作错误；
+
+ ttc、riscv_timer ： delay、 sleep操作，在休眠冻结程序过程中，会等待程序退出。
+
+### 6.5 设备休眠唤醒
+
+**suspend ops:**
+
+platform 设备需要在 platform_driver 结构体中实现 pm ops，操作集合可以分为两种接口， pm system suspend 和 pm runtime suspend；
+
+pm runtime suspend 一般只需要 disable clk，
+
+pm system suspend 需要关闭电源，保存配置信息，然后 pm_runtime_force_suspend。
+
+两种接口按需实现，不需要重新配置寄存器时可以不实现 system suspend，不需要disable clk，可以不实现 runtime suspend。
+ifdef CONFIG_PM 或 CONFIG_PM_SLEEP, 用来避免没有选择这两个选项时带来的 Unused functions 警告。
+只实现 pm runtime suspend 时使用 "#ifdef CONFIG_PM"，其他情况使用 "#ifdef CONFIG_PM_SLEEP"。
+
+特殊的设备，如 ttc 的 pm suspend 操作, 不仅有 platform_driver.pm 还有 clock_event_device.suspend，两者的区别和实现，需要根据情况具体分析。
+
+**休眠唤醒顺序:**
+
+drivers/base/power/main.c 中申请了一个链表 dpm_list 用来保存需要 休眠唤醒的设备列表，按照深度优先的方式，从链表尾部遍历到链表头进行休眠；
+
+添加链接的顺序和 设备 porbe 的顺序有关，设备probe  success 的越早，越靠近链表头部；
+
+当设备休眠唤醒由依赖时，尽可能控制 probe 的时机，如使用 错误码 -EPROBE_DEFER 推后porbe时间，或修改设备树描述的先后顺序。
+
+使用 SET_LATE_SYSTEM_SLEEP_PM_OPS 宏声明pm ops，也可以滞后suspend 的时间，但链表  dpm_late_early_list 也是按照 dev probe 顺序 suspend dev的。
+
+## 七、电源管理
+
+参考文档：https://doc.embedfire.com/linux/rk356x/driver/zh/latest/linux_driver/subsystem_power_management.html
+
+PMIC, Power Management IC ，是一种用于电源管理的集成电路。
+
+在linux 中，电源管理是一个庞大的系统，涉及电源供电、电源状态管理、运行时电源管理、电源省电管理、低功耗等等。
+
+电源的状态可以分为： 
+
+睡眠 sleep 或 STR, suspend to RAM ，把系统信息保存到内存，内存供电，其他断电；
+
+休眠 hibernate 或 STD, suspend to Disk，系统信息保存到disk，系统断点；
+
+关机 shutdown, 重启reboot。
+
+### 7.1 regulator
+
+regulator，调节器，分为电压voltage调节器和电流current调节器，是电源管理底层基础设施之一，在内核中是个抽象出来的概念。
+
+linux regulator 整体分为四部分，分别是 machine(硬件制约，映射关系等)，regulator driver，consumer 使用设备，sys-class-regulator 用户接口。
+
+**dirvier：** linux/drivers/regulator 目录下
+
+驱动模块会调用 devm_regulator_register 将 pmic 每一个通道都注册为regulator 设备。
+
+```c++
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+// 代码中没有实际的 machine 操作，只是简单使用一个 enable 标签表示上下电。
+
+#include <linux/module.h>
+#include <linux/printk.h>
+#include <linux/regulator/machine.h>
+#include <linux/regulator/of_regulator.h>
+#include <linux/of.h>
+#include <linux/platform_device.h>
+#include <linux/regulator/consumer.h>
+#include <linux/regulator/driver.h>
+
+struct icg_regulator_data {
+	struct regulator_desc desc;
+	struct regulator_dev *rdev;
+
+	int current_uV;
+	int enable;
+};
+
+struct icg_pmic_data {
+	void __iomem *base_addr;
+
+	struct icg_regulator_data *regulators;
+	int regulator_num;
+};
+
+static int icg_regulator_enable(struct regulator_dev *rdev)
+{
+	struct icg_regulator_data *reg_data = rdev_get_drvdata(rdev);
+
+	printk("icg regulator enabled, i = %d\n", reg_data->desc.id);
+
+	reg_data->enable = 1;
+
+	return 0;
+}
+
+static int icg_regulator_disable(struct regulator_dev *rdev)
+{
+	struct icg_regulator_data *reg_data = rdev_get_drvdata(rdev);
+
+	printk("icg regulator disabled, %d\n", reg_data->desc.id);
+
+	reg_data->enable = 0;
+
+	return 0;
+}
+
+static int icg_regulator_is_enabled(struct regulator_dev *rdev)
+{
+	struct icg_regulator_data *reg_data = rdev_get_drvdata(rdev);
+
+	printk("icg regulator is enabled check, enable = %d, %d\n", reg_data->enable, reg_data->desc.id);
+
+	return reg_data->enable;
+}
+
+static int icg_regulator_set_voltage(struct regulator_dev *rdev, int min_uV,
+					 int max_uV, unsigned *selector)
+{
+	struct icg_regulator_data *reg_data = rdev_get_drvdata(rdev);
+
+	reg_data->current_uV = min_uV;
+
+	printk("icg regulator %d set voltage: %d - %d uV\n", reg_data->desc.id, min_uV, max_uV);
+	return 0;
+}
+
+static int icg_regulator_get_voltage(struct regulator_dev *rdev)
+{
+	struct icg_regulator_data *reg_data = rdev_get_drvdata(rdev);
+
+	printk("icg regulator get voltage: %d uV\n", reg_data->current_uV);
+	return reg_data->current_uV;
+}
+
+static const struct regulator_ops icg_regulator_ops = {
+	.enable = icg_regulator_enable,
+	.disable = icg_regulator_disable,
+	.is_enabled = icg_regulator_is_enabled,
+	.set_voltage = icg_regulator_set_voltage,
+	.get_voltage = icg_regulator_get_voltage,
+	.list_voltage = regulator_list_voltage_linear,
+};
+
+static int icg_pmic_parse_dtb(struct platform_device *pdev, struct icg_pmic_data *drvdata)
+{
+	int num_reg, i;
+	struct icg_regulator_data *regs;
+	struct regulator_init_data *init_data;
+	struct regulator_config config;
+	struct device_node *regulators_np, *reg_np;
+
+	regulators_np = of_get_child_by_name(pdev->dev.of_node, "regulators");
+	if (!regulators_np) {
+		dev_err(&pdev->dev, "could not find regulators sub-node\n");
+		return -EINVAL;
+	}
+
+	num_reg = of_get_child_count(regulators_np);
+	drvdata->regulator_num = num_reg;
+
+	regs = devm_kcalloc(&pdev->dev, num_reg, sizeof(*regs), GFP_KERNEL);
+	if (!regs) {
+		dev_err(&pdev->dev, "malloc rdevs failed\n");
+		return -ENOMEM;
+	}
+	drvdata->regulators = regs;
+
+	i = 0;
+	for_each_child_of_node(regulators_np, reg_np) {
+		init_data = of_get_regulator_init_data(&pdev->dev, reg_np, &regs[i].desc);
+		if (!init_data) {
+			dev_err(&pdev->dev, "Failed to get regulator init data\n");
+			return -EINVAL;
+		}
+
+		/* base info */
+		regs[i].current_uV = init_data->constraints.min_uV;
+		regs[i].enable = 0;
+
+		/* desc base info */
+		regs[i].desc.name = init_data->constraints.name;
+		regs[i].desc.ops = &icg_regulator_ops;
+		regs[i].desc.type = REGULATOR_VOLTAGE;
+		regs[i].desc.owner = THIS_MODULE;
+		regs[i].desc.id = i;
+
+		/* linear voltages info, 设置该信息可以使用 helpers.c 中的标准 ops */
+		regs[i].desc.min_uV = init_data->constraints.min_uV;
+		regs[i].desc.uV_step = 1000;
+		regs[i].desc.linear_min_sel = 0;
+		regs[i].desc.n_voltages = 
+			(init_data->constraints.max_uV - init_data->constraints.min_uV )
+			/ regs[i].desc.uV_step + 1;
+
+		config.dev = &pdev->dev;
+		config.init_data = init_data;
+		config.driver_data = &regs[i];
+		config.of_node = reg_np;
+
+		regs[i].rdev = devm_regulator_register(&pdev->dev, &regs[i].desc, &config);
+		if (IS_ERR(regs[i].rdev)) {
+			dev_err(&pdev->dev, "Failed to register regulator %d\n", i);
+			return PTR_ERR(regs[i].rdev);
+		}
+
+		i++;
+	}
+
+	return 0;
+}
+
+static int icg_pmic_probe(struct platform_device *pdev)
+{
+	int ret;
+	struct icg_pmic_data *drvdata;
+
+	drvdata = devm_kzalloc(&pdev->dev, sizeof(*drvdata), GFP_KERNEL);
+	if (!drvdata)
+		return -ENOMEM;
+
+	platform_set_drvdata(pdev, drvdata);
+
+	ret = icg_pmic_parse_dtb(pdev, drvdata);
+	if (ret)
+	{
+		dev_err(&pdev->dev, "icg_pmic_parse_dtb failed, ret = %d\n", ret);
+		return ret;
+	}
+
+	dev_info(&pdev->dev, "icg pmic probed\n");
+	return 0;
+}
+
+static const struct of_device_id icg_pmic_of_match[] = {
+	{
+		.compatible = "icg,pmic",
+	},
+	{ /* sentinel */ }
+};
+MODULE_DEVICE_TABLE(of, icg_regulator_of_match);
+
+static struct platform_driver icg_pmic_driver = {
+    .probe = icg_pmic_probe,
+    .driver = {
+        .name = "pmic-icg",
+        .of_match_table = icg_pmic_of_match,
+    },
+};
+
+module_platform_driver(icg_pmic_driver);
+
+MODULE_DESCRIPTION("Voltage Controlled Regulator Driver");
+MODULE_AUTHOR("intchains");
+MODULE_LICENSE("GPL v2");
+```
+
+**设备树：**
+
+of_get_regulator_init_data 需要传入的fdt offset 是 reg1，所以简单起见，可以不写 regulators 节点。
+
+regulator-always-on：使 regulator 一直处于enable状态，不能被disable。没有该flag时，当使用者 user计数为0时，系统会自动disable 该 regulator。
+
+regulator-boot-on：在 regulator register 时会调用 enbale 接口，进行使能。该过程不能使 user 计数+1;
+
+```c++
+pmic: icg-pmic {
+    compatible = "icg,pmic";
+
+    regulators {
+        reg1: reg_tmp_1 {
+            regulator-name = "reg-tmp-1";
+            regulator-min-microvolt = <100000>;
+            regulator-max-microvolt = <1500000>;
+            //regulator-boot-on;
+            //regulator-always-on;
+        };
+
+        reg2: reg_tmp_2 {
+            regulator-name = "reg-tmp-2";
+            regulator-min-microvolt = <1800000>;
+            regulator-max-microvolt = <3300000>;
+        };
+
+    };
+};
+
+gpio_sap: gpio0-controller@d2100000 {
+    gpio-supply = <&reg1>;
 };
 ```
+
+**用户接口：**
+
+```c++
+#include <linux/regulator/consumer.h>
+// 会查找 foo-supply 属性
+struct regulator * regulator = devm_regulator_get(&pdev->dev, "gpio");
+
+int __must_check regulator_enable(struct regulator *regulator);
+int regulator_disable(struct regulator *regulator);
+```
+
+应用层通过 /sys/class/regulator/xxx 查看 regulator 控制器信息。
 
 ## 附: 问题记录
 

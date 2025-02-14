@@ -1,0 +1,10 @@
+config TBH_IDS
+	bool "testbench ids support"
+	default n
+	help:
+		enable testbench ids
+
+config TBH_IDS_MEDIA
+	bool "testbench media support"   
+	depends on TBH_IDS
+

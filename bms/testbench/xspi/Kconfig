@@ -1,0 +1,6 @@
+config TBH_XSPI
+	bool "testbench xspi support"
+	default n
+	help:
+		enable testbench xspi
+

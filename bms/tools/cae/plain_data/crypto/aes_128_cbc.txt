@@ -1,0 +1,1 @@
+This is a 48-byte message (exactly 3 AES blocks)

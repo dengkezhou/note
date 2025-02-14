@@ -1,0 +1,13 @@
+if CONFIG_C920
+source "arch/riscv/c920/Kconfig"
+endif
+if CONFIG_C906
+source "arch/riscv/c906/Kconfig"
+endif
+if CONFIG_E906
+source "arch/riscv/e906/Kconfig"
+endif
+if CONFIG_E902
+source "arch/riscv/e902/Kconfig"
+endif
+source "arch/riscv/lib/Kconfig"

@@ -1,0 +1,6 @@
+config TBH_UART
+	bool "testbench uart support"
+	default n
+	help:
+		enable testbench uart
+

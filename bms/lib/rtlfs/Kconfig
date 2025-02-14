@@ -1,0 +1,12 @@
+config LIB_RTLFS
+	bool "rtlfs support"
+	default n
+	help:
+		enable rtlfs
+
+config RTLFS_LOCATION
+	hex "rtlfs location"
+	default 0x140000000
+	depends on LIB_RTLFS
+	help:
+		rtlfs location

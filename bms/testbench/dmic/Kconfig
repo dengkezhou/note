@@ -1,0 +1,5 @@
+config TBH_DMIC
+	bool "testbench dmic support"
+	default n
+	help:
+		enable testbench dmic

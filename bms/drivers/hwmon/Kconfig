@@ -1,0 +1,5 @@
+config DRV_HWMON
+	bool "hwmon driver support"
+	default n
+	help:
+		enable hwmon driver

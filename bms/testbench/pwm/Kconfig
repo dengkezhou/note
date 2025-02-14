@@ -1,0 +1,5 @@
+config TBH_PWM
+	bool "testbench pwm support"
+	default n
+	help:
+		enable testbench pwm

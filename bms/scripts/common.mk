@@ -1,0 +1,29 @@
+-include $(KCONFIG_AUTOCONFIG)
+
+MACHINE := $(CONFIG_MACHINE:"%"=%)
+export MACHINE
+
+ifdef CONFIG_RISCV
+coremk := $(SRCTREE)/arch/riscv/$(MACHINE)/cc.mk
+endif
+ifdef CONFIG_ARM
+coremk := $(SRCTREE)/arch/arm/$(MACHINE)/cc.mk
+endif
+
+include $(coremk)
+
+# configurations
+ifdef CONFIG_COMPILE_RTL
+CFLAGS += -DCONFIG_COMPILE_RTL
+AFLAGS += -DCONFIG_COMPILE_RTL
+endif
+
+ifdef CONFIG_COMPILE_FPGA
+CFLAGS += -DCONFIG_COMPILE_FPGA
+AFLAGS += -DCONFIG_COMPILE_FPGA
+endif
+
+ifdef CONFIG_COMPILE_ASIC
+CFLAGS += -DCONFIG_COMPILE_ASIC
+AFLAGS += -DCONFIG_COMPILE_ASIC
+endif

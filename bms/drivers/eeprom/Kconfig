@@ -1,0 +1,9 @@
+menuconfig DRV_EEPROM
+	bool "eeprom driver support"
+	default n
+	help
+		enable eeprom driver
+
+if DRV_EEPROM
+source "drivers/eeprom/microchip_24aa08/Kconfig"
+endif

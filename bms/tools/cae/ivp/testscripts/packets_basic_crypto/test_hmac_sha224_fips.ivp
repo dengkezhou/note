@@ -1,0 +1,1270 @@
+# ---------------------------------------------
+# Integration Vectors File
+# Module   : EIP-97b-ie-AXI
+# Version  : 2.3
+# ---------------------------------------------
+# @ 111 ns 
+SetClockFrequency SYS_CLK 100
+DeviceReset 10
+# EIP97: Init(HW version 2.3.1)
+# EIP97.EIP202: Init(HW version 2.7)
+# EIP97.EIP202.AIC_G: Init(HW version 1.4, noi=32, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R0: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R1: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R2: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R3: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.PE_0: Init(HW version 1.5)
+# EIP97.PE_0.EIP96: Init(HW version 4.3.3)
+# EIP97.PE_0.EIP96.EIP201: Init(HW version 1.4, noi=4, mini_reg=0, ext_reg=0)
+# EIP97.PE_0.AIC: Init(HW version 1.4, noi=5, mini_reg=0, ext_reg=0)
+#     Configure DFE
+# @ 221 ns 
+WriteWord MASTER1_XFER 0x0000f000 0xa7050f08 0xffffffff
+#     Configure DSE
+# @ 281 ns 
+WriteWord MASTER1_XFER 0x0000f400 0x8000c807 0xffffffff
+# @ 341 ns 
+WriteWord MASTER1_XFER 0x00010100 0x00007500 0xffffffff
+# @ 401 ns 
+WriteWord MASTER1_XFER 0x00010000 0x0000f800 0xffffffff
+# @ 461 ns 
+WriteWord MASTER1_XFER 0x00011c00 0x00000087 0xffffffff
+#     Enable optimal context updates and timeout counter for EIP-96
+# @ 521 ns 
+WriteWord MASTER1_XFER 0x00011000 0x00410000 0xffffffff
+# @ 581 ns 
+WriteWord MASTER1_XFER 0x00011008 0x00000225 0xffffffff
+# EIP97: ConfigureHIA
+#     'rings': 2(0x2)
+# @ 641 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x80000000 0xffffffff
+# @ 701 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x80000000 0xffffffff
+# @ 761 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x80000000 0xffffffff
+# @ 841 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000000 0xffffffff
+# @ 901 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x80000000 0xffffffff
+# @ 981 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000000 0xffffffff
+# @ 1041 ns 
+ReadWord PORTS_SPACE CMD_TRIG 0x0 0xffffffff
+# EIP97.EIP202.CDR0: Init(Entries=256, EntrySize=24, EntryOffset=24, AddToken=1, TCM=0, 64BitMode=0)
+#     EIP97.EIP202.CDR0Buf: Init(address=0x0 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x0
+#     Program data base address
+# @ 1041 ns 
+WriteWord64 MASTER1_XFER 0x00000008 0x00000000 0xffffffffffffffff
+#     Program additional token base address
+# @ 1161 ns 
+WriteWord64 MASTER1_XFER 0x00000010 0x00000000 0xffffffffffffffff
+#     Temporarily disable ext triggerring
+# @ 1281 ns 
+WriteWord MASTER1_XFER 0x00000020 0x00000000 0xffffffff
+#     Clear pending prepared descriptors counter
+# @ 1341 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x80000000 0xffffffff
+#     Clear pending prepared descriptors pointer
+# @ 1401 ns 
+WriteWord MASTER1_XFER 0x00000034 0x00000000 0xffffffff
+#     Clear pending ownership update pointer
+# @ 1461 ns 
+WriteWord MASTER1_XFER 0x00000038 0x00000000 0xffffffff
+#     Ring size
+# @ 1521 ns 
+WriteWord MASTER1_XFER 0x00000018 0x00001800 0xffffffff
+#     Ring base address
+# @ 1581 ns 
+WriteWord64 MASTER1_XFER 0x00000000 0x00000000 0xffffffffffffffff
+#     Clear pending processed descriptors counter
+# @ 1701 ns 
+WriteWord MASTER1_XFER 0x00000030 0x80000000 0xffffffff
+#     Configure data swapping
+# @ 1761 ns 
+WriteWord MASTER1_XFER 0x00000024 0x01000000 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 1821 ns 
+WriteWord MASTER1_XFER 0x0000001c 0x40060006 0xffffffff
+#     Clear any pending interrupts
+# @ 1881 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x0000003f 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.CDR0:     Requested fetch count: 3
+# @ 1941 ns 
+WriteWord MASTER1_XFER 0x00000020 0x00120012 0xffffffff
+# EIP97.EIP202.CDR0: Init_final(EntrySize=24, EntryOffset=24, FetchCount=3, MaxFetchCount=42, FetchThresh=18, FetchSize=18)
+#     Ring number: 0
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x0
+#     Assign CDR0 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 2001 ns 
+ReadWord MASTER1_XFER 0x0000f010 0x00000000 0xffffffff
+# @ 2081 ns 
+WriteWord MASTER1_XFER 0x0000f010 0x0000000f 0xffffffff
+# @ 2141 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x40000000 0xffffffff
+# @ 2221 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000001 0xffffffff
+# @ 2281 ns 
+ReadWord PORTS_SPACE CMD_TRIG 0x0 0xffffffff
+# EIP97.EIP202.CDR1: Init(Entries=256, EntrySize=24, EntryOffset=24, AddToken=1, TCM=0, 64BitMode=0)
+#     EIP97.EIP202.CDR1Buf: Init(address=0x1800 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x1800
+#     Program data base address
+# @ 2281 ns 
+WriteWord64 MASTER1_XFER 0x00001008 0x00000000 0xffffffffffffffff
+#     Program additional token base address
+# @ 2401 ns 
+WriteWord64 MASTER1_XFER 0x00001010 0x00000000 0xffffffffffffffff
+#     Temporarily disable ext triggerring
+# @ 2521 ns 
+WriteWord MASTER1_XFER 0x00001020 0x00000000 0xffffffff
+#     Clear pending prepared descriptors counter
+# @ 2581 ns 
+WriteWord MASTER1_XFER 0x0000102c 0x80000000 0xffffffff
+#     Clear pending prepared descriptors pointer
+# @ 2641 ns 
+WriteWord MASTER1_XFER 0x00001034 0x00000000 0xffffffff
+#     Clear pending ownership update pointer
+# @ 2701 ns 
+WriteWord MASTER1_XFER 0x00001038 0x00000000 0xffffffff
+#     Ring size
+# @ 2761 ns 
+WriteWord MASTER1_XFER 0x00001018 0x00001800 0xffffffff
+#     Ring base address
+# @ 2821 ns 
+WriteWord64 MASTER1_XFER 0x00001000 0x00001800 0xffffffffffffffff
+#     Clear pending processed descriptors counter
+# @ 2941 ns 
+WriteWord MASTER1_XFER 0x00001030 0x80000000 0xffffffff
+#     Configure data swapping
+# @ 3001 ns 
+WriteWord MASTER1_XFER 0x00001024 0x01000000 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 3061 ns 
+WriteWord MASTER1_XFER 0x0000101c 0x40060006 0xffffffff
+#     Clear any pending interrupts
+# @ 3121 ns 
+WriteWord MASTER1_XFER 0x0000103c 0x0000003f 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.CDR1:     Requested fetch count: 3
+# @ 3181 ns 
+WriteWord MASTER1_XFER 0x00001020 0x00120012 0xffffffff
+# EIP97.EIP202.CDR1: Init_final(EntrySize=24, EntryOffset=24, FetchCount=3, MaxFetchCount=42, FetchThresh=18, FetchSize=18)
+#     Ring number: 1
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x1800
+#     Assign CDR1 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 3241 ns 
+ReadWord MASTER1_XFER 0x0000f010 0x0000000f 0xffffffff
+# @ 3321 ns 
+WriteWord MASTER1_XFER 0x0000f010 0x00000f0f 0xffffffff
+# @ 3381 ns 
+ReadWord MASTER1_XFER 0x0000f200 0x40000001 0xffffffff
+# @ 3461 ns 
+WriteWord MASTER1_XFER 0x0000f200 0x40000003 0xffffffff
+# @ 3521 ns 
+ReadWord PORTS_SPACE RES_TRIG_PREP 0x0 0xffffffff
+# @ 3521 ns 
+ReadWord PORTS_SPACE RES_TRIG_PROC 0x0 0xffffffff
+# @ 3521 ns 
+WriteWord MASTER1_XFER 0x00000824 0x01000000 0xffffffff
+# EIP97.EIP202.RDR0: Init(Entries=256, EntrySize=24, EntryOffset=24, TCM=0, 64BitMode=0, OwnershipWrite=0, SingleWr=0)
+#     EIP97.EIP202.RDR0Buf: Init(address=0x3000 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x3000
+#     Program data base address
+# @ 3581 ns 
+WriteWord64 MASTER1_XFER 0x00000808 0x00000000 0xffffffffffffffff
+#     Ring base address
+# @ 3701 ns 
+WriteWord64 MASTER1_XFER 0x00000800 0x00003000 0xffffffffffffffff
+#     Ring size
+# @ 3821 ns 
+WriteWord MASTER1_XFER 0x00000818 0x00001800 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 3881 ns 
+WriteWord MASTER1_XFER 0x0000081c 0x00060006 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.RDR0:     Requested fetch count: 4
+# @ 3941 ns 
+WriteWord MASTER1_XFER 0x00000820 0x00080018 0xffffffff
+#     Clear descriptors counters
+# @ 4001 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x80000000 0xffffffff
+# @ 4061 ns 
+WriteWord MASTER1_XFER 0x00000830 0x80000000 0xffffffff
+# EIP97.EIP202.RDR0:     Decrement batch size: 3072
+# @ 4121 ns 
+WriteWord MASTER1_XFER 0x00000834 0x00000000 0xffffffff
+# @ 4181 ns 
+WriteWord MASTER1_XFER 0x00000838 0x00000000 0xffffffff
+#     Threshold (Before clearing any interrupts)
+# @ 4241 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000000 0xffffffff
+#     Clear any pending interrupts
+# @ 4301 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x000000ff 0xffffffff
+# EIP97.EIP202.RDR0: Init_final(EntrySize=24, EntryOffset=24, FetchCount=4, ThreshCount=4, MaxFetchCount=42, FetchThresh=8, FetchSize=24)
+#     Ring number: 0
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x3000
+#     Assign RDR0 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 4361 ns 
+ReadWord MASTER1_XFER 0x0000f410 0x00000000 0xffffffff
+# @ 4441 ns 
+WriteWord MASTER1_XFER 0x0000f410 0x0000000f 0xffffffff
+# @ 4501 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x40000000 0xffffffff
+# @ 4581 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000001 0xffffffff
+# @ 4641 ns 
+ReadWord PORTS_SPACE RES_TRIG_PREP 0x0 0xffffffff
+# @ 4641 ns 
+ReadWord PORTS_SPACE RES_TRIG_PROC 0x0 0xffffffff
+# @ 4641 ns 
+WriteWord MASTER1_XFER 0x00001824 0x01000000 0xffffffff
+# EIP97.EIP202.RDR1: Init(Entries=256, EntrySize=24, EntryOffset=24, TCM=0, 64BitMode=0, OwnershipWrite=0, SingleWr=0)
+#     EIP97.EIP202.RDR1Buf: Init(address=0x4800 is allocated for 6144 bytes)
+#         ARM: BaseAddress=0x4800
+#     Program data base address
+# @ 4701 ns 
+WriteWord64 MASTER1_XFER 0x00001808 0x00000000 0xffffffffffffffff
+#     Ring base address
+# @ 4821 ns 
+WriteWord64 MASTER1_XFER 0x00001800 0x00004800 0xffffffffffffffff
+#     Ring size
+# @ 4941 ns 
+WriteWord MASTER1_XFER 0x00001818 0x00001800 0xffffffff
+#     Set sizes (in 32-bit words)
+# @ 5001 ns 
+WriteWord MASTER1_XFER 0x0000181c 0x00060006 0xffffffff
+#     FIFO usage control
+# EIP97.EIP202.RDR1:     Requested fetch count: 4
+# @ 5061 ns 
+WriteWord MASTER1_XFER 0x00001820 0x00080018 0xffffffff
+#     Clear descriptors counters
+# @ 5121 ns 
+WriteWord MASTER1_XFER 0x0000182c 0x80000000 0xffffffff
+# @ 5181 ns 
+WriteWord MASTER1_XFER 0x00001830 0x80000000 0xffffffff
+# EIP97.EIP202.RDR1:     Decrement batch size: 3072
+# @ 5241 ns 
+WriteWord MASTER1_XFER 0x00001834 0x00000000 0xffffffff
+# @ 5301 ns 
+WriteWord MASTER1_XFER 0x00001838 0x00000000 0xffffffff
+#     Threshold (Before clearing any interrupts)
+# @ 5361 ns 
+WriteWord MASTER1_XFER 0x00001828 0x00000000 0xffffffff
+#     Clear any pending interrupts
+# @ 5421 ns 
+WriteWord MASTER1_XFER 0x0000183c 0x000000ff 0xffffffff
+# EIP97.EIP202.RDR1: Init_final(EntrySize=24, EntryOffset=24, FetchCount=4, ThreshCount=4, MaxFetchCount=42, FetchThresh=8, FetchSize=24)
+#     Ring number: 1
+#     Ring entries: 256
+#     Ring entry size: 24
+#     Ring entry offset: 24
+#     Ring base address: 0x4800
+#     Assign RDR1 to engine: {'slot': 15, 'eng_no': 0, 'prio': 0}
+# @ 5481 ns 
+ReadWord MASTER1_XFER 0x0000f410 0x00000000 0xffffffff
+# @ 5561 ns 
+WriteWord MASTER1_XFER 0x0000f410 0x00000f00 0xffffffff
+# @ 5621 ns 
+ReadWord MASTER1_XFER 0x0000f600 0x40000001 0xffffffff
+# @ 5701 ns 
+WriteWord MASTER1_XFER 0x0000f600 0x40000003 0xffffffff
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x07c0c4fe: Data=130073854(0x7c0c4fe) 
+#       3 Digest0_1    0xa59f475d: Data=2778679133(0xa59f475d) 
+#       4 Digest0_2    0xbbe956c4: Data=3152631492(0xbbe956c4) 
+#       5 Digest0_3    0x45d538b4: Data=1171601588(0x45d538b4) 
+#       6 Digest0_4    0x8f2ad900: Data=2401949952(0x8f2ad900) 
+#       7 Digest0_5    0xba3603c5: Data=3124102085(0xba3603c5) 
+#       8 Digest0_6    0xc01584a4: Data=3222635684(0xc01584a4) 
+#       9 Digest0_7    0x039bc763: Data=60540771(0x39bc763) 
+#      10 Digest1_0    0x42351b40: Data=1110776640(0x42351b40) 
+#      11 Digest1_1    0x9b8204e5: Data=2608989413(0x9b8204e5) 
+#      12 Digest1_2    0xcd9fffa6: Data=3449814950(0xcd9fffa6) 
+#      13 Digest1_3    0x331fe6bb: Data=857728699(0x331fe6bb) 
+#      14 Digest1_4    0x8d4e07f1: Data=2370701297(0x8d4e07f1) 
+#      15 Digest1_5    0x887ab7ba: Data=2289743802(0x887ab7ba) 
+#      16 Digest1_6    0xb18ba43c: Data=2978718780(0xb18ba43c) 
+#      17 Digest1_7    0x629aee12: Data=1654320658(0x629aee12) 
+#     ContextBuf: Init(address=0x6000 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x6000, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006000
+Data 72
+026a1002 00000001 07c0c4fe a59f475d bbe956c4 45d538b4 8f2ad900 ba3603c5 
+c01584a4 039bc763 42351b40 9b8204e5 cd9fffa6 331fe6bb 8d4e07f1 887ab7ba 
+b18ba43c 629aee12 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x4ebc1624: Data=1320949284(0x4ebc1624) 
+#       3 Digest0_1    0x072f1b89: Data=120527753(0x72f1b89) 
+#       4 Digest0_2    0xbb08835a: Data=3137897306(0xbb08835a) 
+#       5 Digest0_3    0x5b3270f0: Data=1530032368(0x5b3270f0) 
+#       6 Digest0_4    0x5649a457: Data=1447666775(0x5649a457) 
+#       7 Digest0_5    0x518ad81a: Data=1368053786(0x518ad81a) 
+#       8 Digest0_6    0x0df4b211: Data=234140177(0xdf4b211) 
+#       9 Digest0_7    0xc36df308: Data=3278762760(0xc36df308) 
+#      10 Digest1_0    0xb2cd1518: Data=2999784728(0xb2cd1518) 
+#      11 Digest1_1    0x33e6daf5: Data=870767349(0x33e6daf5) 
+#      12 Digest1_2    0x2944a7fc: Data=692365308(0x2944a7fc) 
+#      13 Digest1_3    0x4963f2cb: Data=1231286987(0x4963f2cb) 
+#      14 Digest1_4    0xdabb1bce: Data=3669695438(0xdabb1bce) 
+#      15 Digest1_5    0xba80fa75: Data=3129014901(0xba80fa75) 
+#      16 Digest1_6    0xd5cf313b: Data=3587125563(0xd5cf313b) 
+#      17 Digest1_7    0x9337ba0c: Data=2469902860(0x9337ba0c) 
+#     ContextBuf: Init(address=0x6048 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x6048, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006048
+Data 72
+026a1002 00000001 4ebc1624 072f1b89 bb08835a 5b3270f0 5649a457 518ad81a 
+0df4b211 c36df308 b2cd1518 33e6daf5 2944a7fc 4963f2cb dabb1bce ba80fa75 
+d5cf313b 9337ba0c 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x5dcbb833: Data=1573632051(0x5dcbb833) 
+#       3 Digest0_1    0xc54f0c3f: Data=3310292031(0xc54f0c3f) 
+#       4 Digest0_2    0x290b4a45: Data=688605765(0x290b4a45) 
+#       5 Digest0_3    0x8fb3aca7: Data=2410917031(0x8fb3aca7) 
+#       6 Digest0_4    0x7636012b: Data=1983250731(0x7636012b) 
+#       7 Digest0_5    0x91f73640: Data=2448897600(0x91f73640) 
+#       8 Digest0_6    0xfe7805e7: Data=4269278695(0xfe7805e7) 
+#       9 Digest0_7    0x216feef6: Data=560983798(0x216feef6) 
+#      10 Digest1_0    0xdc06f5d9: Data=3691443673(0xdc06f5d9) 
+#      11 Digest1_1    0xaf35997b: Data=2939525499(0xaf35997b) 
+#      12 Digest1_2    0x73dfffe1: Data=1944059873(0x73dfffe1) 
+#      13 Digest1_3    0x829e7dbf: Data=2191424959(0x829e7dbf) 
+#      14 Digest1_4    0x59acdd5b: Data=1504501083(0x59acdd5b) 
+#      15 Digest1_5    0xa5173cdf: Data=2769763551(0xa5173cdf) 
+#      16 Digest1_6    0x7a5bddd4: Data=2052840916(0x7a5bddd4) 
+#      17 Digest1_7    0xb2b56d15: Data=2998234389(0xb2b56d15) 
+#     ContextBuf: Init(address=0x6090 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x6090, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006090
+Data 72
+026a1002 00000001 5dcbb833 c54f0c3f 290b4a45 8fb3aca7 7636012b 91f73640 
+fe7805e7 216feef6 dc06f5d9 af35997b 73dfffe1 829e7dbf 59acdd5b a5173cdf 
+7a5bddd4 b2b56d15 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x946fd46b: Data=2490356843(0x946fd46b) 
+#       3 Digest0_1    0x89f231a7: Data=2314351015(0x89f231a7) 
+#       4 Digest0_2    0xcead4890: Data=3467462800(0xcead4890) 
+#       5 Digest0_3    0xd2e66547: Data=3538314567(0xd2e66547) 
+#       6 Digest0_4    0xb703b7e1: Data=3070474209(0xb703b7e1) 
+#       7 Digest0_5    0x4d1fb13c: Data=1293922620(0x4d1fb13c) 
+#       8 Digest0_6    0x90b280da: Data=2427617498(0x90b280da) 
+#       9 Digest0_7    0x65abcae8: Data=1705757416(0x65abcae8) 
+#      10 Digest1_0    0xfaa4d25e: Data=4205105758(0xfaa4d25e) 
+#      11 Digest1_1    0x6eb68dae: Data=1857457582(0x6eb68dae) 
+#      12 Digest1_2    0x01b7e0ec: Data=28827884(0x1b7e0ec) 
+#      13 Digest1_3    0x68b24af4: Data=1756515060(0x68b24af4) 
+#      14 Digest1_4    0x69b45ff8: Data=1773428728(0x69b45ff8) 
+#      15 Digest1_5    0xa3c34c47: Data=2747485255(0xa3c34c47) 
+#      16 Digest1_6    0x814cc382: Data=2169291650(0x814cc382) 
+#      17 Digest1_7    0x2194c60c: Data=563398156(0x2194c60c) 
+#     ContextBuf: Init(address=0x60d8 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x60d8, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x000060d8
+Data 72
+026a1002 00000001 946fd46b 89f231a7 cead4890 d2e66547 b703b7e1 4d1fb13c 
+90b280da 65abcae8 faa4d25e 6eb68dae 01b7e0ec 68b24af4 69b45ff8 a3c34c47 
+814cc382 2194c60c 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x1daf285e: Data=498018398(0x1daf285e) 
+#       3 Digest0_1    0x60d7cb96: Data=1624755094(0x60d7cb96) 
+#       4 Digest0_2    0x0eacbd25: Data=246201637(0xeacbd25) 
+#       5 Digest0_3    0xebbb986d: Data=3954940013(0xebbb986d) 
+#       6 Digest0_4    0xec42fa00: Data=3963812352(0xec42fa00) 
+#       7 Digest0_5    0xeeed0027: Data=4008509479(0xeeed0027) 
+#       8 Digest0_6    0x079e5324: Data=127816484(0x79e5324) 
+#       9 Digest0_7    0x3af6fd07: Data=989265159(0x3af6fd07) 
+#      10 Digest1_0    0x349801f7: Data=882377207(0x349801f7) 
+#      11 Digest1_1    0xe12fb9b0: Data=3778001328(0xe12fb9b0) 
+#      12 Digest1_2    0xea262eb7: Data=3928370871(0xea262eb7) 
+#      13 Digest1_3    0x18e13125: Data=417411365(0x18e13125) 
+#      14 Digest1_4    0xf6f83223: Data=4143460899(0xf6f83223) 
+#      15 Digest1_5    0x3b2e91ab: Data=992907691(0x3b2e91ab) 
+#      16 Digest1_6    0xb3418e2d: Data=3007417901(0xb3418e2d) 
+#      17 Digest1_7    0xa22afa0d: Data=2720725517(0xa22afa0d) 
+#     ContextBuf: Init(address=0x6120 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x6120, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006120
+Data 72
+026a1002 00000001 1daf285e 60d7cb96 0eacbd25 ebbb986d ec42fa00 eeed0027 
+079e5324 3af6fd07 349801f7 e12fb9b0 ea262eb7 18e13125 f6f83223 3b2e91ab 
+b3418e2d a22afa0d 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x05edc3c7: Data=99468231(0x5edc3c7) 
+#       3 Digest0_1    0x761c7486: Data=1981576326(0x761c7486) 
+#       4 Digest0_2    0xb597eac7: Data=3046632135(0xb597eac7) 
+#       5 Digest0_3    0xff5d82d7: Data=4284318423(0xff5d82d7) 
+#       6 Digest0_4    0xe5227afa: Data=3844242170(0xe5227afa) 
+#       7 Digest0_5    0x6f7607f0: Data=1870006256(0x6f7607f0) 
+#       8 Digest0_6    0x86109998: Data=2249234840(0x86109998) 
+#       9 Digest0_7    0x1dc27dd9: Data=499285465(0x1dc27dd9) 
+#      10 Digest1_0    0x8221e4d9: Data=2183259353(0x8221e4d9) 
+#      11 Digest1_1    0x8d92cfa7: Data=2375208871(0x8d92cfa7) 
+#      12 Digest1_2    0x68260420: Data=1747321888(0x68260420) 
+#      13 Digest1_3    0xb9524261: Data=3109175905(0xb9524261) 
+#      14 Digest1_4    0x7377ca23: Data=1937230371(0x7377ca23) 
+#      15 Digest1_5    0xb4f8e4fa: Data=3036210426(0xb4f8e4fa) 
+#      16 Digest1_6    0xf77bb744: Data=4152080196(0xf77bb744) 
+#      17 Digest1_7    0x1a02334a: Data=436351818(0x1a02334a) 
+#     ContextBuf: Init(address=0x6168 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x6168, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006168
+Data 72
+026a1002 00000001 05edc3c7 761c7486 b597eac7 ff5d82d7 e5227afa 6f7607f0 
+86109998 1dc27dd9 8221e4d9 8d92cfa7 68260420 b9524261 7377ca23 b4f8e4fa 
+f77bb744 1a02334a 
+# Context dump
+#     Template "Context Hash":
+#       0 CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       1 CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       2 Digest0_0    0x05edc3c7: Data=99468231(0x5edc3c7) 
+#       3 Digest0_1    0x761c7486: Data=1981576326(0x761c7486) 
+#       4 Digest0_2    0xb597eac7: Data=3046632135(0xb597eac7) 
+#       5 Digest0_3    0xff5d82d7: Data=4284318423(0xff5d82d7) 
+#       6 Digest0_4    0xe5227afa: Data=3844242170(0xe5227afa) 
+#       7 Digest0_5    0x6f7607f0: Data=1870006256(0x6f7607f0) 
+#       8 Digest0_6    0x86109998: Data=2249234840(0x86109998) 
+#       9 Digest0_7    0x1dc27dd9: Data=499285465(0x1dc27dd9) 
+#      10 Digest1_0    0x8221e4d9: Data=2183259353(0x8221e4d9) 
+#      11 Digest1_1    0x8d92cfa7: Data=2375208871(0x8d92cfa7) 
+#      12 Digest1_2    0x68260420: Data=1747321888(0x68260420) 
+#      13 Digest1_3    0xb9524261: Data=3109175905(0xb9524261) 
+#      14 Digest1_4    0x7377ca23: Data=1937230371(0x7377ca23) 
+#      15 Digest1_5    0xb4f8e4fa: Data=3036210426(0xb4f8e4fa) 
+#      16 Digest1_6    0xf77bb744: Data=4152080196(0xf77bb744) 
+#      17 Digest1_7    0x1a02334a: Data=436351818(0x1a02334a) 
+#     ContextBuf: Init(address=0x61b0 is allocated for 72 bytes)
+#     ContextBuf: Write(len=72, address=0x61b0, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x000061b0
+Data 72
+026a1002 00000001 05edc3c7 761c7486 b597eac7 ff5d82d7 e5227afa 6f7607f0 
+86109998 1dc27dd9 8221e4d9 8d92cfa7 68260420 b9524261 7377ca23 b4f8e4fa 
+f77bb744 1a02334a 
+# TestApp: TestQueueAddBurst(7 descriptors)
+# CmdRes.Hash: Init(1, Module=EIP97)
+# Test(WR1): RFC4231 Test Case #1, 8 byte input, 20 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220008: Length=8(0x8) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x0ffb1c2c: AppId=268114988(0xffb1c2c) 
+#       2 ctx_ptr      0x00006000: CtxPtr=24576(0x6000) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020008: Length=8(0x8) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x0ffb1c2c: AppId=268114988(0xffb1c2c) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x000061f8
+Data 16
+026a1002 00000001 02020008 21e6001c 
+#     PktInBuf: Init(len=8 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=8, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006208
+Data 8
+54206948 65726568 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00006210
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x00006210: DataPtr0_Lo=25104(0x6210) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=0)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3000, swap=0, tag=0)
+# @ 5761 ns 
+WriteBlock SLAVE1_XFER 0x00003000
+Data 24
+04c0001c 00006210 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 5761 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 5821 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 5881 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 8 clocks (80 ns)
+# @ 5961 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 6041 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=0)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x0, swap=0, tag=0)
+# @ 6101 ns 
+WriteBlock SLAVE1_XFER 0x00000000
+Data 24
+04c00008 00006208 000061f8 02220008 0ffb1c2c 00006000 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6101 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(2, Module=EIP97)
+# Test(WR2): RFC4231 Test Case #2, 28 byte input, 4 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x0222001c: Length=28(0x1c) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x0b11bb2b: AppId=185711403(0xb11bb2b) 
+#       2 ctx_ptr      0x00006048: CtxPtr=24648(0x6048) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x0202001c: Length=28(0x1c) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x0b11bb2b: AppId=185711403(0xb11bb2b) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 6161 ns 
+WriteBlock SLAVE1_XFER 0x0000622c
+Data 16
+026a1002 00000001 0202001c 21e6001c 
+#     PktInBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=28, swap=0, tag=0)
+# @ 6161 ns 
+WriteBlock SLAVE1_XFER 0x0000623c
+Data 28
+74616877 206f6420 77206179 20746e61 20726f66 68746f6e 3f676e69 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 6161 ns 
+WriteBlock SLAVE1_XFER 0x00006258
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x00006258: DataPtr0_Lo=25176(0x6258) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=1)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3018, swap=0, tag=0)
+# @ 6161 ns 
+WriteBlock SLAVE1_XFER 0x00003018
+Data 24
+04c0001c 00006258 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6161 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 6221 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 6281 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 7 clocks (70 ns)
+# @ 6351 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 6421 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=1)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x18, swap=0, tag=0)
+# @ 6481 ns 
+WriteBlock SLAVE1_XFER 0x00000018
+Data 24
+04c0001c 0000623c 0000622c 0222001c 0b11bb2b 00006048 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6481 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(3, Module=EIP97)
+# Test(WR3): RFC4231 Test Case #3, 50 byte input, 20 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220032: Length=50(0x32) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x08f0c416: AppId=149996566(0x8f0c416) 
+#       2 ctx_ptr      0x00006090: CtxPtr=24720(0x6090) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020032: Length=50(0x32) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x08f0c416: AppId=149996566(0x8f0c416) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 6541 ns 
+WriteBlock SLAVE1_XFER 0x00006274
+Data 16
+026a1002 00000001 02020032 21e6001c 
+#     PktInBuf: Init(len=50 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=50, swap=0, tag=0)
+# @ 6541 ns 
+WriteBlock SLAVE1_XFER 0x00006284
+Data 50
+dddddddd dddddddd dddddddd dddddddd dddddddd dddddddd dddddddd dddddddd 
+dddddddd dddddddd dddddddd dddddddd 0000dddd 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 6541 ns 
+WriteBlock SLAVE1_XFER 0x000062b8
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x000062b8: DataPtr0_Lo=25272(0x62b8) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=2)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3030, swap=0, tag=0)
+# @ 6541 ns 
+WriteBlock SLAVE1_XFER 0x00003030
+Data 24
+04c0001c 000062b8 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6541 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 6601 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 6661 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 7 clocks (70 ns)
+# @ 6731 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 6811 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=2)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x30, swap=0, tag=0)
+# @ 6871 ns 
+WriteBlock SLAVE1_XFER 0x00000030
+Data 24
+04c00032 00006284 00006274 02220032 08f0c416 00006090 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6871 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(4, Module=EIP97)
+# Test(WR4): RFC4231 Test Case #4, 50 byte input, 25 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220032: Length=50(0x32) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x032a564e: AppId=53106254(0x32a564e) 
+#       2 ctx_ptr      0x000060d8: CtxPtr=24792(0x60d8) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020032: Length=50(0x32) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x032a564e: AppId=53106254(0x32a564e) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 6931 ns 
+WriteBlock SLAVE1_XFER 0x000062d4
+Data 16
+026a1002 00000001 02020032 21e6001c 
+#     PktInBuf: Init(len=50 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=50, swap=0, tag=0)
+# @ 6931 ns 
+WriteBlock SLAVE1_XFER 0x000062e4
+Data 50
+cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd 
+cdcdcdcd cdcdcdcd cdcdcdcd cdcdcdcd 0000cdcd 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 6931 ns 
+WriteBlock SLAVE1_XFER 0x00006318
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x00006318: DataPtr0_Lo=25368(0x6318) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=3)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3048, swap=0, tag=0)
+# @ 6931 ns 
+WriteBlock SLAVE1_XFER 0x00003048
+Data 24
+04c0001c 00006318 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 6931 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 6991 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 7051 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 7 clocks (70 ns)
+# @ 7121 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 7191 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=3)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x48, swap=0, tag=0)
+# @ 7251 ns 
+WriteBlock SLAVE1_XFER 0x00000048
+Data 24
+04c00032 000062e4 000062d4 02220032 032a564e 000060d8 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 7251 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(5, Module=EIP97)
+# Test(WR5): RFC4231 Test Case #5, 20 byte input, 20 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220014: Length=20(0x14) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x093d5e32: AppId=155016754(0x93d5e32) 
+#       2 ctx_ptr      0x00006120: CtxPtr=24864(0x6120) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020014: Length=20(0x14) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e60010: Length=16(0x10) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x00000010: Length=16(0x10) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x093d5e32: AppId=155016754(0x93d5e32) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 7311 ns 
+WriteBlock SLAVE1_XFER 0x00006334
+Data 16
+026a1002 00000001 02020014 21e60010 
+#     PktInBuf: Init(len=20 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=20, swap=0, tag=0)
+# @ 7311 ns 
+WriteBlock SLAVE1_XFER 0x00006344
+Data 20
+74736554 74695720 72542068 61636e75 6e6f6974 
+#     PktOutBuf: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=16, swap=0, tag=0)
+# @ 7311 ns 
+WriteBlock SLAVE1_XFER 0x00006358
+Data 16
+cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c00010: ParticleSize=16(0x10) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x00006358: DataPtr0_Lo=25432(0x6358) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=4)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3060, swap=0, tag=0)
+# @ 7311 ns 
+WriteBlock SLAVE1_XFER 0x00003060
+Data 24
+04c00010 00006358 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 7311 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 7371 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 7431 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 8 clocks (80 ns)
+# @ 7511 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 7591 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=4)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x60, swap=0, tag=0)
+# @ 7651 ns 
+WriteBlock SLAVE1_XFER 0x00000060
+Data 24
+04c00014 00006344 00006334 02220014 093d5e32 00006120 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 7651 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=16)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(6, Module=EIP97)
+# Test(WR6): RFC4231 Test Case #6, 54 byte input, 131 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220036: Length=54(0x36) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x089419af: AppId=143923631(0x89419af) 
+#       2 ctx_ptr      0x00006168: CtxPtr=24936(0x6168) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020036: Length=54(0x36) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x089419af: AppId=143923631(0x89419af) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 7711 ns 
+WriteBlock SLAVE1_XFER 0x00006368
+Data 16
+026a1002 00000001 02020036 21e6001c 
+#     PktInBuf: Init(len=54 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=54, swap=0, tag=0)
+# @ 7711 ns 
+WriteBlock SLAVE1_XFER 0x00006378
+Data 54
+74736554 69735520 4c20676e 65677261 68542072 42206e61 6b636f6c 7a69532d 
+654b2065 202d2079 68736148 79654b20 72694620 00007473 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 7711 ns 
+WriteBlock SLAVE1_XFER 0x000063b0
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x000063b0: DataPtr0_Lo=25520(0x63b0) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=5)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3078, swap=0, tag=0)
+# @ 7711 ns 
+WriteBlock SLAVE1_XFER 0x00003078
+Data 24
+04c0001c 000063b0 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 7711 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 7771 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 7831 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 7 clocks (70 ns)
+# @ 7901 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 7981 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=5)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x78, swap=0, tag=0)
+# @ 8041 ns 
+WriteBlock SLAVE1_XFER 0x00000078
+Data 24
+04c00036 00006378 00006368 02220036 089419af 00006168 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 8041 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# CmdRes.Hash: Init(7, Module=EIP97)
+# Test(WR7): RFC4231 Test Case #7, 152 byte input, 131 byte key
+#     Template "HashToken":
+#       0 Description: token header
+#         header       0x02220098: Length=152(0x98) EIP97Mode=1 CP=0 CT=0 RC=2 ToO=0 C=1 IV=0 U=0 Type=0 
+#       1 app_id       0x0e3352f8: AppId=238244600(0xe3352f8) 
+#       2 ctx_ptr      0x000061b0: CtxPtr=25008(0x61b0) 
+#       3 Description: context control word 0
+#         CCW0         0x026a1002: ToP=2(0x2) PktHashRestart=0 PktHashNoFinish=0 PktInitCouter=0 PktInitARC4=0 CtxLen=16(0x10) SeqnrAppend=0 fixed_seqnr_offs=0 Key=0 CryptoAlg=5(0x5) DigestType=3 HashAlg=4(0x4) SPI=0 Seq=0 Mask0=0 Mask1=0 
+#       4 Description: context control word 1
+#         CCW1         0x00000001: CryptoMode=1(0x1) IV0=0 IV1=0 IV2=0 IV3=0 DigestCnt=0 IV_format=0 CryptoStore=0 PreCryptoOp=0 PadType=0 EncHashRes=0 Direction=0 HashStore=0 CryptoAlgExt=0 StateSelect=0 SeqNumStore=0 DisMaskUpdate=0 SeqNumPtr=0(0x0) SeqNumPtrAv=0 CtxFetchMode=0 
+#       5 Description: hash the packet (copy_payload=0,copy_hash=1,save_hash=0)
+#         direction    0x02020098: Length=152(0x98) Stat=1 TypeOfDest=2 L=0 OpCode=0(0x0) 
+#       6 Description: insert hash result to the output
+#         insert       0x21e6001c: Length=28(0x1c) Stat=3 Origin=28(0x1c) TypeOfDest=1 L=0 OpCode=2(0x2) 
+#     Template "ResultToken":
+#       0 res_tkn_hdr0 0x0000001c: Length=28(0x1c) E0=0 E1=0 E2=0 E3=0 E4=0 E5=0 E6=0 E7=0 E8=0 E9=0 E10=0 E11=0 E12=0 E13=0 E14=0 
+#       1 res_tkn_hdr1 0x00000000: BypassData=0(0x0) E15=0 H=0 HashBytes=0(0x0) B=0 C=0 N=0 L=0 
+#       2 app_id       0x0e3352f8: AppId=238244600(0xe3352f8) 
+#       3 res_tkn_hdr3 0x00000000: NextHeader=0(0x0) PadLength=0(0x0) 
+#     InputToken: Init(len=16 bytes, sg=0)
+#         1 particle buffer(s) created
+#     InputToken: Write(len=16, swap=0, tag=0)
+# @ 8101 ns 
+WriteBlock SLAVE1_XFER 0x000063cc
+Data 16
+026a1002 00000001 02020098 21e6001c 
+#     PktInBuf: Init(len=152 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktInBuf: Write(len=152, swap=0, tag=0)
+# @ 8101 ns 
+WriteBlock SLAVE1_XFER 0x000063dc
+Data 152
+73696854 20736920 65742061 75207473 676e6973 6c206120 65677261 68742072 
+62206e61 6b636f6c 7a69732d 656b2065 6e612079 20612064 6772616c 74207265 
+206e6168 636f6c62 69732d6b 6420657a 2e617461 65685420 79656b20 65656e20 
+74207364 6562206f 73616820 20646568 6f666562 62206572 676e6965 65737520 
+79622064 65687420 414d4820 6c612043 69726f67 2e6d6874 
+#     PktOutBuf: Init(len=28 bytes, sg=0)
+#         1 particle buffer(s) created
+#     PktOutBuf: Write(len=28, swap=0, tag=0)
+# @ 8101 ns 
+WriteBlock SLAVE1_XFER 0x00006474
+Data 28
+cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc cccccccc 
+#     EIP97.EIP202.RDR0: PrepareDescriptors(ExtBuffer=1, NumOfDescriptors=0, ParticleSize=0, IncrMode=0)
+#     Template "PktOutBuf.0":
+#       0 w00          0x04c0001c: ParticleSize=28(0x1c) LS=1 FS=1 ResultSize=4(0x4) 
+#       1 dp0          0x00006474: DataPtr0_Lo=25716(0x6474) 
+#     EIP97.EIP202.RDR0: WriteCommand(index=6)
+#     EIP97.EIP202.RDR0Buf: Write(len=24, address=0x3090, swap=0, tag=0)
+# @ 8101 ns 
+WriteBlock SLAVE1_XFER 0x00003090
+Data 24
+04c0001c 00006474 77777777 77777777 77777777 77777777 
+#     EIP97.EIP202.RDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 8101 ns 
+WriteWord MASTER1_XFER 0x0000082c 0x00000018 0xffffffff
+#     EIP97.EIP202.CDR0: Put(AddTokenEn=1, ControlDataEn=1)
+#     Need to submit chain of 1 buffer(s)
+#     EIP97.EIP202.CDR0: WaitForThresholdIrq(FreeDescr=1, pending=0)
+#     - Request threshold interrupt for 1 descriptors to be free
+# @ 8161 ns 
+WriteWord MASTER1_XFER 0x00000028 0x000005fa 0xffffffff
+# @ 8221 ns 
+#     - Wait for threshold interrupt...
+
+PollWord MASTER1_XFER 0x0000003c 0x00000002 0x00000002 1073741824
+# ...poll succeeded in 7 clocks (70 ns)
+# @ 8291 ns 
+ReadWord MASTER1_XFER 0x0000002c 0x00000000 0x00ffffff
+# @ 8361 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x00000002 0xffffffff
+#     EIP97.EIP202.CDR0: WriteCommand(index=6)
+#     EIP97.EIP202.CDR0Buf: Write(len=24, address=0x90, swap=0, tag=0)
+# @ 8421 ns 
+WriteBlock SLAVE1_XFER 0x00000090
+Data 24
+04c00098 000063dc 000063cc 02220098 0e3352f8 000061b0 
+#     EIP97.EIP202.CDR0: CounterIncrement(1 entries + 0 pending = 1)
+# @ 8421 ns 
+WriteWord MASTER1_XFER 0x0000002c 0x00000018 0xffffffff
+#     PktOutBuf: EstimateBufferUsage(len=28)
+#         estimated 1 buffer(s)
+# Test(RD1): RFC4231 Test Case #1, 8 byte input, 20 byte key
+Record 1
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=0, 0 (pend 0, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 8481 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000006 0xffffffff
+# @ 8541 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 8 clocks (80 ns)
+# @ 8621 ns 
+ReadWord MASTER1_XFER 0x00000830 0x01000018 0xffffffff
+# @ 8701 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=0)
+# @ 8761 ns 
+CheckBlock SLAVE1_XFER 0x00003000
+Data 24
+04c0001c 00006210 0000001c 00000000 0ffb1c2c 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (0 pend), 0 pkts (0 pend), cur 24, 1)
+# @ 8761 ns 
+CheckBlock SLAVE1_XFER 0x00006210
+Data 28
+12b16f89 19dfbb8a 7c103268 3ff39dd4 16b1b447 4fba1299 224b6853 
+#         collected 28 bytes
+# TestDel(1): RFC4231 Test Case #1, 8 byte input, 20 byte key
+# @ 8761 ns 
+# @ 8761 ns 
+# @ 8761 ns 
+# Test(RD2): RFC4231 Test Case #2, 28 byte input, 4 byte key
+Record 2
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=1, 1 (pend 1, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 8761 ns 
+WriteWord MASTER1_XFER 0x00000828 0x0000000c 0xffffffff
+# @ 8821 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 86 clocks (860 ns)
+# @ 9681 ns 
+ReadWord MASTER1_XFER 0x00000830 0x02000030 0xffffffff
+# @ 9761 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=1)
+# @ 9821 ns 
+CheckBlock SLAVE1_XFER 0x00003018
+Data 24
+04c0001c 00006258 0000001c 00000000 0b11bb2b 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (24 pend), 0 pkts (0 pend), cur 48, 2)
+# @ 9821 ns 
+CheckBlock SLAVE1_XFER 0x00006258
+Data 28
+09010ea3 bfdbc68b 3a0f6945 0f6d9e7e a3a2be8b 0048619e 445ed08f 
+#         collected 28 bytes
+# TestDel(2): RFC4231 Test Case #2, 28 byte input, 4 byte key
+# @ 9821 ns 
+# @ 9821 ns 
+# @ 9821 ns 
+# Test(RD3): RFC4231 Test Case #3, 50 byte input, 20 byte key
+Record 3
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=2, 2 (pend 2, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 9821 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000012 0xffffffff
+# @ 9881 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 109 clocks (1090 ns)
+# @ 10971 ns 
+ReadWord MASTER1_XFER 0x00000830 0x03000048 0xffffffff
+# @ 11051 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=2)
+# @ 11111 ns 
+CheckBlock SLAVE1_XFER 0x00003030
+Data 24
+04c0001c 000062b8 0000001c 00000000 08f0c416 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (48 pend), 0 pkts (0 pend), cur 72, 3)
+# @ 11111 ns 
+CheckBlock SLAVE1_XFER 0x000062b8
+Data 28
+35cbb37f f6c1c688 4d69a9ff 64d26a7d c1b06593 d1695df6 ea3383ec 
+#         collected 28 bytes
+# TestDel(3): RFC4231 Test Case #3, 50 byte input, 20 byte key
+# @ 11111 ns 
+# @ 11111 ns 
+# @ 11111 ns 
+# Test(RD4): RFC4231 Test Case #4, 50 byte input, 25 byte key
+Record 4
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=3, 3 (pend 3, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 11111 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000018 0xffffffff
+# @ 11171 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 101 clocks (1010 ns)
+# @ 12181 ns 
+ReadWord MASTER1_XFER 0x00000830 0x04000060 0xffffffff
+# @ 12261 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=3)
+# @ 12321 ns 
+CheckBlock SLAVE1_XFER 0x00003048
+Data 24
+04c0001c 00006318 0000001c 00000000 032a564e 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (72 pend), 0 pkts (0 pend), cur 96, 4)
+# @ 12321 ns 
+CheckBlock SLAVE1_XFER 0x00006318
+Data 28
+6850116c ac3c0174 1bbc2a6a 7c6282b3 d8906aec 2d01fc6e 5aecafe7 
+#         collected 28 bytes
+# TestDel(4): RFC4231 Test Case #4, 50 byte input, 25 byte key
+# @ 12321 ns 
+# @ 12321 ns 
+# @ 12321 ns 
+# Test(RD5): RFC4231 Test Case #5, 20 byte input, 20 byte key
+Record 5
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=4, 4 (pend 4, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 12321 ns 
+WriteWord MASTER1_XFER 0x00000828 0x0000001e 0xffffffff
+# @ 12381 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 77 clocks (770 ns)
+# @ 13151 ns 
+ReadWord MASTER1_XFER 0x00000830 0x05000078 0xffffffff
+# @ 13231 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=4)
+# @ 13291 ns 
+CheckBlock SLAVE1_XFER 0x00003060
+Data 24
+04c00010 00006358 00000010 00000000 093d5e32 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (96 pend), 0 pkts (0 pend), cur 120, 5)
+# @ 13291 ns 
+CheckBlock SLAVE1_XFER 0x00006358
+Data 16
+68ea2a0e 378d0ca9 dbbc88c9 a86fca9f 
+#         collected 16 bytes
+# TestDel(5): RFC4231 Test Case #5, 20 byte input, 20 byte key
+# @ 13291 ns 
+# @ 13291 ns 
+# @ 13291 ns 
+# Test(RD6): RFC4231 Test Case #6, 54 byte input, 131 byte key
+Record 6
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=5, 5 (pend 5, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 13291 ns 
+WriteWord MASTER1_XFER 0x00000828 0x00000024 0xffffffff
+# @ 13351 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 109 clocks (1090 ns)
+# @ 14441 ns 
+ReadWord MASTER1_XFER 0x00000830 0x06000090 0xffffffff
+# @ 14521 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=5)
+# @ 14581 ns 
+CheckBlock SLAVE1_XFER 0x00003078
+Data 24
+04c0001c 000063b0 0000001c 00000000 089419af 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (120 pend), 0 pkts (0 pend), cur 144, 6)
+# @ 14581 ns 
+CheckBlock SLAVE1_XFER 0x000063b0
+Data 28
+dba0e995 ad952096 2d9bbeae e2bc0d6f 12f199d4 27b7d2f2 0e87a63f 
+#         collected 28 bytes
+# TestDel(6): RFC4231 Test Case #6, 54 byte input, 131 byte key
+# @ 14581 ns 
+# @ 14581 ns 
+# @ 14581 ns 
+# Test(RD7): RFC4231 Test Case #7, 152 byte input, 131 byte key
+Record 7
+#     EIP97.EIP202.RDR0: WaitForThresholdIrq(ProcDescr=1, Leftover=0, cur=6, 6 (pend 6, 0))
+#     - Request threshold interrupt for 1 descriptors to be processed
+# @ 14581 ns 
+WriteWord MASTER1_XFER 0x00000828 0x0000002a 0xffffffff
+# @ 14641 ns 
+#     - Wait for threshold interrupt (number 0)...
+
+PollWord MASTER1_XFER 0x0000083c 0x00000010 0x00000010 1073741824
+# ...poll succeeded in 181 clocks (1810 ns)
+# @ 16451 ns 
+ReadWord MASTER1_XFER 0x00000830 0x070000a8 0xffffffff
+# @ 16531 ns 
+WriteWord MASTER1_XFER 0x0000083c 0x00000010 0xffffffff
+#     EIP97.EIP202.RDR0: ReadResult(index=6)
+# @ 16591 ns 
+CheckBlock SLAVE1_XFER 0x00003090
+Data 24
+04c0001c 00006474 0000001c 00000000 0e3352f8 00000000 
+#     CombinedBuffer: Init(len=1 bytes, sg=0)
+#         1 buffers form a complete packet
+#     EIP97.EIP202.RDR0: ProcCounterDecrement(1 descr (144 pend), 0 pkts (0 pend), cur 168, 7)
+# @ 16591 ns 
+CheckBlock SLAVE1_XFER 0x00006474
+Data 28
+6641853a 029f5dac 17d5543f bd9db3d0 db706794 c9952b9c d165f5f6 
+#         collected 28 bytes
+# TestDel(7): RFC4231 Test Case #7, 152 byte input, 131 byte key
+# @ 16591 ns 
+# @ 16591 ns 
+# @ 16591 ns 

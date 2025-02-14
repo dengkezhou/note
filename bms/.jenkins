@@ -1,0 +1,6 @@
+echo ">>> rebuilding c906"
+make firmware-dirclean
+make firmware
+echo ">>> rebuilding eh1"
+make firmware-dirclean
+make firmware TARGET=eh1

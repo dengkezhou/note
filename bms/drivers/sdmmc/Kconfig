@@ -1,0 +1,6 @@
+config DRV_SDMMC
+	bool "sdmmc driver support"
+	default n
+	help:
+		enable sdmmc
+

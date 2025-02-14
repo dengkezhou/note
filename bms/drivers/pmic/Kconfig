@@ -1,0 +1,5 @@
+config DRV_PMIC
+	bool "pmic driver support"
+	default n
+	help:
+		enable pmic driver

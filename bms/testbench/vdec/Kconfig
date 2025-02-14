@@ -1,0 +1,5 @@
+config TBH_VDEC
+	bool "testbench vdec support"
+	default n
+	help
+		enable testbench vdec

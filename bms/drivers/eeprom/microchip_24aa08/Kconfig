@@ -1,0 +1,5 @@
+config MICRO_24AA08
+	bool "24AA08 support"
+	default n
+	help:
+		support 24AA08

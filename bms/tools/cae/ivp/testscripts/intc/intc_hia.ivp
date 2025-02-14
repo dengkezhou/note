@@ -1,0 +1,87 @@
+# ---------------------------------------------
+# Integration Vectors File
+# Module   : EIP-97b-ie-AXI
+# Version  : 2.3
+# ---------------------------------------------
+# @ 111 ns 
+SetClockFrequency SYS_CLK 100
+DeviceReset 10
+# EIP97: Init(HW version 2.3.1)
+# EIP97.EIP202: Init(HW version 2.7)
+# EIP97.EIP202.AIC_G: Init(HW version 1.4, noi=32, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R0: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R1: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R2: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.EIP202.AIC_R3: Init(HW version 1.4, noi=8, mini_reg=0, ext_reg=0)
+# EIP97.PE_0: Init(HW version 1.5)
+# EIP97.PE_0.EIP96: Init(HW version 4.3.3)
+# EIP97.PE_0.EIP96.EIP201: Init(HW version 1.4, noi=4, mini_reg=0, ext_reg=0)
+# EIP97.PE_0.AIC: Init(HW version 1.4, noi=5, mini_reg=0, ext_reg=0)
+# @ 221 ns 
+CheckWord PORTS_SPACE OUT_IRQ 0x0 0x1
+# @ 221 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x0 0x1
+# @ 221 ns 
+WriteWord MASTER1_XFER 0x0000f800 0xffffffff 0xffffffff
+# @ 281 ns 
+WriteWord MASTER1_XFER 0x0000f808 0xffffffff 0xffffffff
+# @ 341 ns 
+WaitClock SYS_CLK 10 1
+# @ 436 ns 
+CheckWord PORTS_SPACE OUT_IRQ 0x1 0x1
+# @ 436 ns 
+WriteWord MASTER1_XFER 0x0000f808 0x00000000 0xffffffff
+# @ 501 ns 
+WaitClock SYS_CLK 10 1
+# @ 596 ns 
+CheckWord PORTS_SPACE OUT_IRQ 0x0 0x1
+# @ 596 ns 
+WriteWord MASTER1_XFER 0x0000003c 0x40000000 0xffffffff
+# @ 661 ns 
+WriteWord MASTER1_XFER 0x0000e008 0xffffffff 0xffffffff
+# @ 721 ns 
+WaitClock SYS_CLK 10 1
+# @ 816 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x1 0x1
+# @ 816 ns 
+WriteWord MASTER1_XFER 0x0000e008 0x00000000 0xffffffff
+# @ 881 ns 
+WaitClock SYS_CLK 10 1
+# @ 976 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x0 0x1
+# @ 976 ns 
+WriteWord MASTER1_XFER 0x0000d008 0xffffffff 0xffffffff
+# @ 1041 ns 
+WaitClock SYS_CLK 10 1
+# @ 1136 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x2 0x1
+# @ 1136 ns 
+WriteWord MASTER1_XFER 0x0000d008 0x00000000 0xffffffff
+# @ 1201 ns 
+WaitClock SYS_CLK 10 1
+# @ 1296 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x0 0x1
+# @ 1296 ns 
+WriteWord MASTER1_XFER 0x0000c008 0xffffffff 0xffffffff
+# @ 1361 ns 
+WaitClock SYS_CLK 10 1
+# @ 1456 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x4 0x1
+# @ 1456 ns 
+WriteWord MASTER1_XFER 0x0000c008 0x00000000 0xffffffff
+# @ 1521 ns 
+WaitClock SYS_CLK 10 1
+# @ 1616 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x0 0x1
+# @ 1616 ns 
+WriteWord MASTER1_XFER 0x0000b008 0xffffffff 0xffffffff
+# @ 1681 ns 
+WaitClock SYS_CLK 10 1
+# @ 1776 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x8 0x1
+# @ 1776 ns 
+WriteWord MASTER1_XFER 0x0000b008 0x00000000 0xffffffff
+# @ 1841 ns 
+WaitClock SYS_CLK 10 1
+# @ 1936 ns 
+CheckWord PORTS_SPACE RING_IRQ 0x0 0x1

@@ -1,0 +1,16 @@
+config LIB_FATFS
+	bool "fatfs support"
+	default n
+	select DRV_SDMMC
+	help:
+		enable fatfs
+
+config FATFS_MMC_IF
+	hex "FATFS MMC Interface"
+	default 0x1
+	depends on LIB_FATFS
+
+config FS_API_WRAPPER
+	bool "enable fs wrapper api"
+	depends on LIB_FATFS && !LIB_RTLFS
+	default y

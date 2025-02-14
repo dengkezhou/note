@@ -1,0 +1,6 @@
+config LIB_CONSOLE
+	bool "console support"
+	default n
+	help:
+		enable console
+

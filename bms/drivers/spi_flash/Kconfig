@@ -1,0 +1,5 @@
+config DRV_SPI_FLASH
+	bool "spi flash driver support"
+	default n
+	help:
+		enable spi flash

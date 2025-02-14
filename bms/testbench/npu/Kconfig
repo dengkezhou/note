@@ -1,0 +1,5 @@
+config TBH_NPU
+	bool "testbench npu support"
+	default n
+	help:
+		enable testbench npu

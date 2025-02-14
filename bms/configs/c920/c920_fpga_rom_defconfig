@@ -1,0 +1,109 @@
+#
+# Automatically generated file; DO NOT EDIT.
+# BareMetal System Configuration
+#
+
+#
+# Target options
+#
+CONFIG_RISCV=y
+# CONFIG_ARM is not set
+CONFIG_C920=y
+# CONFIG_C906 is not set
+# CONFIG_E906 is not set
+# CONFIG_E902 is not set
+# CONFIG_RISCV_SMODE is not set
+CONFIG_MACHINE="c920"
+# CONFIG_COMPILE_RTL is not set
+CONFIG_COMPILE_FPGA=y
+# CONFIG_COMPILE_SIM is not set
+# CONFIG_COMPILE_EVB is not set
+CONFIG_NR_CPUS=1
+CONFIG_COMPILE_ROM=y
+# CONFIG_BOOT_OTHER_CORE is not set
+# CONFIG_TB is not set
+# CONFIG_TB_RUN_DDR is not set
+# CONFIG_TB_RUN_DDR1 is not set
+CONFIG_TB_RUN_IRAM=y
+# CONFIG_SYSMAP is not set
+CONFIG_64BIT=y
+# CONFIG_32BIT is not set
+CONFIG_COMPILE_DRV=y
+# CONFIG_DRV_DMA is not set
+CONFIG_DRV_SYSM=y
+CONFIG_DRV_IRQCHIP=y
+CONFIG_PLIC=y
+# CONFIG_CLIC is not set
+# CONFIG_DRV_TIMER is not set
+# CONFIG_DRV_I2C is not set
+# CONFIG_DRV_EEPROM is not set
+# CONFIG_DRV_WDT is not set
+# CONFIG_DRV_UART is not set
+# CONFIG_DRV_ETH is not set
+# CONFIG_DRV_I2S is not set
+# CONFIG_CDNS_I2S_SC is not set
+# CONFIG_CDNS_I2S_MC is not set
+# CONFIG_DRV_CODEC_ES8388 is not set
+# CONFIG_DRV_SDMMC is not set
+# CONFIG_DRV_DRD is not set
+# CONFIG_DRV_RTC is not set
+# CONFIG_DRV_SPI is not set
+# CONFIG_DRV_XSPI is not set
+# CONFIG_DRV_SPI_FLASH is not set
+# CONFIG_DRV_MU is not set
+# CONFIG_DRV_PWM is not set
+# CONFIG_DRV_PVT is not set
+# CONFIG_DRV_CAE is not set
+# CONFIG_DRV_PUFCC is not set
+# CONFIG_DRV_DDR is not set
+# CONFIG_DRV_RXA is not set
+# CONFIG_DRV_LPDDR4 is not set
+# CONFIG_DRV_VDEC is not set
+# CONFIG_DRV_IDS is not set
+# CONFIG_DRV_DMIC is not set
+CONFIG_COMPILE_TBH=y
+# CONFIG_TBH_E906 is not set
+# CONFIG_TBH_C920 is not set
+# CONFIG_TBH_DMA is not set
+CONFIG_TBH_IRQ=y
+CONFIG_TBH_RTLFS=y
+# CONFIG_TBH_TIMER is not set
+# CONFIG_TBH_I2C is not set
+CONFIG_TBH_SKULL=y
+# CONFIG_TBH_TASK is not set
+# CONFIG_TBH_WDT is not set
+# CONFIG_TBH_UART is not set
+# CONFIG_TBH_ETH is not set
+# CONFIG_TBH_I2S is not set
+# CONFIG_TBH_VDEC is not set
+# CONFIG_TBH_SDMMC is not set
+# CONFIG_TBH_SYSM is not set
+# CONFIG_TBH_DRD is not set
+# CONFIG_TBH_RTC is not set
+# CONFIG_TBH_SPI is not set
+# CONFIG_TBH_XSPI is not set
+# CONFIG_TBH_MU is not set
+# CONFIG_TBH_PWM is not set
+# CONFIG_TBH_PVT is not set
+# CONFIG_TBH_CAE is not set
+# CONFIG_TBH_PUFCC is not set
+# CONFIG_TBH_DDR is not set
+# CONFIG_TBH_RXA is not set
+# CONFIG_TBH_LPDDR4 is not set
+# CONFIG_TBH_IDS is not set
+# CONFIG_TBH_NPU is not set
+# CONFIG_TBH_DMIC is not set
+CONFIG_COMPILE_LIB=y
+CONFIG_LIB_COMMAND=y
+CONFIG_LIB_MATH=y
+CONFIG_LIB_SHELL=y
+CONFIG_LIB_STDLIB=y
+CONFIG_LIB_CONSOLE=y
+CONFIG_LIB_CRYPTO=y
+CONFIG_LIB_COMMON=y
+CONFIG_LIB_INTERRUPT=y
+CONFIG_LIB_RTLFS=y
+CONFIG_LIB_RTL=y
+# CONFIG_LIB_FREERTOS is not set
+# CONFIG_LIB_SBI is not set
+CONFIG_COMPILE_ARCH=y

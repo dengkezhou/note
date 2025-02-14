@@ -1,0 +1,5 @@
+config DRV_SYSM
+	bool "sysm driver support"
+	default n
+	help:
+	  enable sysm

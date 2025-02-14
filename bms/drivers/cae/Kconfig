@@ -1,0 +1,11 @@
+config DRV_CAE
+	bool "cae driver support"
+	default n
+	help:
+	  enable cae
+
+config DRV_CAE_IVP
+	bool "ivp test"
+	depends on DRV_CAE
+	help
+		Integration Vectors File test

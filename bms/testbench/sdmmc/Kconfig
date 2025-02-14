@@ -1,0 +1,5 @@
+config TBH_SDMMC
+	bool "testbench sdmmc support"
+	default n
+	help
+		enable testbench sdmmc

@@ -1,0 +1,6 @@
+config LIB_RTL
+  bool "rtl support"
+  default n
+  help:
+    enable rtl
+

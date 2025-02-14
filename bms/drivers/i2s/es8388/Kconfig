@@ -1,0 +1,7 @@
+config DRV_CODEC_ES8388
+	bool "codec es8388 driver support"
+	default n
+	help
+		enable codec es8388 driver
+
+

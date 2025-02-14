@@ -1,0 +1,83 @@
+diff --git a/drivers/arm/pl011/pl011_console.c b/drivers/arm/pl011/pl011_console.c
+index 9b8b4a3..041f78b 100755
+--- a/drivers/arm/pl011/pl011_console.c
++++ b/drivers/arm/pl011/pl011_console.c
+@@ -38,7 +38,8 @@ static unsigned long uart_base;
+ 
+ int init_serial(void)
+ {
+-    console_init(PL011_UART0_BASE);
++    //console_init(PL011_UART0_BASE);
++	console_init(0x1c090000);
+     return 0;
+ }
+ 
+diff --git a/drivers/irq/irq-gic.c b/drivers/irq/irq-gic.c
+index 12d8dc5..485937a 100644
+--- a/drivers/irq/irq-gic.c
++++ b/drivers/irq/irq-gic.c
+@@ -365,7 +365,7 @@ void gic_emu_init(void)
+ 	/* map iRAM to 0x00000000 */
+ 	//writel(1, 0x21e09820);
+ 
+-	gic_init();
++//	gic_init();
+ }
+ module_init(gic_emu_init);
+ #endif
+diff --git a/lib/stdlib/printf.c b/lib/stdlib/printf.c
+index 359f293..a9aba8c 100755
+--- a/lib/stdlib/printf.c
++++ b/lib/stdlib/printf.c
+@@ -43,12 +43,15 @@ int printf(const char *fmt, ...)
+ 	char printbuffer[PRINT_BUFFER_SIZE];
+ 	static char *buf = __lds_print;
+ 	int count;
+-
++//#ifdef CONFIG_COMPILE_RTL
+ 	if(__lds_print == 0x0)
+ 	  buf = printbuffer;
+ 	else if(buf - __lds_print + PRINT_BUFFER_SIZE
+ 				> (long)__lds_print_size)
+ 	  buf = __lds_print;
++//#else
++ //  buf = printbuffer;
++//#endif   
+ 
+ 	va_start(args, fmt);
+ 	count = vsnprintf(buf, PRINT_BUFFER_SIZE - 1, fmt, args);
+diff --git a/plat/fvp/aarch64/plat_common.c b/plat/fvp/aarch64/plat_common.c
+index 796b687..8fb42fb 100755
+--- a/plat/fvp/aarch64/plat_common.c
++++ b/plat/fvp/aarch64/plat_common.c
+@@ -161,7 +161,7 @@ const mmap_region_t fvp_mmap[] = {
+ 	{ 0x40000000,	0x40000000,	MT_DEVICE | MT_RW | MT_SECURE },
+ 	{ DRAM_BASE,	DRAM_SIZE,	MT_MEMORY | MT_RW | MT_NS },
+ #endif
+-#if 0
++#if 1
+ 	//for test on vdk 
+ 	//LDS_DATA
+ 	{ DEVICE0_BASE_TMP,	DEVICE0_SIZE_TMP,	MT_DEVICE | MT_RW | MT_SECURE },
+diff --git a/soc/main.c b/soc/main.c
+index c622584..8f4d93f 100644
+--- a/soc/main.c
++++ b/soc/main.c
+@@ -70,14 +70,15 @@ int main(void)
+         writel(0xffffffff, GIC_DISTRIBUTOR_ADDR + 0x180 + (i << 2));
+ 
+ #endif
++
+ #if !defined(CONFIG_BUILD_FPGA)
+-    set_clk();
++//    set_clk();
+ #endif
+ 
+ 	/* init serial */
+ 	init_serial();
+ #ifdef CONFIG_COMPILE_RTL
+-	puts_enable(0);
++//	puts_enable(0);
+ #endif
+ 
+ 	printf("\n\n");

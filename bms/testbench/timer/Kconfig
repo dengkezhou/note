@@ -1,0 +1,5 @@
+config TBH_TIMER
+	bool "testbench timer support"
+	default n
+	help:
+		enable testbench timer

@@ -1,0 +1,6 @@
+config TBH_CAE
+	bool "testbench cae support"
+	default n
+	help:
+		enable testbench cae
+

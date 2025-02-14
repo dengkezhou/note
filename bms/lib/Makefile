@@ -1,0 +1,13 @@
+subdirs-$(CONFIG_LIB_COMMAND) += command
+subdirs-$(CONFIG_LIB_MATH) += math
+subdirs-$(CONFIG_LIB_SHELL) += shell
+subdirs-$(CONFIG_LIB_STDLIB) += stdlib
+subdirs-$(CONFIG_LIB_CONSOLE) += console
+subdirs-$(CONFIG_LIB_CRYPTO) += crypto
+subdirs-$(CONFIG_LIB_COMMON) += common
+subdirs-$(CONFIG_LIB_INTERRUPT) += interrupt
+subdirs-$(CONFIG_LIB_FATFS) += fatfs
+subdirs-$(CONFIG_LIB_RTLFS) += rtlfs
+subdirs-$(CONFIG_LIB_RTL) += rtl
+subdirs-$(CONFIG_LIB_FREERTOS) += freertos
+subdirs-$(CONFIG_LIB_SBI) += sbi

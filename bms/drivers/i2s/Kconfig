@@ -1,0 +1,18 @@
+config DRV_I2S
+	bool "i2s driver support"
+	default n
+	help
+		enable i2s driver
+
+config CDNS_I2S_SC
+	bool "cadence i2s sc driver support"
+	help
+		Cadence I2S SC driver support
+
+config CDNS_I2S_MC
+	bool "cadence i2s mc driver support"
+	help
+		Cadence I2S MC driver support
+
+source "drivers/i2s/es8388/Kconfig"
+

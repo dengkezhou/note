@@ -1,0 +1,13 @@
+config TBH_RXA
+	bool "testbench rxa support"
+	default n
+	help:
+		enable testbench rxa
+
+if TBH_RXA
+config RANDOMX_MINING
+	bool "Randomx Mining support"
+	default n
+	help:
+	  enable randomx mining
+endif

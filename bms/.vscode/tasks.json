@@ -1,0 +1,43 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "./tools/asic/asic-build.sh --conf tools/asic/.asic-build.conf ",
+            "problemMatcher": []
+        },
+        {
+            "label": "burn",
+            "type": "shell",
+            "command": "sudo ./tools/asic/mk-tf.sh --conf tools/asic/.asic-build.conf ",
+            "problemMatcher": []
+        },
+        {
+            "label": "cskysim_c920_defconfig",
+            "type": "shell",
+            "command": "make cskysim_c920_defconfig",
+            "problemMatcher": []
+        },
+        {
+            "label": "start c920 qemu with gdb",
+            "type": "shell",
+            "command": "cskysim  -soc tools/cskysim/c920_cfg.xml -kernel out/soc.elf  -nographic -gdb tcp::12233 -S",
+            "problemMatcher": []
+        },
+        {
+            "label": "start e902 qemu with gdb",
+            "type": "shell",
+            "command": "cskysim  -soc tools/cskysim/smartl_902_cfg.xml -kernel out/soc.elf  -nographic -gdb tcp::12233 -S",
+            "problemMatcher": []
+        },
+        {
+            "label": "start e906 qemu with gdb",
+            "type": "shell",
+            "command": "cskysim  -soc tools/cskysim/e906_cfg.xml -kernel out/soc.elf  -nographic -gdb tcp::12233 -S",
+            "problemMatcher": []
+        }
+    ]
+}

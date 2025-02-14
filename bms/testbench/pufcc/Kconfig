@@ -1,0 +1,10 @@
+config TBH_PUFCC
+	bool
+
+config TBH_PUFSECURITY 
+	bool "testbench pufcc support"
+	default n
+	select TBH_PUFCC
+	help:
+		enable testbench pufcc
+
